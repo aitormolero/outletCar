@@ -1,6 +1,6 @@
 from django.db import models
 
-MANUAL = 'Manual'
+MANUAL1 = 'Manual'
 AUTOMATICA = 'Automática'
 TRANSMISION_OPCIONES = [
     (MANUAL, 'Manual'),
