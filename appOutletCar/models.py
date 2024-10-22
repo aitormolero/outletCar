@@ -1,11 +1,14 @@
 from django.db import models
 
-MANUAL1 = 'Manual'
+MANUAL = 'Manual'
 AUTOMATICA = 'Automática'
 TRANSMISION_OPCIONES = [
     (MANUAL, 'Manual'),
     (AUTOMATICA, 'Automática')
 ]
+
+
+
 
 GASOLINA = 'Gasolina'
 DIESEL = 'Diésel'
