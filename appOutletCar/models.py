@@ -2,18 +2,18 @@ from django.db import models
 
 MANUAL = 'Manual'
 AUTOMATICA = 'Automática'
+
 TRANSMISION_OPCIONES = [
     (MANUAL, 'Manual'),
     (AUTOMATICA, 'Automática')
 ]
 
 
-
-
 GASOLINA = 'Gasolina'
 DIESEL = 'Diésel'
 ELECTRICO = 'Eléctrico'
 HIBRIDO = 'Híbrido'
+
 COMBUSTIBLE_OPCIONES = [
     (GASOLINA, 'Gasolina'),
     (DIESEL, 'Diésel'),
@@ -21,23 +21,28 @@ COMBUSTIBLE_OPCIONES = [
     (HIBRIDO, 'Híbrido')
 ]
 
+
 DELANTERA = 'Delantera'
 TRASERA = 'Trasera'
 INTEGRAL = 'Integral'
+
 TRACCION_OPCIONES = [
     (DELANTERA, 'Delantera'),
     (TRASERA, 'Trasera'),
     (INTEGRAL, 'Integral')
 ]
 
+
 DOS = 2
 CUATRO = 4
 CINCO = 5
+
 NUMERO_PUERTAS_OPCIONES = [
     (DOS, 2),
     (CUATRO, 4),
     (CINCO, 5)
 ]
+
 
 
 class Coche (models.Model):
@@ -56,7 +61,7 @@ class Coche (models.Model):
     categoria = models.ManyToManyField('Categoria')
 
     def __str__(self):
-        return self.marca + ' ' + self.modelo
+        return str(self.marca) + ' ' + str(self.modelo)
 
 
 class Marca (models.Model):
@@ -66,7 +71,7 @@ class Marca (models.Model):
     descripcion = models.TextField(blank = True, null = True)
 
     def __str__(self):
-        return "(" + self.fecha_fundacion + ") " + self.nombre
+        return "(" + str(self.fecha_fundacion) + ") " + self.nombre
 
 
 class Categoria (models.Model):
