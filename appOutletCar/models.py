@@ -24,12 +24,12 @@ COMBUSTIBLE_OPCIONES = [
 
 DELANTERA = 'Delantera'
 TRASERA = 'Trasera'
-INTEGRAL = 'Integral'
+TOTAL = 'Total'
 
 TRACCION_OPCIONES = [
     (DELANTERA, 'Delantera'),
     (TRASERA, 'Trasera'),
-    (INTEGRAL, 'Integral')
+    (TOTAL, 'Total')
 ]
 
 
@@ -46,10 +46,10 @@ NUMERO_PUERTAS_OPCIONES = [
 
 
 class Coche (models.Model):
-    anio = models.PositiveIntegerField()
+    anio = models.PositiveIntegerField(default = 2000)
     precio = models.DecimalField(max_digits = 10, decimal_places = 2)
-    color = models.CharField(max_length = 50, blank = True, null = True)
-    kilometraje = models.PositiveIntegerField(blank = True, null = True)
+    color = models.CharField(max_length = 50, default = 'Blanco')
+    kilometraje = models.PositiveIntegerField(default=0)
     transmision = models.CharField(max_length = 50, choices = TRANSMISION_OPCIONES)
     combustible = models.CharField(max_length = 50, choices = COMBUSTIBLE_OPCIONES)
     traccion = models.CharField(max_length = 50, choices = TRACCION_OPCIONES)
@@ -61,7 +61,7 @@ class Coche (models.Model):
     categoria = models.ManyToManyField('Categoria')
 
     def __str__(self):
-        return str(self.marca) + ' ' + str(self.modelo)
+        return str(self.marca) + ' ' + str(self.modelo) + " (" + str(self.anio) + ")"
 
 
 class Marca (models.Model):
@@ -71,7 +71,7 @@ class Marca (models.Model):
     descripcion = models.TextField(blank = True, null = True)
 
     def __str__(self):
-        return "(" + str(self.fecha_fundacion) + ") " + self.nombre
+        return self.nombre
 
 
 class Categoria (models.Model):
@@ -80,3 +80,4 @@ class Categoria (models.Model):
 
     def __str__(self):
         return self.nombre
+    
