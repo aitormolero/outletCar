@@ -43,7 +43,22 @@ NUMERO_PUERTAS_OPCIONES = [
     (CINCO, 5)
 ]
 
+class Marca (models.Model):
+    nombre = models.CharField(max_length = 50)
+    pais_origen = models.CharField(max_length = 50, blank = True, null = True)
+    fecha_fundacion = models.DateField(blank = True, null = True)
+    descripcion = models.TextField(blank = True, null = True)
 
+    def __str__(self):
+        return self.nombre
+
+
+class Categoria (models.Model):
+    nombre = models.CharField(max_length = 50)
+    descripcion = models.TextField(blank = True, null = True)
+
+    def __str__(self):
+        return self.nombre
 
 class Coche (models.Model):
     anio = models.PositiveIntegerField(default = 2000)
@@ -62,22 +77,3 @@ class Coche (models.Model):
 
     def __str__(self):
         return str(self.marca) + ' ' + str(self.modelo) + " (" + str(self.anio) + ")"
-
-
-class Marca (models.Model):
-    nombre = models.CharField(max_length = 50)
-    pais_origen = models.CharField(max_length = 50, blank = True, null = True)
-    fecha_fundacion = models.DateField(blank = True, null = True)
-    descripcion = models.TextField(blank = True, null = True)
-
-    def __str__(self):
-        return self.nombre
-
-
-class Categoria (models.Model):
-    nombre = models.CharField(max_length = 50)
-    descripcion = models.TextField(blank = True, null = True)
-
-    def __str__(self):
-        return self.nombre
-    
