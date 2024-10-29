@@ -69,6 +69,7 @@ class Coche (models.Model):
     combustible = models.CharField(max_length = 50, choices = COMBUSTIBLE_OPCIONES)
     traccion = models.CharField(max_length = 50, choices = TRACCION_OPCIONES)
     numero_puertas = models.PositiveIntegerField(default = 4, choices = NUMERO_PUERTAS_OPCIONES)
+    descapotable = models.BooleanField(default = False)
     descripcion = models.TextField(blank = True, null = True)
 
     marca = models.ForeignKey('Marca', on_delete = models.CASCADE)
