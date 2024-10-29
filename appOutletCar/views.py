@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import Coche, Marca, Categoria
 
 
-# Por cada marca obtener el coche con el precio mas alto y mostrarlo
+# Función para obtener por cada marca obtener el coche con el precio mas alto y mostrarlo
 def index(request):
     marcas = Marca.objects.all()
     coches = []
