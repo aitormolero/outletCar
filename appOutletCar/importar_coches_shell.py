@@ -2,7 +2,7 @@ from tu_app.models import Coche, Marca, Categoria
 
 def importar_coches():
     coches = [
-        {
+            {
             'marca': 'BMW',
             'modelo': 'Serie 3',
             'anio': 2020,
@@ -14,7 +14,9 @@ def importar_coches():
             'traccion': 'Trasera',
             'numero_puertas': 4,
             'descapotable': False,
-            'descripcion': 'Un sedán deportivo con gran rendimiento.',
+            'descripcion': 'Un sedán deportivo que combina un diseño elegante con un rendimiento excepcional. '
+                        'Equipado con tecnología de punta, ofrece una experiencia de conducción dinámica y '
+                        'confort en el interior, ideal para quienes buscan estilo y potencia.',
             'categorias': ['Sedan', 'Deportivo']
         },
         {
@@ -29,7 +31,9 @@ def importar_coches():
             'traccion': 'Delantera',
             'numero_puertas': 4,
             'descapotable': False,
-            'descripcion': 'Sedán de lujo, ideal para viajes largos.',
+            'descripcion': 'Sedán de lujo, ideal para viajes largos. Con un diseño elegante y aerodinámico, '
+                        'ofrece una cabina espaciosa y equipada con tecnología avanzada, '
+                        'perfecta para quienes buscan confort y estilo en la carretera.',
             'categorias': ['Sedan', 'Familiar']
         },
         {
@@ -44,7 +48,9 @@ def importar_coches():
             'traccion': 'Total',
             'numero_puertas': 4,
             'descapotable': False,
-            'descripcion': 'Una mezcla perfecta de lujo y rendimiento.',
+            'descripcion': 'Una mezcla perfecta de lujo y rendimiento. Con un diseño moderno y un interior cómodo, '
+                        'este sedán es ideal para quienes buscan un vehículo versátil, '
+                        'refinado y que garantice una experiencia de conducción excepcional.',
             'categorias': ['Sedan']
         },
         {
@@ -59,7 +65,9 @@ def importar_coches():
             'traccion': 'Trasera',
             'numero_puertas': 2,
             'descapotable': False,
-            'descripcion': 'Deportivo de alto rendimiento para amantes de la velocidad.',
+            'descripcion': 'Deportivo de alto rendimiento para amantes de la velocidad. '
+                        'Un símbolo de elegancia y tecnología avanzada, este vehículo '
+                        'es ideal para una experiencia de conducción inigualable y pura adrenalina.',
             'categorias': ['Deportivo', 'Coupé']
         },
         {
@@ -74,7 +82,9 @@ def importar_coches():
             'traccion': 'Delantera',
             'numero_puertas': 5,
             'descapotable': False,
-            'descripcion': 'Económico y práctico para la ciudad.',
+            'descripcion': 'Económico y práctico para la ciudad. Su diseño moderno y '
+                        'economía de combustible lo convierten en una opción versátil '
+                        'y fácil de manejar en el tráfico urbano.',
             'categorias': ['Familiar']
         },
         {
@@ -89,7 +99,9 @@ def importar_coches():
             'traccion': 'Delantera',
             'numero_puertas': 4,
             'descapotable': False,
-            'descripcion': 'El clásico híbrido, perfecto para un consumo eficiente.',
+            'descripcion': 'El clásico híbrido, perfecto para un consumo eficiente. '
+                        'Su diseño aerodinámico y tecnología de vanguardia '
+                        'hacen de este vehículo una excelente opción para quienes buscan sostenibilidad.',
             'categorias': ['Híbrido-Eléctrico']
         },
         {
@@ -104,7 +116,9 @@ def importar_coches():
             'traccion': 'Delantera',
             'numero_puertas': 5,
             'descapotable': False,
-            'descripcion': 'Compacto y ágil, ideal para la ciudad.',
+            'descripcion': 'Compacto y ágil, ideal para la ciudad. Su tamaño reducido '
+                        'facilita el estacionamiento y la maniobrabilidad, '
+                        'mientras que su interior cómodo asegura un viaje agradable.',
             'categorias': ['Familiar', 'Coupé']
         },
         {
@@ -119,7 +133,9 @@ def importar_coches():
             'traccion': 'Delantera',
             'numero_puertas': 5,
             'descapotable': False,
-            'descripcion': 'Un compacto premium con tecnología avanzada.',
+            'descripcion': 'Un compacto premium con tecnología avanzada. Con su diseño '
+                        'moderno y características de seguridad, es perfecto para '
+                        'conductores que buscan un vehículo confiable y elegante.',
             'categorias': ['Sedan']
         },
         {
@@ -134,7 +150,9 @@ def importar_coches():
             'traccion': 'Total',
             'numero_puertas': 4,
             'descapotable': False,
-            'descripcion': 'Eléctrico asequible y de alto rendimiento.',
+            'descripcion': 'Eléctrico asequible y de alto rendimiento. Su diseño minimalista '
+                        'y tecnología de conducción autónoma lo hacen ideal para '
+                        'aquellos que buscan un futuro más sostenible en el transporte.',
             'categorias': ['Híbrido-Eléctrico', 'Sedan']
         },
         {
@@ -149,7 +167,9 @@ def importar_coches():
             'traccion': 'Delantera',
             'numero_puertas': 4,
             'descapotable': False,
-            'descripcion': 'Popular compacto con excelente rendimiento de combustible.',
+            'descripcion': 'Popular compacto con excelente rendimiento de combustible. '
+                        'Su diseño atractivo y características de seguridad '
+                        'hacen de este modelo una opción confiable para el día a día.',
             'categorias': ['Sedan', 'Deportivo']
         },
         {
@@ -889,23 +909,23 @@ def importar_coches():
 
         # Crear el coche
         coche = Coche.objects.create(
-            marca=marca,
-            modelo=coche_data['modelo'],
-            anio=coche_data['anio'],
-            precio=coche_data['precio'],
-            color=coche_data['color'],
-            kilometraje=coche_data['kilometraje'],
-            transmision=coche_data['transmision'],
-            combustible=coche_data['combustible'],
-            traccion=coche_data['traccion'],
-            numero_puertas=coche_data['numero_puertas'],
-            descapotable=coche_data['descapotable'],
-            descripcion=coche_data['descripcion']
+            marca = marca,
+            modelo = coche_data['modelo'],
+            anio = coche_data['anio'],
+            precio = coche_data['precio'],
+            color = coche_data['color'],
+            kilometraje = coche_data['kilometraje'],
+            transmision = coche_data['transmision'],
+            combustible = coche_data['combustible'],
+            traccion = coche_data['traccion'],
+            numero_puertas = coche_data['numero_puertas'],
+            descapotable = coche_data['descapotable'],
+            descripcion = coche_data['descripcion']
         )
 
         # Obtener o crear las categorías y asignarlas al coche
         for categoria_nombre in coche_data['categorias']:
-            categoria, created = Categoria.objects.get_or_create(nombre=categoria_nombre)
+            categoria, created = Categoria.objects.get_or_create(nombre = categoria_nombre)
             coche.categoria.add(categoria)
 
         coche.save()
