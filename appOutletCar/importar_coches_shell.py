@@ -1,4 +1,4 @@
-from tu_app.models import Coche, Marca, Categoria
+from .models import Coche, Marca, Categoria
 
 def importar_coches():
     coches = [
