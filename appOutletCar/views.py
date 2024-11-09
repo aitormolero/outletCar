@@ -12,19 +12,26 @@ def index(request):
         coche = Coche.objects.filter(marca__id=marca.id).order_by('-precio').first()
         coches.append(coche)
 
-    return HttpResponse(coches)
+    context = {
+        'coches': coches,
+    }
+
+    return render(request, 'index.html', context)
 
 # Función para obtener todos los coches de una marca
 def index_marca(request, marca):
 
     coches_all = Coche.objects.all()
     coches_marca = []
-    
     for coche in coches_all:
-        if(coche.marca == marca):
+        if(coche.marca.id == int(marca)):
             coches_marca.append(coche)
 
-    return HttpResponse(coches_marca)
+    context = {
+        'coches': coches_marca,
+    }
+
+    return render(request, 'index.html', context)
 
 # Función para obtener todos los coches de una categoría    
 def index_categoria(request, categoria):
@@ -36,6 +43,10 @@ def index_categoria(request, categoria):
         if(coche.categoria == categoria):
             coches_categoría.append(coche)
 
-    return HttpResponse(coches_categoría)
+    context = {
+        'coches': coches_categoría,
+    }
+
+    return render(request, 'index.html', context)
        
 
