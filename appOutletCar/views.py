@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Coche, Marca, Categoria
 
 
@@ -49,4 +49,48 @@ def index_categoria(request, categoria):
 
     return render(request, 'index.html', context)
        
+
+def index_coches(request):
+    coches = Coche.objects.order_by('-precio').all()
+
+    marca = request.GET.get('marca')
+    transmision = request.GET.get('transmision')
+    combustible = request.GET.get('combustible')
+    traccion = request.GET.get('traccion')
+    puertas = request.GET.get('puertas')
+
+
+
+    # Aplicar filtros solo si los valores no son los predeterminados
+    if marca and marca != "Marca":
+        coches = coches.filter(marca__id=marca)
+    if transmision and transmision != "Transmisión":
+        coches = coches.filter(transmision=transmision)
+    if combustible and combustible != "Combustible":
+        coches = coches.filter(combustible=combustible)
+    if traccion and traccion != "Tracción":
+        coches = coches.filter(traccion=traccion)
+    if puertas and puertas != "Puertas":
+        coches = coches.filter(numero_puertas=puertas)
+
+
+    # Filtros
+    marcas = Marca.objects.order_by('nombre').all()
+    transmisiones = ["Manual", "Automática"]
+    combustibles = ["Gasolina", "Diésel", "Eléctrico", "Híbrido"]
+    tracciones = ["Delantera", "Trasera", "Total"]
+    num_puertas = [2, 4, 5]
+
+
+    context = {
+        'coches': coches,
+        'marcas': marcas,
+        'transmisiones': transmisiones,
+        'combustibles': combustibles,
+        'tracciones': tracciones,
+        'num_puertas': num_puertas,
+
+    }
+
+    return render(request, 'car.html', context)
 

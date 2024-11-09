@@ -1,15 +1,17 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>ROYAL CARS - Car Rental HTML Template</title>
+    <title>OUTLET CAR</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,14 +21,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -72,71 +74,64 @@
 
     <!-- Search Start -->
     <div class="container-fluid bg-white pt-3 px-lg-5">
-        <div class="row mx-n2">
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <select class="custom-select px-4 mb-3" style="height: 50px;">
-                    <option selected>Marca</option>
-                    <option value="1">Location 1</option>
-                    <option value="2">Location 2</option>
-                    <option value="3">Location 3</option>
-                </select>
-            </div>
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <select class="custom-select px-4 mb-3" style="height: 50px;">
-                    <option selected>Transmisión</option>
-                    <option value="1">Location 1</option>
-                    <option value="2">Location 2</option>
-                    <option value="3">Location 3</option>
-                </select>
-            </div>
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <select class="custom-select px-4 mb-3" style="height: 50px;">
-                    <option selected>Combustible</option>
-                    <option value="1">Location 1</option>
-                    <option value="2">Location 2</option>
-                    <option value="3">Location 3</option>
-                </select>
-            </div>
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <select class="custom-select px-4 mb-3" style="height: 50px;">
-                    <option selected>Tracción</option>
-                    <option value="1">Location 1</option>
-                    <option value="2">Location 2</option>
-                    <option value="3">Location 3</option>
-                </select>
-            </div>
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <select class="custom-select px-4 mb-3" style="height: 50px;">
-                    <option selected>Puertas</option>
-                    <option value="1">Location 1</option>
-                    <option value="2">Location 2</option>
-                    <option value="3">Location 3</option>
-                </select>
-            </div>
-            <!-- <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <div class="date mb-3" id="date" data-target-input="nearest">
-                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Date"
-                        data-target="#date" data-toggle="datetimepicker" />
+        <form method="get" action="{% url 'index_coches' %}">
+            <div class="row mx-n2">
+                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+                    <select name="marca" class="custom-select px-4 mb-3" style="height: 50px;">
+                        <option {% if not request.GET.marca %}selected{% endif %}>Marca</option>
+                        {% for marca in marcas %}
+                            <option value="{{ marca.id }}" {% if marca.id|stringformat:"s" == request.GET.marca %}selected{% endif %}>
+                                {{ marca.nombre }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+                    <select name="transmision" class="custom-select px-4 mb-3" style="height: 50px;">
+                        <option {% if not request.GET.transmision %}selected{% endif %}>Transmisión</option>
+                        {% for transmision in transmisiones %}
+                            <option value="{{ transmision }}" {% if transmision == request.GET.transmision %}selected{% endif %}>
+                                {{ transmision }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+                    <select name="combustible" class="custom-select px-4 mb-3" style="height: 50px;">
+                        <option {% if not request.GET.combustible %}selected{% endif %}>Combustible</option>
+                        {% for combustible in combustibles %}
+                            <option value="{{ combustible }}" {% if combustible == request.GET.combustible %}selected{% endif %}>
+                                {{ combustible }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+                    <select name="traccion" class="custom-select px-4 mb-3" style="height: 50px;">
+                        <option {% if not request.GET.traccion %}selected{% endif %}>Tracción</option>
+                        {% for traccion in tracciones %}
+                            <option value="{{ traccion }}" {% if traccion == request.GET.traccion %}selected{% endif %}>
+                                {{ traccion }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+                    <select name="puertas" class="custom-select px-4 mb-3" style="height: 50px;">
+                        <option {% if not request.GET.puertas %}selected{% endif %}>Puertas</option>
+                        {% for puerta in num_puertas %}
+                            <option value="{{ puerta }}" {% if puerta|stringformat:"s" == request.GET.puertas %}selected{% endif %}>
+                                {{ puerta }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+                    <button class="btn btn-primary btn-block mb-3" type="submit" style="height: 50px;">Filtrar</button>
                 </div>
             </div>
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <div class="time mb-3" id="time" data-target-input="nearest">
-                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Time"
-                        data-target="#time" data-toggle="datetimepicker" />
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <select class="custom-select px-4 mb-3" style="height: 50px;">
-                    <option selected>Select A Car</option>
-                    <option value="1">Car 1</option>
-                    <option value="2">Car 1</option>
-                    <option value="3">Car 1</option>
-                </select>
-            </div> -->
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <button class="btn btn-primary btn-block mb-3" type="submit" style="height: 50px;">Search</button>
-            </div>
-        </div>
+        </form>
     </div>
     <!-- Search End -->
 
@@ -158,30 +153,32 @@
         <div class="container pt-5 pb-3">
             <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="rent-item mb-4">
-                        <img class="img-fluid mb-4" src="img/car-rent-1.png" alt="">
-                        <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                        <div class="d-flex justify-content-center mb-4">
-                            <div class="px-2">
-                                <i class="fa fa-car text-primary mr-1"></i>
-                                <span>2015</span>
+                {% for coche in coches %}
+                    <div class="col-lg-6 col-md-6 mb-2">
+                        <div class="rent-item mb-4">
+                            <img class="img-fluid mb-4" src="" alt="{{ coche.imagen.name }}">
+                            <h4 class="text-uppercase mb-4">{{ coche.marca.nombre }} {{ coche.modelo }}</h4>
+                            <div class="d-flex justify-content-center mb-4">
+                                <div class="px-4">
+                                    <i class="fa fa-car text-primary mr-1"></i>
+                                    <span>{{ coche.anio }}</span>
+                                </div>
+                                <div class="px-4 border-left border-right">
+                                    <i class="fa fa-cogs text-primary mr-1"></i>
+                                    <span>{{ coche.transmision }}</span>
+                                </div>
+                                <div class="px-4">
+                                    <i class="fa fa-road text-primary mr-1"></i>
+                                    <span>{{ coche.kilometraje }}</span>
+                                </div>
                             </div>
-                            <div class="px-2 border-left border-right">
-                                <i class="fa fa-cogs text-primary mr-1"></i>
-                                <span>AUTO</span>
-                            </div>
-                            <div class="px-2">
-                                <i class="fa fa-road text-primary mr-1"></i>
-                                <span>25K</span>
-                            </div>
+                            <a class="btn btn-primary px-3" href="">{{ coche.precio }}€</a>
                         </div>
-                        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-2">
+                {% endfor %}
+                <!-- <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item active mb-4">
-                        <img class="img-fluid mb-4" src="img/car-rent-2.png" alt="">
+                        <img class="img-fluid mb-4" src="" alt="">
                         <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
                         <div class="d-flex justify-content-center mb-4">
                             <div class="px-2">
@@ -202,7 +199,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item mb-4">
-                        <img class="img-fluid mb-4" src="img/car-rent-3.png" alt="">
+                        <img class="img-fluid mb-4" src="" alt="">
                         <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
                         <div class="d-flex justify-content-center mb-4">
                             <div class="px-2">
@@ -223,7 +220,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item mb-4">
-                        <img class="img-fluid mb-4" src="img/car-rent-4.png" alt="">
+                        <img class="img-fluid mb-4" src="" alt="">
                         <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
                         <div class="d-flex justify-content-center mb-4">
                             <div class="px-2">
@@ -244,7 +241,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item mb-4">
-                        <img class="img-fluid mb-4" src="img/car-rent-5.png" alt="">
+                        <img class="img-fluid mb-4" src="" alt="">
                         <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
                         <div class="d-flex justify-content-center mb-4">
                             <div class="px-2">
@@ -265,7 +262,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item mb-4">
-                        <img class="img-fluid mb-4" src="img/car-rent-6.png" alt="">
+                        <img class="img-fluid mb-4" src="" alt="">
                         <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
                         <div class="d-flex justify-content-center mb-4">
                             <div class="px-2">
@@ -283,7 +280,7 @@
                         </div>
                         <a class="btn btn-primary px-3" href="">$99.00/Day</a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -291,7 +288,7 @@
 
 
     <!-- Banner Start -->
-    <div class="container-fluid py-5">
+    <!-- <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="row mx-0">
                 <div class="col-lg-6 px-0">
@@ -316,7 +313,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Banner End -->
 
 
@@ -325,28 +322,28 @@
         <div class="container py-5">
             <div class="owl-carousel vendor-carousel">
                 <div class="bg-light p-4">
-                    <img src="img/vendor-1.png" alt="">
+                    <img src="{% static 'img/vendor-1.png' %}" alt="">
                 </div>
                 <div class="bg-light p-4">
-                    <img src="img/vendor-2.png" alt="">
+                    <img src="{% static 'img/vendor-2.png' %}" alt="">
                 </div>
                 <div class="bg-light p-4">
-                    <img src="img/vendor-3.png" alt="">
+                    <img src="{% static 'img/vendor-3.png' %}" alt="">
                 </div>
                 <div class="bg-light p-4">
-                    <img src="img/vendor-4.png" alt="">
+                    <img src="{% static 'img/vendor-4.png' %}" alt="">
                 </div>
                 <div class="bg-light p-4">
-                    <img src="img/vendor-5.png" alt="">
+                    <img src="{% static 'img/vendor-5.png' %}" alt="">
                 </div>
                 <div class="bg-light p-4">
-                    <img src="img/vendor-6.png" alt="">
+                    <img src="{% static 'img/vendor-6.png' %}" alt="">
                 </div>
                 <div class="bg-light p-4">
-                    <img src="img/vendor-7.png" alt="">
+                    <img src="{% static 'img/vendor-7.png' %}" alt="">
                 </div>
                 <div class="bg-light p-4">
-                    <img src="img/vendor-8.png" alt="">
+                    <img src="{% static 'img/vendor-8.png' %}" alt="">
                 </div>
             </div>
         </div>
@@ -369,15 +366,15 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
