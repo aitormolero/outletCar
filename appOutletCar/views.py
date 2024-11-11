@@ -26,15 +26,21 @@ def index_marca(request, marca):
     for coche in coches_all:
         if(coche.marca.id == int(marca)):
             coches_marca.append(coche)
+    
+    marcas = Marca.objects.all()
 
     context = {
         'coches': coches_marca,
+        'marcas': marcas,
     }
 	 
     return render(request, 'marcas.html', context)
 
 # Función para obtener todos los coches de una categoría    
 def index_categoria(request, categoria):
+
+    if categoria == "HibridoElectrico":
+        categoria = "Híbrido / Eléctrico"
 
     categorias = Categoria.objects.all()
     coches_all = Coche.objects.all()
@@ -48,6 +54,7 @@ def index_categoria(request, categoria):
     context = {
         'coches': coches_categoría,
         'categorias': categorias,
+        'categoria_activa': categoria,
     }
 
     return render(request, 'categorias.html', context)

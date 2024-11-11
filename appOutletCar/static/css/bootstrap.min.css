@@ -10633,3 +10633,7 @@ a.text-dark:focus {
         border-color: #dee2e6
     }
 }
+
+.categoria-active {
+    border: 3px solid #F77D0A !important
+}
