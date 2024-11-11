@@ -85,19 +85,37 @@
     <!-- Page Header Start -->
 
 
+
     <!-- Vendor Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="owl-carousel vendor-carousel">
-                {% for categoria in categorias %}
+                {% for marca in marcas %}
                     <div class="bg-light p-4">
-                        {% if categoria.nombre == "Híbrido / Eléctrico" %}
-                            <h4 class="text-uppercase text-center py-4 mb-1">{{ categoria.nombre }}</h4>
-                        {% else %}
-                            <h4 class="text-uppercase text-center py-4 mt-3 mb-3">{{ categoria.nombre }}</h4>
-                        {% endif %}
+                        <img alt="{{ marca.imagen.name }}" src= "{% static marca.imagen.name %}"/>
                     </div>
                 {% endfor %}
+                <!-- <div class="bg-light p-4">
+                    <img src="{% static 'img/vendor-2.png' %}" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="{% static 'img/vendor-3.png' %}" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="{% static 'img/vendor-4.png' %}" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="{% static 'img/vendor-5.png' %}" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="{% static 'img/vendor-6.png' %}" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="{% static 'img/vendor-7.png' %}" alt="">
+                </div>
+                <div class="bg-light p-4">
+                    <img src="{% static 'img/vendor-8.png' %}" alt="">
+                </div> -->
             </div>
         </div>
     </div>
