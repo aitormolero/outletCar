@@ -45,10 +45,11 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="#" class="nav-item nav-link active">Home</a>
-                        <a href="#" class="nav-item nav-link">About</a>
-                        <a href="#" class="nav-item nav-link">Service</a>
-                        <div class="nav-item dropdown">
+                        <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                        <a href="{% url 'index_coches' %}" class="nav-item nav-link">Coches</a>
+                        <a href="" class="nav-item nav-link">Marcas</a>
+                        <a href="" class="nav-item nav-link">Categorías</a>
+                        <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="#" class="dropdown-item">Car Listing</a>
@@ -63,7 +64,7 @@
                                 <a href="#" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="#" class="nav-item nav-link">Contact</a>
+                        <a href="#" class="nav-item nav-link">Contact</a> -->
                     </div>
                 </div>
             </nav>

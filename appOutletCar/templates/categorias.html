@@ -48,7 +48,7 @@
                         <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
                         <a href="{% url 'index_coches' %}" class="nav-item nav-link active">Coches</a>
                         <a href="" class="nav-item nav-link">Marcas</a>
-                        <a href="{% url 'index_categoria' '1' %}" class="nav-item nav-link">Categorías</a>
+                        <a href="{% url 'index_categoria' '0' %}" class="nav-item nav-link">Categorías</a>
                         <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                             <div class="dropdown-menu rounded-0 m-0">
@@ -73,70 +73,6 @@
     <!-- Navbar End -->
 
 
-    <!-- Search Start -->
-    <div class="container-fluid bg-white pt-3 px-lg-5">
-        <form method="get" action="{% url 'index_coches' %}">
-            <div class="row mx-n2">
-                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select name="marca" class="custom-select px-4 mb-3" style="height: 50px;">
-                        <option {% if not request.GET.marca %}selected{% endif %}>Marca</option>
-                        {% for marca in marcas %}
-                            <option value="{{ marca.id }}" {% if marca.id|stringformat:"s" == request.GET.marca %}selected{% endif %}>
-                                {{ marca.nombre }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select name="transmision" class="custom-select px-4 mb-3" style="height: 50px;">
-                        <option {% if not request.GET.transmision %}selected{% endif %}>Transmisión</option>
-                        {% for transmision in transmisiones %}
-                            <option value="{{ transmision }}" {% if transmision == request.GET.transmision %}selected{% endif %}>
-                                {{ transmision }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select name="combustible" class="custom-select px-4 mb-3" style="height: 50px;">
-                        <option {% if not request.GET.combustible %}selected{% endif %}>Combustible</option>
-                        {% for combustible in combustibles %}
-                            <option value="{{ combustible }}" {% if combustible == request.GET.combustible %}selected{% endif %}>
-                                {{ combustible }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select name="traccion" class="custom-select px-4 mb-3" style="height: 50px;">
-                        <option {% if not request.GET.traccion %}selected{% endif %}>Tracción</option>
-                        {% for traccion in tracciones %}
-                            <option value="{{ traccion }}" {% if traccion == request.GET.traccion %}selected{% endif %}>
-                                {{ traccion }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select name="puertas" class="custom-select px-4 mb-3" style="height: 50px;">
-                        <option {% if not request.GET.puertas %}selected{% endif %}>Puertas</option>
-                        {% for puerta in num_puertas %}
-                            <option value="{{ puerta }}" {% if puerta|stringformat:"s" == request.GET.puertas %}selected{% endif %}>
-                                {{ puerta }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </div>
-
-                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <button class="btn btn-primary btn-block mb-3" type="submit" style="height: 50px;">Filtrar</button>
-                </div>
-            </div>
-        </form>
-    </div>
-    <!-- Search End -->
-
-
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
         <h1 class="display-3 text-uppercase text-white mb-3">Car Listing</h1>
@@ -147,6 +83,25 @@
         </div>
     </div>
     <!-- Page Header Start -->
+
+
+    <!-- Vendor Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="owl-carousel vendor-carousel">
+                {% for categoria in categorias %}
+                    <div class="bg-light p-4">
+                        {% if categoria.nombre == "Híbrido / Eléctrico" %}
+                            <h4 class="text-uppercase text-center py-4 mb-1">{{ categoria.nombre }}</h4>
+                        {% else %}
+                            <h4 class="text-uppercase text-center py-4 mt-3 mb-3">{{ categoria.nombre }}</h4>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Vendor End -->
 
 
     <!-- Rent A Car Start -->
@@ -286,71 +241,6 @@
         </div>
     </div>
     <!-- Rent A Car End -->
-
-
-    <!-- Banner Start -->
-    <!-- <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row mx-0">
-                <div class="col-lg-6 px-0">
-                    <div class="px-5 bg-secondary d-flex align-items-center justify-content-between" style="height: 350px;">
-                        <img class="img-fluid flex-shrink-0 ml-n5 w-50 mr-4" src="img/banner-left.png" alt="">
-                        <div class="text-right">
-                            <h3 class="text-uppercase text-light mb-3">Want to be driver?</h3>
-                            <p class="mb-4">Lorem justo sit sit ipsum eos lorem kasd, kasd labore</p>
-                            <a class="btn btn-primary py-2 px-4" href="">Start Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 px-0">
-                    <div class="px-5 bg-dark d-flex align-items-center justify-content-between" style="height: 350px;">
-                        <div class="text-left">
-                            <h3 class="text-uppercase text-light mb-3">Looking for a car?</h3>
-                            <p class="mb-4">Lorem justo sit sit ipsum eos lorem kasd, kasd labore</p>
-                            <a class="btn btn-primary py-2 px-4" href="">Start Now</a>
-                        </div>
-                        <img class="img-fluid flex-shrink-0 mr-n5 w-50 ml-4" src="img/banner-right.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Banner End -->
-
-
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="owl-carousel vendor-carousel">
-                <div class="bg-light p-4">
-                    <!-- <h4 class="text-uppercase py-4 mt-3 mb-3">Comercial</h4> -->
-                    <img src="{% static 'img/vendor-1.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-2.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-3.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-4.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-5.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-6.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-7.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-8.png' %}" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Vendor End -->
 
 
     <!-- Footer Start -->
