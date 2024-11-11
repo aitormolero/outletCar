@@ -1,0 +1,272 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>OUTLET CAR</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="position-relative" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="#" class="navbar-brand">
+                    <h1 class="text-uppercase text-primary mb-1">OUTLET CAR</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
+                        <a href="{% url 'index_coches' %}" class="nav-item nav-link">Coches</a>
+                        <a href="{% url 'index_marca' '1' %}" class="nav-item nav-link active">Marcas</a>
+                        <a href="{% url 'index_categoria' '0' %}" class="nav-item nav-link">Categorías</a>
+                        <!-- <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="#" class="dropdown-item">Car Listing</a>
+                                <a href="#" class="dropdown-item">Car Detail</a>
+                                <a href="#" class="dropdown-item">Car Booking</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="#" class="dropdown-item">The Team</a>
+                                <a href="#" class="dropdown-item">Testimonial</a>
+                            </div>
+                        </div>
+                        <a href="#" class="nav-item nav-link">Contact</a> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header">
+        <h1 class="display-3 text-uppercase text-white mb-3">Car Listing</h1>
+        <div class="d-inline-flex text-white">
+            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
+            <h6 class="text-body m-0 px-3">/</h6>
+            <h6 class="text-uppercase text-body m-0">Car Listing</h6>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+
+    <!-- Vendor Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="owl-carousel vendor-carousel">
+                {% for categoria in categorias %}
+                    <div class="bg-light p-4">
+                        {% if categoria.nombre == "Híbrido / Eléctrico" %}
+                            <h4 class="text-uppercase text-center py-4 mb-1">{{ categoria.nombre }}</h4>
+                        {% else %}
+                            <h4 class="text-uppercase text-center py-4 mt-3 mb-3">{{ categoria.nombre }}</h4>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Vendor End -->
+
+
+    <!-- Rent A Car Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
+            <div class="row">
+                {% for coche in coches %}
+                    <div class="col-lg-6 col-md-6 mb-2">
+                        <div class="rent-item mb-4">
+                            <img class="img-fluid mb-4" src="" alt="{{ coche.imagen.name }}">
+                            <h4 class="text-uppercase mb-4">{{ coche.marca.nombre }} {{ coche.modelo }}</h4>
+                            <div class="d-flex justify-content-center mb-4">
+                                <div class="px-4">
+                                    <i class="fa fa-car text-primary mr-1"></i>
+                                    <span>{{ coche.anio }}</span>
+                                </div>
+                                <div class="px-4 border-left border-right">
+                                    <i class="fa fa-cogs text-primary mr-1"></i>
+                                    <span>{{ coche.transmision }}</span>
+                                </div>
+                                <div class="px-4">
+                                    <i class="fa fa-road text-primary mr-1"></i>
+                                    <span>{{ coche.kilometraje }}</span>
+                                </div>
+                            </div>
+                            <a class="btn btn-primary px-3" href="">{{ coche.precio }}€</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                <!-- <div class="col-lg-4 col-md-6 mb-2">
+                    <div class="rent-item active mb-4">
+                        <img class="img-fluid mb-4" src="" alt="">
+                        <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="px-2">
+                                <i class="fa fa-car text-primary mr-1"></i>
+                                <span>2015</span>
+                            </div>
+                            <div class="px-2 border-left border-right">
+                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                <span>AUTO</span>
+                            </div>
+                            <div class="px-2">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>25K</span>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <div class="rent-item mb-4">
+                        <img class="img-fluid mb-4" src="" alt="">
+                        <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="px-2">
+                                <i class="fa fa-car text-primary mr-1"></i>
+                                <span>2015</span>
+                            </div>
+                            <div class="px-2 border-left border-right">
+                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                <span>AUTO</span>
+                            </div>
+                            <div class="px-2">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>25K</span>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <div class="rent-item mb-4">
+                        <img class="img-fluid mb-4" src="" alt="">
+                        <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="px-2">
+                                <i class="fa fa-car text-primary mr-1"></i>
+                                <span>2015</span>
+                            </div>
+                            <div class="px-2 border-left border-right">
+                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                <span>AUTO</span>
+                            </div>
+                            <div class="px-2">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>25K</span>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <div class="rent-item mb-4">
+                        <img class="img-fluid mb-4" src="" alt="">
+                        <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="px-2">
+                                <i class="fa fa-car text-primary mr-1"></i>
+                                <span>2015</span>
+                            </div>
+                            <div class="px-2 border-left border-right">
+                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                <span>AUTO</span>
+                            </div>
+                            <div class="px-2">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>25K</span>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <div class="rent-item mb-4">
+                        <img class="img-fluid mb-4" src="" alt="">
+                        <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="px-2">
+                                <i class="fa fa-car text-primary mr-1"></i>
+                                <span>2015</span>
+                            </div>
+                            <div class="px-2 border-left border-right">
+                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                <span>AUTO</span>
+                            </div>
+                            <div class="px-2">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>25K</span>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Rent A Car End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
+        <p class="mb-2 text-center text-body">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.</p>
+        <p class="m-0 text-center text-body">Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
