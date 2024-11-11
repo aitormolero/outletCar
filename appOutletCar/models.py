@@ -49,7 +49,7 @@ class Marca (models.Model):
     fecha_fundacion = models.DateField(blank = True, null = True)
     descripcion = models.TextField(blank = True, null = True)
 
-    imagen = models.ImageField(upload_to = 'img', blank = True, null = True, verbose_name = 'Image')
+    imagen = models.ImageField(upload_to = 'appOutletCar/static/img', blank = True, null = True, verbose_name = 'Image')
 
     def __str__(self):
         return self.nombre
@@ -78,7 +78,7 @@ class Coche (models.Model):
     modelo = models.CharField(max_length = 100)
     categoria = models.ManyToManyField('Categoria')
 
-    imagen = models.ImageField(upload_to = 'img', blank = True, null = True, verbose_name = 'Image')
+    imagen = models.ImageField(upload_to = 'appOutletCar/static/img', blank = True, null = True, verbose_name = 'Image')
 
     def __str__(self):
         return str(self.marca) + ' ' + str(self.modelo) + " (" + str(self.anio) + ")"

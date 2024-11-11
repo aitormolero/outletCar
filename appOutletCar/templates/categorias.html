@@ -47,7 +47,7 @@
                     <div class="navbar-nav ml-auto py-0">
                         <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
                         <a href="{% url 'index_coches' %}" class="nav-item nav-link">Coches</a>
-                        <a href="" class="nav-item nav-link">Marcas</a>
+                        <a href="{% url 'index_marca' '1' %}" class="nav-item nav-link">Marcas</a>
                         <a href="{% url 'index_categoria' 'Sedan' %}" class="nav-item nav-link active">Categorías</a>
                         <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
@@ -90,11 +90,15 @@
         <div class="container py-5">
             <div class="owl-carousel vendor-carousel">
                 {% for categoria in categorias %}
-                    <div class="bg-light p-4">
+                    <div class="bg-light p-4 {% if categoria.nombre == categoria_activa %}categoria-active{% endif %}">
                         {% if categoria.nombre == "Híbrido / Eléctrico" %}
-                            <h4 class="text-uppercase text-center py-4 mb-1">{{ categoria.nombre }}</h4>
+                            <a href="{% url 'index_categoria' 'HibridoElectrico' %}" class="text-decoration-none">
+                                <h4 class="text-uppercase text-center py-4 mb-1">{{ categoria.nombre }}</h4>
+                            </a>
                         {% else %}
-                            <h4 class="text-uppercase text-center py-4 mt-3 mb-3">{{ categoria.nombre }}</h4>
+                            <a href="{% url 'index_categoria' categoria.nombre %}" class="text-decoration-none {% if categoria.nombre == categoria_activa %}active{% endif %}">
+                                <h4 class="text-uppercase text-center py-4 mt-3 mb-3">{{ categoria.nombre }}</h4>
+                            </a>
                         {% endif %}
                     </div>
                 {% endfor %}
