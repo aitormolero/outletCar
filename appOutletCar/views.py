@@ -31,23 +31,27 @@ def index_marca(request, marca):
         'coches': coches_marca,
     }
 
-    return render(request, 'index.html', context)
+    return HttpResponse("Coches de la marca " + marca + ": " + str(coches_marca))	 
+    # return render(request, 'index.html', context)
 
 # Función para obtener todos los coches de una categoría    
 def index_categoria(request, categoria):
 
+    categorias = Categoria.objects.all()
     coches_all = Coche.objects.all()
     coches_categoría = []
     
     for coche in coches_all:
-        if(coche.categoria == categoria):
-            coches_categoría.append(coche)
+        for cat in coche.categoria.all():
+            if(cat.id == int(categoria)):
+                coches_categoría.append(coche)
 
     context = {
         'coches': coches_categoría,
+        'categorias': categorias,
     }
 
-    return render(request, 'index.html', context)
+    return render(request, 'categorias.html', context)
        
 
 def index_coches(request):
