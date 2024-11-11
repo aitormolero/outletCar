@@ -30,9 +30,8 @@ def index_marca(request, marca):
     context = {
         'coches': coches_marca,
     }
-
-    return HttpResponse("Coches de la marca " + marca + ": " + str(coches_marca))	 
-    # return render(request, 'index.html', context)
+	 
+    return render(request, 'marcas.html', context)
 
 # Función para obtener todos los coches de una categoría    
 def index_categoria(request, categoria):
@@ -43,7 +42,7 @@ def index_categoria(request, categoria):
     
     for coche in coches_all:
         for cat in coche.categoria.all():
-            if(cat.id == int(categoria)):
+            if(cat.nombre == categoria):
                 coches_categoría.append(coche)
 
     context = {
