@@ -47,8 +47,8 @@
                     <div class="navbar-nav ml-auto py-0">
                         <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
                         <a href="{% url 'index_coches' %}" class="nav-item nav-link">Coches</a>
-                        <a href="{% url 'index_marca' '1' %}" class="nav-item nav-link active">Marcas</a>
-                        <a href="{% url 'index_categoria' '0' %}" class="nav-item nav-link">Categorías</a>
+                        <a href="{% url 'index_marca' 'BMW' %}" class="nav-item nav-link active">Marcas</a>
+                        <a href="{% url 'index_categoria' 'Sedan' %}" class="nav-item nav-link">Categorías</a>
                         <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                             <div class="dropdown-menu rounded-0 m-0">
@@ -89,36 +89,19 @@
     <!-- Vendor Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
+            <h1 class="display-4 text-uppercase text-center mb-5 pb-5">Select Your Brand</h1>
             <div class="owl-carousel vendor-carousel">
                 {% for marca in marcas %}
                     <div class="bg-light p-4">
-                        <img alt="{{ marca.imagen.name }}" src= "{% static marca.imagen.name %}"/>
+                        <a href="{% url 'index_marca' marca.nombre %}">
+                            <img alt="{{ marca.nombre }}" src="{% static marca.imagen.name %}"/>
+                        </a>
                     </div>
                 {% endfor %}
-                <!-- <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-2.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-3.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-4.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-5.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-6.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-7.png' %}" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="{% static 'img/vendor-8.png' %}" alt="">
-                </div> -->
             </div>
         </div>
     </div>
+    
     <!-- Vendor End -->
 
 

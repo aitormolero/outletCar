@@ -20,7 +20,7 @@ def index(request):
 
 # Función para obtener todos los coches de una marca
 def index_marca(request, marca):
-
+    
     coches_all = Coche.objects.all()
     coches_marca = []
     for coche in coches_all:
