@@ -24,7 +24,8 @@ def index_marca(request, marca):
     coches_all = Coche.objects.all()
     coches_marca = []
     for coche in coches_all:
-        if(coche.marca.id == int(marca)):
+        if((coche.marca.nombre).lower() == marca.lower()):
+            
             coches_marca.append(coche)
     
     marcas = Marca.objects.all()
