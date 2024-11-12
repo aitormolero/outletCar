@@ -52,10 +52,12 @@ def index_categoria(request, categoria):
             if(cat.nombre == categoria):
                 coches_categoría.append(coche)
 
+    categoria_activa = Categoria.objects.get(nombre=categoria)
+
     context = {
         'coches': coches_categoría,
         'categorias': categorias,
-        'categoria_activa': categoria,
+        'categoria_activa': categoria_activa,
     }
 
     return render(request, 'categorias.html', context)

@@ -3,6 +3,36 @@
 
     // Dropdown on mouse hover
     $(document).ready(function () {
+        var activeIndex = $(".vendor-carousel .categoria-active").index()
+
+        $('.vendor-carousel').owlCarousel({
+            loop: true,
+            margin: 30,
+            dots: true,
+            loop: true,
+            center: true,
+            autoplay: true,
+            smartSpeed: 1000,
+            startPosition: activeIndex,
+            responsive: {
+                0: {
+                    items: 2
+                },
+                576: {
+                    items: 3
+                },
+                768: {
+                    items: 4
+                },
+                992: {
+                    items: 5
+                },
+                1200: {
+                    items: 6
+                }
+            }
+        });
+
         function toggleNavbarMethod() {
             if ($(window).width() > 992) {
                 $('.navbar .dropdown').on('mouseover', function () {
@@ -96,34 +126,6 @@
         }
     });
 
-
-    // Vendor carousel
-    $('.vendor-carousel').owlCarousel({
-        loop: true,
-        margin: 30,
-        dots: true,
-        loop: true,
-        center: true,
-        autoplay: true,
-        smartSpeed: 1000,
-        responsive: {
-            0: {
-                items: 2
-            },
-            576: {
-                items: 3
-            },
-            768: {
-                items: 4
-            },
-            992: {
-                items: 5
-            },
-            1200: {
-                items: 6
-            }
-        }
-    });
 
 })(jQuery);
 
