@@ -94,7 +94,7 @@
                 {% for marca in marcas %}
                     <div class="bg-light p-4">
                         <a href="{% url 'index_marca' marca.nombre %}">
-                            <img alt="{{ marca.nombre }}" src="{% static marca.imagen.name %}"/>
+                            <img class="img-fluid mb-4" src="{{ marca.imagen.url }}" alt="{{ marca.imagen.name }}">
                         </a>
                     </div>
                 {% endfor %}
