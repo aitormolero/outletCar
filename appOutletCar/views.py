@@ -29,10 +29,12 @@ def index_marca(request, marca):
             coches_marca.append(coche)
     
     marcas = Marca.objects.all()
+    marca_seleccionada = Marca.objects.get(nombre = marca)
 
     context = {
         'coches': coches_marca,
         'marcas': marcas,
+        'marca_seleccionada': marca_seleccionada,
     }
 	 
     return render(request, 'marcas.html', context)

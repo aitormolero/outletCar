@@ -92,7 +92,7 @@
             <h1 class="display-4 text-uppercase text-center mb-5 pb-5">Select Your Brand</h1>
             <div class="owl-carousel vendor-carousel">
                 {% for marca in marcas %}
-                    <div class="bg-light p-4">
+                    <div class="bg-light p-4 {% if marca.nombre == marca_seleccionada.nombre %}marca-active{% endif %}">
                         <a href="{% url 'index_marca' marca.nombre %}">
                             <img class="img-fluid mb-4" src="{{ marca.imagen.url }}" alt="{{ marca.imagen.name }}">
                         </a>
@@ -108,7 +108,7 @@
     <!-- Rent A Car Start -->
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
+            <h1 class="display-4 text-uppercase text-center mb-5">{{ marca_seleccionada.nombre }}</h1>
             <div class="row">
                 {% for coche in coches %}
                     <div class="col-lg-6 col-md-6 mb-2">
