@@ -10645,3 +10645,16 @@ a.text-dark:focus {
 .marca-active {
     border: 3px solid #F77D0A !important
 }
+
+.altura-carac {
+    height: 150px;
+}
+
+.altura-anchura-carac {
+    width: 100px; 
+    height: 100px;
+}
+
+.pad-nosotros {
+    padding: 0 30px;
+}

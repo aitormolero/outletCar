@@ -46,6 +46,7 @@
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
                         <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                        <a href="{% url 'index_about' %}" class="nav-item nav-link">Sobre Nosotros</a>
                         <a href="{% url 'index_coches' %}" class="nav-item nav-link">Coches</a>
                         <a href="{% url 'index_marca' 'BMW' %}" class="nav-item nav-link">Marcas</a>
                         <a href="{% url 'index_categoria' 'Sedán' %}" class="nav-item nav-link">Categorías</a>
@@ -117,7 +118,7 @@
     <!-- Rent A Car Start -->
     <div class="container-fluid py-2">
         <div class="container pt-3 pb-3">
-            <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
+            <h1 class="display-4 text-uppercase text-center mb-5">Busca el coche <span class="text-primary">ideal</span></h1>
             <div class="row">
                 {% for coche in coches %}
                     <div class="col-lg-6 col-md-6 mb-2">

@@ -36,33 +36,35 @@
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="position-relative" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
-                <a href="" class="navbar-brand">
-                    <h1 class="text-uppercase text-primary mb-1">Royal Cars</h1>
+                <a href="#" class="navbar-brand">
+                    <h1 class="text-uppercase text-primary mb-1">OUTLET CAR</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
-                        <div class="nav-item dropdown">
+                        <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
+                        <a href="{% url 'index_about' %}" class="nav-item nav-link active">Sobre Nosotros</a>
+                        <a href="{% url 'index_coches' %}" class="nav-item nav-link">Coches</a>
+                        <a href="{% url 'index_marca' 'BMW' %}" class="nav-item nav-link">Marcas</a>
+                        <a href="{% url 'index_categoria' 'Sedán' %}" class="nav-item nav-link">Categorías</a>
+                        <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="car.html" class="dropdown-item">Car Listing</a>
-                                <a href="detail.html" class="dropdown-item">Car Detail</a>
-                                <a href="booking.html" class="dropdown-item">Car Booking</a>
+                                <a href="#" class="dropdown-item">Car Listing</a>
+                                <a href="#" class="dropdown-item">Car Detail</a>
+                                <a href="#" class="dropdown-item">Car Booking</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="team.html" class="dropdown-item">The Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="#" class="dropdown-item">The Team</a>
+                                <a href="#" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="#" class="nav-item nav-link">Contact</a> -->
                     </div>
                 </div>
             </nav>
@@ -74,49 +76,53 @@
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
-        <h1 class="display-3 text-uppercase text-white mb-3">About</h1>
+        <h1 class="display-3 text-uppercase text-white mb-3">Sobre Nosotros</h1>
         <div class="d-inline-flex text-white">
-            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
+            <h6 class="text-uppercase m-0"><a class="text-white" href="{% url 'index' %}">Inicio</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
-            <h6 class="text-uppercase text-body m-0">About</h6>
+            <h6 class="text-uppercase text-body m-0">Sobre Nosotros</h6>
         </div>
     </div>
-    <!-- Page Header Start -->
+    <!-- Page Header End -->
+
 
 
     <!-- About Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid">
         <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-uppercase text-center mb-5">Welcome To <span class="text-primary">Royal Cars</span></h1>
+            <h1 class="display-4 text-uppercase text-center mb-5">Bienvenido a <span class="text-primary">Outlet Car</span></h1>
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <img class="w-75 mb-4" src="img/about.png" alt="">
-                    <p>Justo et eos et ut takimata sed sadipscing dolore lorem, et elitr labore labore voluptua no rebum sed, stet voluptua amet sed elitr ea dolor dolores no clita. Dolores diam magna clita ea eos amet, amet rebum voluptua vero vero sed clita accusam takimata. Nonumy labore ipsum sea voluptua sea eos sit justo, no ipsum sanctus sanctus no et no ipsum amet, tempor labore est labore no. Eos diam eirmod lorem ut eirmod, ipsum diam sadipscing stet dolores elitr elitr eirmod dolore. Magna elitr accusam takimata labore, et at erat eirmod consetetur tempor eirmod invidunt est, ipsum nonumy at et.</p>
+                    <img class="w-75 mb-4 p-4" src="{% static 'img/about.png' %}" alt="Outlet Car">
+                    <p>En <strong>Outlet Car</strong> nos especializamos en la venta de coches usados de distintas marcas y categorías, para que encuentres el vehículo ideal a precios accesibles. Nuestra misión es ofrecer coches de calidad y facilitar el proceso de compra proporcionando toda la información necesaria para tomar la mejor decisión.</p>
                 </div>
             </div>
-            <div class="row mt-3">
+            <div class="row mt-3 p-4">
+                <!-- Garantía de Calidad -->
                 <div class="col-lg-4 mb-2">
-                    <div class="d-flex align-items-center bg-light p-4 mb-4" style="height: 150px;">
-                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary ml-n4 mr-4" style="width: 100px; height: 100px;">
-                            <i class="fa fa-2x fa-headset text-secondary"></i>
+                    <div class="d-flex align-items-center bg-light p-4 mb-4 altura-carac">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary ml-n4 mr-4 altura-anchura-carac">
+                            <i class="fa fa-2x fa-check-circle text-secondary"></i>
                         </div>
-                        <h4 class="text-uppercase m-0">24/7 Car Rental Support</h4>
+                        <h4 class="text-uppercase m-0">Garantía de Calidad</h4>
                     </div>
                 </div>
+                <!-- Precios Competitivos -->
                 <div class="col-lg-4 mb-2">
-                    <div class="d-flex align-items-center bg-secondary p-4 mb-4" style="height: 150px;">
-                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary ml-n4 mr-4" style="width: 100px; height: 100px;">
-                            <i class="fa fa-2x fa-car text-secondary"></i>
+                    <div class="d-flex align-items-center bg-secondary p-4 mb-4 altura-carac">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary ml-n4 mr-4 altura-anchura-carac">
+                            <i class="fa fa-2x fa-tag text-secondary"></i>
                         </div>
-                        <h4 class="text-light text-uppercase m-0">Car Reservation Anytime</h4>
+                        <h4 class="text-light text-uppercase m-0">Precios Competitivos</h4>
                     </div>
                 </div>
+                <!-- Amplia Red de Localización -->
                 <div class="col-lg-4 mb-2">
-                    <div class="d-flex align-items-center bg-light p-4 mb-4" style="height: 150px;">
-                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary ml-n4 mr-4" style="width: 100px; height: 100px;">
+                    <div class="d-flex align-items-center bg-light p-4 mb-4 altura-carac">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary ml-n4 mr-4 altura-anchura-carac">
                             <i class="fa fa-2x fa-map-marker-alt text-secondary"></i>
                         </div>
-                        <h4 class="text-uppercase m-0">Lots Of Pickup Locations</h4>
+                        <h4 class="text-uppercase m-0">Ubicados en toda la peninsula</h4>
                     </div>
                 </div>
             </div>
@@ -129,9 +135,9 @@
     <div class="container-fluid py-5">
         <div class="container py-5">
             <h1 class="display-4 text-uppercase text-center mb-5">Conoce Nuestro Equipo</h1>
-            <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+            <div class="owl-carousel team-carousel position-relative pad-nosotros">
                 <div class="team-item">
-                    <img class="img-fluid w-100" src="{% static 'img/nosotros/sabin.png' %}" alt="Team Member 1">
+                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/sabin.png' %}" alt="Team Member 1">
                     <div class="position-relative py-4">
                         <h4 class="text-uppercase">Aitor Molero Lopez</h4>
                     </div>
@@ -143,13 +149,13 @@
                     </div>
                 </div>
                 <div class="team-item">
-                    <img class="img-fluid" src="{% static 'img/nosotros/sabin.png' %}" alt="Team Member 3">
+                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/sabin.png' %}" alt="Team Member 3">
                     <div class="position-relative py-4">
                         <h4 class="text-uppercase">Endika Blanco Cabana</h4>
                     </div>
                 </div>
                 <div class="team-item">
-                    <img class="img-fluid w-100" src="{% static 'img/nosotros/sabin.png' %}" alt="Team Member 4">
+                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/sabin.png' %}" alt="Team Member 4">
                     <div class="position-relative py-4">
                         <h4 class="text-uppercase">Kerman Bruña Garcia</h4>
                     </div>
