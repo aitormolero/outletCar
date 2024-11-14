@@ -3,7 +3,15 @@
 
     // Dropdown on mouse hover
     $(document).ready(function () {
-        var activeIndex = $(".vendor-carousel .categoria-active").index()
+        var activeIndex;
+        var activeIndexCategoria = $(".vendor-carousel .categoria-active").index();
+        var activeIndexMarca = $(".vendor-carousel .marca-active").index();
+        
+        if (0 > activeIndexCategoria) {
+            activeIndex = activeIndexMarca;
+        } else {
+            activeIndex = activeIndexCategoria;
+        }
 
         $('.vendor-carousel').owlCarousel({
             loop: true,
@@ -128,4 +136,3 @@
 
 
 })(jQuery);
-
