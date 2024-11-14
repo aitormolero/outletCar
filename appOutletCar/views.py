@@ -3,7 +3,6 @@ from django.shortcuts import redirect, render
 from .models import Coche, Marca, Categoria
 
 
-# Función para obtener por cada marca obtener el coche con el precio mas alto y mostrarlo
 def index(request):
     marcas = Marca.objects.all()
     coches = []
@@ -18,7 +17,11 @@ def index(request):
 
     return render(request, 'index.html', context)
 
-# Función para obtener todos los coches de una marca
+
+def index_about(request):
+    return render(request, 'about.html', context = {})
+
+
 def index_marca(request, marca):
     
     coches_all = Coche.objects.all()
@@ -39,7 +42,7 @@ def index_marca(request, marca):
 	 
     return render(request, 'marcas.html', context)
 
-# Función para obtener todos los coches de una categoría    
+
 def index_categoria(request, categoria):
 
     if categoria == "HibridoElectrico":

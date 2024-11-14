@@ -46,6 +46,7 @@
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
                         <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
+                        <a href="{% url 'index_about' %}" class="nav-item nav-link">About Us</a>
                         <a href="{% url 'index_coches' %}" class="nav-item nav-link">Coches</a>
                         <a href="{% url 'index_marca' 'BMW' %}" class="nav-item nav-link active">Marcas</a>
                         <a href="{% url 'index_categoria' 'Sedán' %}" class="nav-item nav-link">Categorías</a>
@@ -73,6 +74,7 @@
     <!-- Navbar End -->
 
  
+
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
         <h1 class="display-3 text-uppercase text-white mb-3">Car Listing</h1>
@@ -88,8 +90,8 @@
 
     <!-- Vendor Start -->
     <div class="container-fluid py-5">
-        <div class="container py-5">
-            <h1 class="display-4 text-uppercase text-center mb-5 pb-5">Select Your Brand</h1>
+        <div class="container">
+            <h1 class="display-4 text-uppercase text-center mb-5 pb-5">Selecciona tu Marca</h1>
             <div class="owl-carousel vendor-carousel">
                 {% for marca in marcas %}
                     <div class="bg-light p-4 {% if marca.nombre == marca_seleccionada.nombre %}marca-active{% endif %}">
