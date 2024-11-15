@@ -96,7 +96,7 @@
                 {% for marca in marcas %}
                     <div class="bg-light p-4 {% if marca.nombre == marca_seleccionada.nombre %}marca-active{% endif %}">
                         <a href="{% url 'index_marca' marca.nombre %}">
-                            <img class="img-fluid mb-4" src="{{ marca.imagen.url }}" alt="{{ marca.imagen.name }}">
+                            <img class="img-fluid img-uniforme mb-4" src="{{ marca.imagen.url }}" alt="{{ marca.imagen.name }}">
                         </a>
                     </div>
                 {% endfor %}

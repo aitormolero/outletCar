@@ -24,6 +24,12 @@ h6,
     font-weight: 500 !important;
 }
 
+.img-uniforme {
+    width: 150px; 
+    height: 150px;
+    object-fit: contain; 
+}
+
 .btn-square {
     width: 36px;
     height: 36px;
