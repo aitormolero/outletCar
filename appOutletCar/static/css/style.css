@@ -30,6 +30,12 @@ h6,
     object-fit: contain; 
 }
 
+.img-uniforme2 {
+    width: 430px; 
+    height: 430px;
+    object-fit: contain; 
+}
+
 .btn-square {
     width: 36px;
     height: 36px;
