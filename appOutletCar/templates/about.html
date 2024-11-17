@@ -3,13 +3,12 @@
 
 
 {% block title %}OUTLET CAR - NOSOTROS{% endblock %}
-
-
+{% block about-active %} active {% endblock %}
 {% block content %}
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
-        <h1 class="display-3 text-uppercase text-white mb-3">Sobre Nosotros</h1>
+        <h2 class="display-3 text-uppercase text-white mb-3">Sobre Nosotros</h2>
         <div class="d-inline-flex text-white">
             <h6 class="text-uppercase m-0"><a class="text-white" href="{% url 'index' %}">Inicio</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
@@ -19,10 +18,11 @@
     <!-- Page Header End -->
 
 
+
     <!-- About Start -->
     <div class="container-fluid">
         <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-uppercase text-center mb-5">Bienvenido a <span class="text-primary">Outlet Car</span></h1>
+            <h2 class="display-4 text-uppercase text-center mb-5">Bienvenido a <span class="text-primary">Outlet Car</span></h2>
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
                     <img class="w-75 mb-4 p-4" src="{% static 'img/about.png' %}" alt="Outlet Car">
@@ -63,13 +63,14 @@
     <!-- About End -->
 
 
+
     <!-- Team Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
-            <h1 class="display-4 text-uppercase text-center mb-5">Conoce Nuestro Equipo</h1>
+            <h2 class="display-4 text-uppercase text-center mb-5">Conoce Nuestro Equipo</h2>
             <div class="owl-carousel team-carousel position-relative pad-nosotros">
                 <div class="team-item">
-                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/sabin.png' %}" alt="Team Member 1">
+                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/aitor.png' %}" alt="Team Member 1">
                     <div class="position-relative py-4">
                         <h4 class="text-uppercase">Aitor Molero Lopez</h4>
                     </div>
@@ -81,13 +82,13 @@
                     </div>
                 </div>
                 <div class="team-item">
-                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/sabin.png' %}" alt="Team Member 3">
+                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/endika.png' %}" alt="Team Member 3">
                     <div class="position-relative py-4">
                         <h4 class="text-uppercase">Endika Blanco Cabana</h4>
                     </div>
                 </div>
                 <div class="team-item">
-                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/sabin.png' %}" alt="Team Member 4">
+                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/kerman.png' %}" alt="Team Member 4">
                     <div class="position-relative py-4">
                         <h4 class="text-uppercase">Kerman Bruña Garcia</h4>
                     </div>

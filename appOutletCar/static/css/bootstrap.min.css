@@ -8256,6 +8256,10 @@ button.bg-dark:focus {
     margin-left: 3rem !important
 }
 
+.mb-90 {
+    margin-bottom: 90px;
+}
+
 .p-0 {
     padding: 0 !important
 }
@@ -10655,6 +10659,23 @@ a.text-dark:focus {
     height: 100px;
 }
 
+.w-h-45 {
+    width: 45px; 
+    height: 45px;
+}
+
 .pad-nosotros {
     padding: 0 30px;
+}
+
+.z-9 {
+    z-index: 9;
+}
+
+.mx-width-900 {
+    max-width: 900px;
+}
+
+.height-50 {
+    height: 50px;
 }

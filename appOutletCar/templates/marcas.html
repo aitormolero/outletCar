@@ -2,10 +2,12 @@
 {% load static %}
 
 {% block title %}OUTLET CAR - MARCAS{% endblock %}
+{% block marcas-active %} active {% endblock %}
 {% block content %}
+
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
-        <h1 class="display-3 text-uppercase text-white mb-3">Marcas</h1>
+        <h2 class="display-3 text-uppercase text-white mb-3">Marcas</h2>
         <div class="d-inline-flex text-white">
             <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
@@ -19,7 +21,7 @@
     <!-- Vendor Start -->
     <div class="container-fluid py-5">
         <div class="container">
-            <h1 class="display-4 text-uppercase text-center mb-5 pb-5">Selecciona tu Marca</h1>
+            <h2 class="display-4 text-uppercase text-center mb-5 pb-5">Selecciona tu Marca</h2>
             <div class="owl-carousel vendor-carousel">
                 {% for marca in marcas %}
                     <div class="bg-light p-4 {% if marca.nombre == marca_seleccionada.nombre %}marca-active{% endif %}">
@@ -34,10 +36,11 @@
     <!-- Vendor End -->
 
 
+
     <!-- Rent A Car Start -->
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-uppercase text-center mb-5">{{ marca_seleccionada.nombre }}</h1>
+            <h2 class="display-4 text-uppercase text-center mb-5">{{ marca_seleccionada.nombre }}</h2>
             <div class="row">
                 {% for coche in coches %}
                     <div class="col-lg-6 col-md-6 mb-2">
@@ -68,4 +71,5 @@
         </div>
     </div>
     <!-- Rent A Car End -->
+     
 {% endblock %}

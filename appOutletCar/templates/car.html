@@ -2,14 +2,15 @@
 {% load static %}
 
 {% block title %}OUTLET CAR - COCHES{% endblock %}
-
+{% block coches-active %} active {% endblock %}
 {% block content %}
+
     <!-- Search Start -->
     <div class="container-fluid bg-white pt-3 px-lg-5">
         <form method="get" action="{% url 'index_coches' %}">
             <div class="row mx-n2">
                 <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select name="marca" class="custom-select px-4 mb-3" style="height: 50px;">
+                    <select name="marca" class="custom-select px-4 mb-3 height-50">
                         <option {% if not request.GET.marca %}selected{% endif %}>Marca</option>
                         {% for marca in marcas %}
                             <option value="{{ marca.id }}" {% if marca.id|stringformat:"s" == request.GET.marca %}selected{% endif %}>
@@ -19,7 +20,7 @@
                     </select>
                 </div>
                 <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select name="transmision" class="custom-select px-4 mb-3" style="height: 50px;">
+                    <select name="transmision" class="custom-select px-4 mb-3 height-50">
                         <option {% if not request.GET.transmision %}selected{% endif %}>Transmisión</option>
                         {% for transmision in transmisiones %}
                             <option value="{{ transmision }}" {% if transmision == request.GET.transmision %}selected{% endif %}>
@@ -29,7 +30,7 @@
                     </select>
                 </div>
                 <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select name="combustible" class="custom-select px-4 mb-3" style="height: 50px;">
+                    <select name="combustible" class="custom-select px-4 mb-3 height-50">
                         <option {% if not request.GET.combustible %}selected{% endif %}>Combustible</option>
                         {% for combustible in combustibles %}
                             <option value="{{ combustible }}" {% if combustible == request.GET.combustible %}selected{% endif %}>
@@ -39,7 +40,7 @@
                     </select>
                 </div>
                 <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select name="traccion" class="custom-select px-4 mb-3" style="height: 50px;">
+                    <select name="traccion" class="custom-select px-4 mb-3 height-50">
                         <option {% if not request.GET.traccion %}selected{% endif %}>Tracción</option>
                         {% for traccion in tracciones %}
                             <option value="{{ traccion }}" {% if traccion == request.GET.traccion %}selected{% endif %}>
@@ -49,7 +50,7 @@
                     </select>
                 </div>
                 <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select name="puertas" class="custom-select px-4 mb-3" style="height: 50px;">
+                    <select name="puertas" class="custom-select px-4 mb-3 height-50">
                         <option {% if not request.GET.puertas %}selected{% endif %}>Puertas</option>
                         {% for puerta in num_puertas %}
                             <option value="{{ puerta }}" {% if puerta|stringformat:"s" == request.GET.puertas %}selected{% endif %}>
@@ -60,7 +61,7 @@
                 </div>
 
                 <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <button class="btn btn-primary btn-block mb-3" type="submit" style="height: 50px;">Filtrar</button>
+                    <button class="btn btn-primary btn-block mb-3 height-50" type="submit">Filtrar</button>
                 </div>
             </div>
         </form>
@@ -70,7 +71,7 @@
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
-        <h1 class="display-3 text-uppercase text-white mb-3">Listado De Coches</h1>
+        <h2 class="display-3 text-uppercase text-white mb-3">Listado De Coches</h2>
         <div class="d-inline-flex text-white">
             <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
@@ -83,7 +84,7 @@
     <!-- Rent A Car Start -->
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-uppercase text-center mb-5">Encuentra Tu Coche</h1>
+            <h2 class="display-4 text-uppercase text-center mb-5">Encuentra Tu Coche</h2>
             <div class="row">
                 {% for coche in coches %}
                     <div class="col-lg-6 col-md-6 mb-2">

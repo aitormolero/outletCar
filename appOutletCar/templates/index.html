@@ -2,18 +2,19 @@
 {% load static %}
 
 {% block title %}OUTLET CAR - HOME{% endblock %}
+{% block home-active %} active {% endblock %}
 {% block content %}
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0" style="margin-bottom: 90px;">
+    <div class="container-fluid p-0 mb-90">
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="w-100" src="{% static 'img/carousel-1.jpg' %}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
+                        <div class="p-3 mx-width-900">
                             <h4 class="text-white text-uppercase mb-md-3">Outlet Car</h4>
-                            <h1 class="display-1 text-white mb-md-4">Los Mejores Coches a tu Disposición</h1>
+                            <h2 class="display-1 text-white mb-md-4">Los Mejores Coches a tu Disposición</h2>
                             <a href="#cars-container" class="btn btn-primary py-md-3 px-md-5 mt-2">Comprar Ahora</a>
                         </div>
                     </div>
@@ -21,21 +22,21 @@
                 <div class="carousel-item">
                     <img class="w-100" src="{% static 'img/carousel-2.jpg' %}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
+                        <div class="p-3 mx-width-900">
                             <h4 class="text-white text-uppercase mb-md-3">Outlet Car</h4>
-                            <h1 class="display-1 text-white mb-md-4">Coches de Calidad con Kilómetros Ilimitados</h1>
+                            <h2 class="display-1 text-white mb-md-4">Coches de Calidad con Kilómetros Ilimitados</h2>
                             <a href="#cars-container" class="btn btn-primary py-md-3 px-md-5 mt-2">Comprar Ahora</a>
                         </div>
                     </div>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                <div class="btn btn-dark w-h-45">
                     <span class="carousel-control-prev-icon mb-n2"></span>
                 </div>
             </a>
             <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                <div class="btn btn-dark w-h-45">
                     <span class="carousel-control-next-icon mb-n2"></span>
                 </div>
             </a>
@@ -48,7 +49,7 @@
     <!-- Rent A Car Start -->
     <div id="cars-container" class="container-fluid py-2">
         <div class="container pt-3 pb-3">
-            <h1 class="display-4 text-uppercase text-center mb-5">Busca el coche <span class="text-primary">ideal</span></h1>
+            <h2 class="display-4 text-uppercase text-center mb-5">Busca el coche <span class="text-primary">ideal</span></h2>
             <div class="row">
                 {% for coche in coches %}
                     <div class="col-lg-6 col-md-6 mb-2">
@@ -79,4 +80,5 @@
         </div>
     </div>
     <!-- Rent A Car End -->
+
 {% endblock %}
