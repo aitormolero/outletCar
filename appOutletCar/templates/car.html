@@ -69,6 +69,7 @@
     <!-- Search End -->
 
 
+
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
         <h2 class="display-3 text-uppercase text-white mb-3">Listado De Coches</h2>
@@ -81,6 +82,7 @@
     <!-- Page Header Start -->
 
 
+    
     <!-- Rent A Car Start -->
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
@@ -107,7 +109,7 @@
                                     <span>{{ coche.kilometraje }}</span>
                                 </div>
                             </div>
-                            <a class="btn btn-primary px-3" href="">{{ coche.precio }}€</a>
+                            <a class="btn btn-primary px-3" href="{% url 'show_coche' coche.id %}">VER COCHE</a>
                         </div>
                     </div>
                 {% endfor %}

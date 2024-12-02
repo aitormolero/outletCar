@@ -40,6 +40,10 @@
                 {% endfor %}
             </div>
         </div>
+        
+        <div class="d-flex justify-content-center mt-5">
+            <a class="btn btn-primary btn-lg px-5 py-3 text-uppercase" href="{% url 'show_categoria' categoria_activa.nombre %}">VER DETALLES DE {{ categoria_activa.nombre }}</a>
+        </div>
     </div>
     <!-- Vendor End -->
 
@@ -72,7 +76,7 @@
                                     <span>{{ coche.kilometraje }}</span>
                                 </div>
                             </div>
-                            <a class="btn btn-primary px-3" href="">{{ coche.precio }}€</a>
+                            <a class="btn btn-primary px-3" href="{% url 'show_coche' coche.id %}">VER COCHE</a>
                         </div>
                     </div>
 

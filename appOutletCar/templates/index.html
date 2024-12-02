@@ -72,7 +72,7 @@
                                     <span>{{ coche.kilometraje }}</span>
                                 </div>
                             </div>
-                            <a class="btn btn-primary px-3" href="">{{ coche.precio }}€</a>
+                            <a class="btn btn-primary px-3" href="{% url 'show_coche' coche.id %}">VER COCHE</a>
                         </div>
                     </div>
                 {% endfor %}
