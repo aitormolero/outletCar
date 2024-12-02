@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-9r%ob%om*zl@es(a%1+&b%98+%mh^@0z!6rxagc6s5(ay^a2ga'
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = ['outletcar.onrender.com']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
