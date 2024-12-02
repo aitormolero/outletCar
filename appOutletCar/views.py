@@ -2,6 +2,43 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import TemplateView, ListView, DetailView
 from .models import Coche, Marca, Categoria
+from django.shortcuts import render
+from django.core.mail import send_mail
+
+
+class ReseñaCocheView(TemplateView):
+    template_name = 'formulario.html'
+
+    def get(self, request, *args, **kwargs):
+        marcas = Marca.objects.all()
+        categorias = Categoria.objects.all()
+        coches = Coche.objects.all()
+        
+        return render(request, self.template_name, {
+            "marcas": marcas,
+            "categorias": categorias,
+            "coches": coches
+        })
+
+    def post(self, request, *args, **kwargs):
+        email = request.POST.get('email')
+        dni = request.POST.get('dni')
+        marca_id = request.POST.get('marca')
+        modelo = request.POST.get('modelo')
+        categoria_id = request.POST.get('categoria')
+        transmision = request.POST.get('transmision')
+        descapotable = request.POST.get('descapotable')
+        recomendaciones = request.POST.get('recomendaciones')
+
+        send_mail(
+            'Nueva Reseña de Coche',
+            f'Correo: {email}\nDNI: {dni}\nMarca: {marca_id}\nModelo: {modelo}\nCategoría: {categoria_id}\nTransmisión: {transmision}\nDescapotable: {descapotable}\nRecomendaciones: {recomendaciones}',
+            'from@example.com',
+            ['admin@example.com'],
+            fail_silently=False,
+        )
+
+        return HttpResponse("Formulario enviado con éxito.")
 
 
 class IndexView(TemplateView):

@@ -51,6 +51,7 @@
                             <a href="{% url 'index_coches' %}" class="nav-item nav-link {% block coches-active %} {% endblock %}">Coches</a>
                             <a href="{% url 'index_marca' 'BMW' %}" class="nav-item nav-link {% block marcas-active %} {% endblock %}">Marcas</a>
                             <a href="{% url 'index_categoria' 'Sedán' %}" class="nav-item nav-link {% block categorias-active %} {% endblock %}">Categorías</a>
+                            <a href="{% url 'index_formulario' %}" class="nav-item nav-link {% block formulario-active %} {% endblock %}">Reseña</a>
                         </div>
                     </div>
                 </nav>
@@ -58,6 +59,8 @@
         </div>
         <!-- Navbar End -->
 
+
+        
         <!-- Content Start -->
         <main>
             {% block content %}

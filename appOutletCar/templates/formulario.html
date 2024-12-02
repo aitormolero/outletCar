@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Formulario de Reseña - Outlet Car{% endblock %}
+{% block formulario-active %} active {% endblock %}
+{% block content %}
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header">
+        <h2 class="display-3 text-uppercase text-white mb-3">Reseña</h2>
+        <div class="d-inline-flex text-white">
+            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
+            <h6 class="text-body m-0 px-3">/</h6>
+            <h6 class="text-uppercase text-body m-0">Reseña</h6>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+
+
+    <!-- Formulario Start -->
+    <div class="container py-5">
+        <h2 class="display-4 text-uppercase text-center mb-5 pb-5">¡Déjanos tu reseña!</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-12">
+                <div class="card shadow-lg">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h3>¡Tu opinión es importante para nosotros!</h3>
+                        <p class="mb-0">Completa el formulario y comparte tu experiencia.</p>
+                    </div>
+                    <div class="card-body bg-light p-5">
+                        <form method="post" action="{% url 'index_formulario' %}">
+                            {% csrf_token %}
+
+                            <!-- Detalles de contacto (Correo y DNI) -->
+                            <div class="row mb-4 text-center">
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Correo Electrónico</label>
+                                    <input type="email" name="email" class="form-control" placeholder="Tu email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="dni" class="form-label">DNI</label>
+                                    <input type="text" name="dni" class="form-control" placeholder="Tu DNI" required>
+                                </div>
+                            </div>
+
+                            <!-- Marca, Modelo y Categoría -->
+                            <div class="row mb-4 text-center">
+                                <div class="col-md-4">
+                                    <label for="marca" class="form-label">Marca</label>
+                                    <select name="marca" class="form-select" required>
+                                        <option value="">-----</option>
+                                        {% for marca in marcas %}
+                                            <option value="{{ marca.id }}">{{ marca.nombre }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="modelo" class="form-label">Modelo</label>
+                                    <select name="modelo" class="form-select" required>
+                                        <option value="">-----</option>
+                                        {% for coche in coches %}
+                                            <option value="{{ coche.modelo }}">{{ coche.modelo }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="categoria" class="form-label">Categoría</label>
+                                    <select name="categoria" class="form-select" required>
+                                        <option value="">-----</option>
+                                        {% for categoria in categorias %}
+                                            <option value="{{ categoria.id }}">{{ categoria.nombre }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Transmisión y Descapotable -->
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label class="form-label">Transmisión</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="transmision"¡>
+                                        <label class="form-check-label">Manual</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="transmision" checked>
+                                        <label class="form-check-label">Automática</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">¿Es Descapotable?</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="descapotable" value="True">
+                                        <label class="form-check-label">Sí</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="descapotable" value="False" checked>
+                                        <label class="form-check-label">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recomendaciones -->
+                            <div class="mb-4 pt-2">
+                                <label for="recomendaciones" class="form-label">Recomendaciones</label>
+                                <textarea name="recomendaciones" class="form-control" rows="3" placeholder="Escribe aquí tus recomendaciones..." required></textarea>
+                            </div>
+
+                            <!-- Botón de Enviar -->
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill">Enviar Reseña</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Formulario End -->
+
+{% endblock %}
