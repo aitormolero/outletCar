@@ -5,6 +5,56 @@
 {% block coches-active %} active {% endblock %}
 {% block content %}
 
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header">
+        <h2 class="display-3 text-uppercase text-white mb-3">Listado De Coches</h2>
+        <div class="d-inline-flex text-white">
+            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
+            <h6 class="text-body m-0 px-3">/</h6>
+            <h6 class="text-uppercase text-body m-0">Listado De Coches</h6>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+
+
+    <!-- Rent A Car Start -->
+    <div class="container-fluid">
+        <div class="container pt-5 pb-3">
+            <h2 class="display-4 text-uppercase text-center mb-5 pb-5">Encuentra Tu Coche</h2>
+            <div class="row">
+                {% for coche in coches %}
+                    <div class="col-lg-6 col-md-6 mb-2">
+                        <div class="rent-item mb-4">
+                            <div class="img-container">
+                                <img class="img-uniforme2 mb-4" src="{{ coche.imagen.url }}" alt="{{ coche.imagen.name }}">
+                            </div>
+                            <h4 class="text-uppercase mb-4">{{ coche.marca.nombre }} {{ coche.modelo }}</h4>
+                            <div class="d-flex justify-content-center mb-4">
+                                <div class="px-4">
+                                    <i class="fa fa-car text-primary mr-1"></i>
+                                    <span>{{ coche.anio }}</span>
+                                </div>
+                                <div class="px-4 border-left border-right">
+                                    <i class="fa fa-cogs text-primary mr-1"></i>
+                                    <span>{{ coche.transmision }}</span>
+                                </div>
+                                <div class="px-4">
+                                    <i class="fa fa-road text-primary mr-1"></i>
+                                    <span>{{ coche.kilometraje }}</span>
+                                </div>
+                            </div>
+                            <a class="btn btn-primary px-3" href="{% url 'show_coche' coche.id %}">VER COCHE</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Rent A Car End -->
+
+
+
     <!-- Search Start -->
     <div class="container-fluid bg-white pt-3 px-lg-5">
         <form method="get" action="{% url 'index_coches' %}">
@@ -67,55 +117,5 @@
         </form>
     </div>
     <!-- Search End -->
-
-
-
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header">
-        <h2 class="display-3 text-uppercase text-white mb-3">Listado De Coches</h2>
-        <div class="d-inline-flex text-white">
-            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
-            <h6 class="text-body m-0 px-3">/</h6>
-            <h6 class="text-uppercase text-body m-0">Listado De Coches</h6>
-        </div>
-    </div>
-    <!-- Page Header Start -->
-
-
-    
-    <!-- Rent A Car Start -->
-    <div class="container-fluid py-5">
-        <div class="container pt-5 pb-3">
-            <h2 class="display-4 text-uppercase text-center mb-5">Encuentra Tu Coche</h2>
-            <div class="row">
-                {% for coche in coches %}
-                    <div class="col-lg-6 col-md-6 mb-2">
-                        <div class="rent-item mb-4">
-                            <div class="img-container">
-                                <img class="img-uniforme2 mb-4" src="{{ coche.imagen.url }}" alt="{{ coche.imagen.name }}">
-                            </div>
-                            <h4 class="text-uppercase mb-4">{{ coche.marca.nombre }} {{ coche.modelo }}</h4>
-                            <div class="d-flex justify-content-center mb-4">
-                                <div class="px-4">
-                                    <i class="fa fa-car text-primary mr-1"></i>
-                                    <span>{{ coche.anio }}</span>
-                                </div>
-                                <div class="px-4 border-left border-right">
-                                    <i class="fa fa-cogs text-primary mr-1"></i>
-                                    <span>{{ coche.transmision }}</span>
-                                </div>
-                                <div class="px-4">
-                                    <i class="fa fa-road text-primary mr-1"></i>
-                                    <span>{{ coche.kilometraje }}</span>
-                                </div>
-                            </div>
-                            <a class="btn btn-primary px-3" href="{% url 'show_coche' coche.id %}">VER COCHE</a>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    <!-- Rent A Car End -->
 
 {% endblock %}

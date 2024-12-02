@@ -10683,3 +10683,11 @@ a.text-dark:focus {
 .height-50 {
     height: 50px;
 }
+
+.select-constant-width {
+    width: 100%;
+    max-width: 300px;
+    min-width: 200px;
+    display: block;
+    margin: 0 auto;
+}

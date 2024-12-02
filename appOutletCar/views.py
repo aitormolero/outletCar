@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect
 from django.views.generic import TemplateView, ListView, DetailView
 from .models import Coche, Marca, Categoria
@@ -114,15 +114,38 @@ class ReseñaCocheView(TemplateView):
         descapotable = request.POST.get('descapotable')
         recomendaciones = request.POST.get('recomendaciones')
 
-        send_mail(
-            'Nueva Reseña de Coche',
-            f'Correo: {email}\nDNI: {dni}\nMarca: {marca_id}\nModelo: {modelo}\nCategoría: {categoria_id}\nTransmisión: {transmision}\nDescapotable: {descapotable}\nRecomendaciones: {recomendaciones}',
-            'from@example.com',
-            ['admin@example.com'],
-            fail_silently=False,
-        )
+        print("\n\n" + "-"*50)
+        print("¡Nueva Reseña de Coche!")
+        print("-" * 50)
+        print(f"Correo Electrónico: {email}")
+        print(f"DNI: {dni}")
+        print(f"Marca: {marca_id}")
+        print(f"Modelo: {modelo}")
+        print(f"Categoría: {categoria_id}")
+        print(f"Transmisión: {transmision}")
+        print(f"¿Es Descapotable? {'Sí' if descapotable == 'True' else 'No'}")
+        print(f"Recomendaciones: {recomendaciones}")
+        print("-" * 50 + "\n\n")
 
         return HttpResponse("Formulario enviado con éxito.")
+
+
+def get_categories_by_brand(request, marca_id):
+    """
+    Devuelve las categorías asociadas a una marca.
+    """
+    categorias = Categoria.objects.filter(coche__marca_id=marca_id).distinct()
+    data = [{"id": categoria.id, "nombre": categoria.nombre} for categoria in categorias]
+    return JsonResponse(data, safe=False)
+
+
+def get_cars_by_brand_and_category(request, marca_id, categoria_id):
+    """
+    Devuelve los coches según la marca y la categoría seleccionadas.
+    """
+    coches = Coche.objects.filter(marca_id=marca_id, categoria__id=categoria_id).distinct()
+    data = [{"id": coche.id, "modelo": coche.modelo} for coche in coches]
+    return JsonResponse(data, safe=False)
 
 
 def show_coche(request, coche_id):

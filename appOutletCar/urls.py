@@ -12,4 +12,6 @@ urlpatterns = [
     path('categorias/<str:categoria>/', CategoriaDetailView.as_view(), name='index_categoria'),
     path('categorias/<str:categoria>/detail/', views.show_categoria, name='show_categoria'),
     path('reseña/', ReseñaCocheView.as_view(), name='index_formulario'),
+    path('api/categorias/<int:marca_id>/', views.get_categories_by_brand, name='get_categories_by_brand'),
+    path('api/coches/<int:marca_id>/<int:categoria_id>/', views.get_cars_by_brand_and_category, name='get_cars_by_brand_and_category'),
 ]

@@ -11,7 +11,7 @@
             activeIndex = activeIndexMarca;
         } else {
             activeIndex = activeIndexCategoria;
-        }
+        }   
 
         $('.vendor-carousel').owlCarousel({
             loop: true,
