@@ -1,114 +1,89 @@
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
+from django.views.generic import TemplateView, ListView, DetailView
 from .models import Coche, Marca, Categoria
 
 
-def index(request):
-    marcas = Marca.objects.all()
-    coches = []
+class IndexView(TemplateView):
+    template_name = 'index.html'
 
-    for marca in marcas:
-        coche = Coche.objects.filter(marca__id=marca.id).order_by('-precio').first()
-        coches.append(coche)
-
-    context = {
-        'coches': coches,
-    }
-
-    return render(request, 'index.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        marcas = Marca.objects.all()
+        coches = [Coche.objects.filter(marca__id=marca.id).order_by('-precio').first() for marca in marcas]
+        context['coches'] = coches
+        return context
 
 
-def index_about(request):
-    return render(request, 'about.html', context = {})
+class AboutView(TemplateView):
+    template_name = 'about.html'
 
 
-def index_marca(request, marca):
-    
-    coches_all = Coche.objects.all()
-    coches_marca = []
-    for coche in coches_all:
-        if((coche.marca.nombre).lower() == marca.lower()):
-            
-            coches_marca.append(coche)
-    
-    marcas = Marca.objects.all()
-    marca_seleccionada = Marca.objects.get(nombre = marca)
+class MarcaDetailView(TemplateView):
+    template_name = 'marcas.html'
 
-    context = {
-        'coches': coches_marca,
-        'marcas': marcas,
-        'marca_seleccionada': marca_seleccionada,
-    }
-	 
-    return render(request, 'marcas.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        marca_nombre = self.kwargs['marca'].lower()
+        coches_all = Coche.objects.all()
+        coches_marca = [coche for coche in coches_all if coche.marca.nombre.lower() == marca_nombre]
+
+        context['coches'] = coches_marca
+        context['marcas'] = Marca.objects.all()
+        context['marca_seleccionada'] = Marca.objects.get(nombre__iexact=self.kwargs['marca'])
+        return context
 
 
-def index_categoria(request, categoria):
+class CategoriaDetailView(TemplateView):
+    template_name = 'categorias.html'
 
-    if categoria == "HibridoElectrico":
-        categoria = "Híbrido / Eléctrico"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        categoria_nombre = self.kwargs['categoria']
+        if categoria_nombre == "HibridoElectrico":
+            categoria_nombre = "Híbrido / Eléctrico"
 
-    categorias = Categoria.objects.all()
-    coches_all = Coche.objects.all()
-    coches_categoría = []
-    
-    for coche in coches_all:
-        for cat in coche.categoria.all():
-            if(cat.nombre == categoria):
-                coches_categoría.append(coche)
+        coches_all = Coche.objects.all()
+        coches_categoria = [
+            coche for coche in coches_all for cat in coche.categoria.all() if cat.nombre == categoria_nombre
+        ]
 
-    categoria_activa = Categoria.objects.get(nombre=categoria)
-
-    context = {
-        'coches': coches_categoría,
-        'categorias': categorias,
-        'categoria_activa': categoria_activa,
-    }
-
-    return render(request, 'categorias.html', context)
-       
-
-def index_coches(request):
-    coches = Coche.objects.order_by('-precio').all()
-
-    marca = request.GET.get('marca')
-    transmision = request.GET.get('transmision')
-    combustible = request.GET.get('combustible')
-    traccion = request.GET.get('traccion')
-    puertas = request.GET.get('puertas')
+        context['coches'] = coches_categoria
+        context['categorias'] = Categoria.objects.all()
+        context['categoria_activa'] = Categoria.objects.get(nombre=categoria_nombre)
+        return context
 
 
+class CocheListView(ListView):
+    model = Coche
+    template_name = 'car.html'
+    context_object_name = 'coches'
 
-    # Aplicar filtros solo si los valores no son los predeterminados
-    if marca and marca != "Marca":
-        coches = coches.filter(marca__id=marca)
-    if transmision and transmision != "Transmisión":
-        coches = coches.filter(transmision=transmision)
-    if combustible and combustible != "Combustible":
-        coches = coches.filter(combustible=combustible)
-    if traccion and traccion != "Tracción":
-        coches = coches.filter(traccion=traccion)
-    if puertas and puertas != "Puertas":
-        coches = coches.filter(numero_puertas=puertas)
+    def get_queryset(self):
+        queryset = super().get_queryset().order_by('-precio')
+        marca = self.request.GET.get('marca')
+        transmision = self.request.GET.get('transmision')
+        combustible = self.request.GET.get('combustible')
+        traccion = self.request.GET.get('traccion')
+        puertas = self.request.GET.get('puertas')
 
+        if marca and marca != "Marca":
+            queryset = queryset.filter(marca__id=marca)
+        if transmision and transmision != "Transmisión":
+            queryset = queryset.filter(transmision=transmision)
+        if combustible and combustible != "Combustible":
+            queryset = queryset.filter(combustible=combustible)
+        if traccion and traccion != "Tracción":
+            queryset = queryset.filter(traccion=traccion)
+        if puertas and puertas != "Puertas":
+            queryset = queryset.filter(numero_puertas=puertas)
+        return queryset
 
-    # Filtros
-    marcas = Marca.objects.order_by('nombre').all()
-    transmisiones = ["Manual", "Automática"]
-    combustibles = ["Gasolina", "Diésel", "Eléctrico", "Híbrido"]
-    tracciones = ["Delantera", "Trasera", "Total"]
-    num_puertas = [2, 4, 5]
-
-
-    context = {
-        'coches': coches,
-        'marcas': marcas,
-        'transmisiones': transmisiones,
-        'combustibles': combustibles,
-        'tracciones': tracciones,
-        'num_puertas': num_puertas,
-
-    }
-
-    return render(request, 'car.html', context)
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['marcas'] = Marca.objects.order_by('nombre').all()
+        context['transmisiones'] = ["Manual", "Automática"]
+        context['combustibles'] = ["Gasolina", "Diésel", "Eléctrico", "Híbrido"]
+        context['tracciones'] = ["Delantera", "Trasera", "Total"]
+        context['num_puertas'] = [2, 4, 5]
+        return context
