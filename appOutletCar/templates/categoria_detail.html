@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}OUTLET CAR - DETALLES MARCA{% endblock %}
+{% block categorias-active %} active {% endblock %}
+{% block content %}
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header">
+        <h2 class="display-3 text-uppercase text-white mb-3">{{ categoria.nombre }}</h2>
+        <div class="d-inline-flex text-white">
+            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
+            <h6 class="text-body m-0 px-3">/</h6>
+            <h6 class="text-uppercase text-body m-0">Detalles Categoria</h6>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+    <!-- Detail Start -->
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="display-4 text-uppercase pb-3">{{ categoria.nombre }}</h1>
+            <div class="row">
+               <div class="col-lg-12 mb-5">
+                    <div class="bg-secondary p-5">
+                        <h3 class="text-primary text-center mb-4">Detalles de la Categoria</h3>
+                        <ul class="ml-0 pl-0">
+                            <li class="d-flex justify-content-between">
+                                <p>Nombre: {{ categoria.nombre }}</p>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <p>{{ categoria.descripcion }}</p>
+                            </li>
+                        </ul>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- Detail End -->
+
+    <!-- Related Car Start -->
+    <div class="container-fluid pb-5">
+        <div class="container pb-5">
+            <h2 class="mb-4">Coches {{ categoria.nombre }}</h2>
+            <div class="owl-carousel related-carousel position-relative" style="padding: 0 30px;">
+
+                {% for coche in coches %}
+                    <div class="rent-item">
+                        <img class="img-uniforme4 mb-4" src="{{ coche.imagen.url }}" alt="">
+                        <h4 class="text-uppercase mb-4">{{ coche.marca.nombre }} {{ coche.modelo }}</h4>
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="px-2">
+                                <i class="fa fa-car text-primary mr-1"></i>
+                                <span>{{ coche.anio }}</span>
+                            </div>
+                            <div class="px-2 border-left border-right">
+                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                <span>{{ coche.transmision }}</span>
+                            </div>
+                            <div class="px-2">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>{{ coche.kilometraje }}</span>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary px-3" href="{% url 'show_coche' coche.id %}">VER COCHE</a>
+                    </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+    <!-- Related Car End -->
+
+{% endblock %}
