@@ -136,7 +136,7 @@ def show_coche(request, coche_id):
 
 def show_marca(request, marca):
     mar = get_object_or_404(Marca, nombre=marca)
-    coches = Coche.objects.filter(marcaid=mar.id).all()
+    coches = Coche.objects.filter(marca__id=mar.id).all()
 
     context = {
         'marca': mar,
@@ -146,9 +146,12 @@ def show_marca(request, marca):
     return render(request, 'marca_detail.html', context)
 
 def show_categoria(request, categoria):
-    cat = get_object_or_404(Categoria, nombre=categoria)
-    coches = Coche.objects.filter(categorianombre=categoria).all()
+    if categoria == "HibridoElectrico":
+        categoria = "Híbrido / Eléctrico"
 
+    cat = get_object_or_404(Categoria, nombre=categoria)
+    coches = Coche.objects.filter(categoria__nombre=categoria).all()
+    
     context = {
         'categoria': cat,
         'coches': coches,
