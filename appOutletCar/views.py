@@ -1,9 +1,7 @@
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import redirect
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView, ListView
 from .models import Coche, Marca, Categoria
-from django.shortcuts import render, get_object_or_404, get_list_or_404
-from django.core.mail import send_mail
+from django.shortcuts import render, get_object_or_404
 
 class IndexView(TemplateView):
     template_name = 'index.html'
