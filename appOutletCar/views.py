@@ -1,5 +1,5 @@
 from django.http import HttpResponse, JsonResponse
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, View, DetailView
 from .models import Coche, Marca, Categoria
 from django.shortcuts import render, get_object_or_404
 
@@ -128,54 +128,48 @@ class ReseñaCocheView(TemplateView):
         return HttpResponse("Formulario enviado con éxito.")
 
 
-def get_categories_by_brand(request, marca_id):
-    """
-    Devuelve las categorías asociadas a una marca.
-    """
-    categorias = Categoria.objects.filter(coche__marca_id=marca_id).distinct()
-    data = [{"id": categoria.id, "nombre": categoria.nombre} for categoria in categorias]
-    return JsonResponse(data, safe=False)
+class GetCategoriesByBrandView(View):
+    def get(self, request, marca_id):
+        categorias = Categoria.objects.filter(coche__marca_id=marca_id).distinct()
+        data = [{"id": categoria.id, "nombre": categoria.nombre} for categoria in categorias]
+        return JsonResponse(data, safe=False)
 
 
-def get_cars_by_brand_and_category(request, marca_id, categoria_id):
-    """
-    Devuelve los coches según la marca y la categoría seleccionadas.
-    """
-    coches = Coche.objects.filter(marca_id=marca_id, categoria__id=categoria_id).distinct()
-    data = [{"id": coche.id, "modelo": coche.modelo} for coche in coches]
-    return JsonResponse(data, safe=False)
+class GetCarsByBrandAndCategoryView(View):
+    def get(self, request, marca_id, categoria_id):
+        coches = Coche.objects.filter(marca_id=marca_id, categoria__id=categoria_id).distinct()
+        data = [{"id": coche.id, "modelo": coche.modelo} for coche in coches]
+        return JsonResponse(data, safe=False)
 
 
-def show_coche(request, coche_id):
-    coche = get_object_or_404(Coche, pk=coche_id)
 
-    context = {
-        'coche': coche,
-    }
+class ShowCocheView(DetailView):
+    model = Coche
+    template_name = 'car_detail.html'
+    context_object_name = 'coche'
 
-    return render(request, 'car_detail.html', context)
+    def get_object(self):
+        return get_object_or_404(Coche, pk=self.kwargs['coche_id'])
 
-def show_marca(request, marca):
-    mar = get_object_or_404(Marca, nombre=marca)
-    coches = Coche.objects.filter(marca__id=mar.id).all()
+class ShowMarcaView(TemplateView):
+    template_name = 'marca_detail.html'
 
-    context = {
-        'marca': mar,
-        'coches': coches,
-    }
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        marca = get_object_or_404(Marca, nombre=self.kwargs['marca'])
+        context['marca'] = marca
+        context['coches'] = Coche.objects.filter(marca=marca)
+        return context
 
-    return render(request, 'marca_detail.html', context)
+class ShowCategoriaView(TemplateView):
+    template_name = 'categoria_detail.html'
 
-def show_categoria(request, categoria):
-    if categoria == "HibridoElectrico":
-        categoria = "Híbrido / Eléctrico"
-
-    cat = get_object_or_404(Categoria, nombre=categoria)
-    coches = Coche.objects.filter(categoria__nombre=categoria).all()
-    
-    context = {
-        'categoria': cat,
-        'coches': coches,
-    }
-
-    return render(request, 'categoria_detail.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        categoria_nombre = self.kwargs['categoria']
+        if categoria_nombre == "HibridoElectrico":
+            categoria_nombre = "Híbrido / Eléctrico"
+        categoria = get_object_or_404(Categoria, nombre=categoria_nombre)
+        context['categoria'] = categoria
+        context['coches'] = Coche.objects.filter(categoria=categoria)
+        return context
