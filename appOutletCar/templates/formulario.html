@@ -16,6 +16,8 @@
     </div>
     <!-- Page Header Start -->
 
+
+    
     <!-- Formulario Start -->
     <div class="container py-5">
         <h2 class="display-4 text-uppercase text-center mb-5 pb-5">¡Déjanos tu reseña!</h2>
@@ -48,7 +50,7 @@
                                 <div class="col-md-4">
                                     <label for="marca" class="form-label">Marca</label>
                                     <select name="marca" class="form-select" required>
-                                        <option value="">----</option>
+                                        <option value="">-----</option>
                                         {% for marca in marcas %}
                                             <option value="{{ marca.id }}">{{ marca.nombre }}</option>
                                         {% endfor %}
@@ -57,13 +59,13 @@
                                 <div class="col-md-4">
                                     <label for="categoria" class="form-label">Categoría</label>
                                     <select name="categoria" class="form-select select-constant-width" required>
-                                        <option value="">Selecciona la marca</option>
+                                        <option value=""></option>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="modelo" class="form-label">Modelo</label>
                                     <select name="modelo" class="form-select select-constant-width" required>
-                                        <option value="">Selecciona la marca y la categoría</option>
+                                        <option value=""></option>
                                     </select>
                                 </div>
                             </div>

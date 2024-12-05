@@ -43,6 +43,7 @@ NUMERO_PUERTAS_OPCIONES = [
     (CINCO, 5)
 ]
 
+
 class Marca (models.Model):
     nombre = models.CharField(max_length = 50)
     pais_origen = models.CharField(max_length = 50, blank = True, null = True)
@@ -61,6 +62,7 @@ class Categoria (models.Model):
 
     def __str__(self):
         return self.nombre
+
 
 class Coche (models.Model):
     anio = models.PositiveIntegerField(default = 2000)

@@ -3,18 +3,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const categoriaSelect = document.querySelector('select[name="categoria"]');
     const modeloSelect = document.querySelector('select[name="modelo"]');
 
+    // Establecer la opción inicial "Selecciona la marca" para las categorías y modelos
     categoriaSelect.innerHTML = '<option value="">Selecciona la marca</option>';
     modeloSelect.innerHTML = '<option value="">Selecciona la marca</option>';
 
     marcaSelect.addEventListener('change', function () {
         const marcaId = this.value;
 
+        // Si no hay marca seleccionada, se resetean las categorías y los modelos
         if (!marcaId) {
             categoriaSelect.innerHTML = '<option value="">Selecciona la marca</option>';
             modeloSelect.innerHTML = '<option value="">Selecciona la marca</option>';
             return;
         }
 
+        // Mostrar mensaje de carga mientras se obtienen las categorías
         categoriaSelect.innerHTML = '<option value="">Cargando categorías...</option>';
         modeloSelect.innerHTML = '<option value="">Selecciona la categoría</option>';
 
@@ -24,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (data.length === 0) {
                     categoriaSelect.innerHTML = '<option value="">Sin categorías disponibles</option>';
                 } else {
-                    categoriaSelect.innerHTML = '<option value="">----</option>';
+                    categoriaSelect.innerHTML = '<option value="">-----</option>'; // Establecemos el valor "-----" solo una vez
                     data.forEach(categoria => {
                         const option = document.createElement('option');
                         option.value = categoria.id;
@@ -43,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const marcaId = marcaSelect.value;
         const categoriaId = this.value;
 
+        // Si no hay categoría seleccionada, se resetean los modelos
         if (!marcaId) {
             modeloSelect.innerHTML = '<option value="">Selecciona la marca</option>';
             return;
@@ -53,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        // Mostrar mensaje de carga mientras se obtienen los modelos
         modeloSelect.innerHTML = '<option value="">Cargando modelos...</option>';
 
         fetch(`/api/coches/${marcaId}/${categoriaId}/`)
@@ -61,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (data.length === 0) {
                     modeloSelect.innerHTML = '<option value="">Sin modelos disponibles</option>';
                 } else {
-                    modeloSelect.innerHTML = '<option value="">----</option>';
+                    modeloSelect.innerHTML = '<option value="">-----</option>'; // Establecemos el valor "-----" solo una vez
                     data.forEach(coche => {
                         const option = document.createElement('option');
                         option.value = coche.id;

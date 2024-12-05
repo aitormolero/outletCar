@@ -10691,3 +10691,8 @@ a.text-dark:focus {
     display: block;
     margin: 0 auto;
 }
+
+.lan {
+    font-size: 0.9em;
+    padding-left: 0 10px;
+}
