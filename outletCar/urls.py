@@ -22,21 +22,12 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.shortcuts import redirect
 
-
-# def redirect_to_spanish(request):
-#     return redirect('/es/')
-
 urlpatterns = [
+    path('', include('appOutletCar.urls')),
     path('admin/', admin.site.urls),
     # path('', redirect_to_spanish),
 ]
 
-urlpatterns += i18n_patterns(
-    path('set_language/', include('django.conf.urls.i18n'), name='set_language'),
-    path('', include('appOutletCar.urls')),
-)
-
-# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

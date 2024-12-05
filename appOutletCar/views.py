@@ -1,7 +1,8 @@
 from django.http import HttpResponse, JsonResponse
 from django.views.generic import TemplateView, ListView, View, DetailView
-from .models import Coche, Marca, Categoria
-from django.shortcuts import render, get_object_or_404
+from .models import Coche, Marca, Categoria, COMBUSTIBLE_OPCIONES, TRANSMISION_OPCIONES, NUMERO_PUERTAS_OPCIONES, TRACCION_OPCIONES
+from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
+from .forms import CocheForm
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -86,6 +87,48 @@ class CocheListView(ListView):
         context['tracciones'] = ["Delantera", "Trasera", "Total"]
         context['num_puertas'] = [2, 4, 5]
         return context
+
+
+class AgregarCocheView(TemplateView):
+    template_name = 'agregar_coche_formulario.html'
+
+    def get(self, request, *args, **kwargs):
+        marcas = Marca.objects.all()
+        categorias = Categoria.objects.all()
+        form = CocheForm()
+        return render(request, self.template_name, {
+            "form": form,
+            "marcas": marcas,
+            "categorias": categorias,
+            'combustibles': COMBUSTIBLE_OPCIONES,
+            'tracciones': TRACCION_OPCIONES,
+            'transmisiones': TRANSMISION_OPCIONES, 
+            'numero_puertas': NUMERO_PUERTAS_OPCIONES
+        })
+
+    def post(self, request, *args, **kwargs):
+        marcas = Marca.objects.all()
+        categorias = Categoria.objects.all()
+        form = CocheForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            print("\n\nFormulario válido, ¡Coche agregado con éxito!\n\n")
+            form.save()
+
+            return redirect('index_coches')
+        else:
+            print("\n\nFormulario no válido")
+            print(form.errors)
+
+            return render(request, self.template_name, {
+                "form": form,
+                "marcas": marcas,
+                "categorias": categorias,
+                'combustibles': COMBUSTIBLE_OPCIONES,
+                'tracciones': TRACCION_OPCIONES,
+                'transmisiones': TRANSMISION_OPCIONES,
+                'numero_puertas': NUMERO_PUERTAS_OPCIONES
+            })
 
 
 class ReseñaCocheView(TemplateView):
