@@ -3,6 +3,18 @@ from django.views.generic import TemplateView, ListView, View, DetailView
 from .models import Coche, Marca, Categoria, COMBUSTIBLE_OPCIONES, TRANSMISION_OPCIONES, NUMERO_PUERTAS_OPCIONES, TRACCION_OPCIONES
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
 from .forms import CocheForm
+from django.shortcuts import redirect
+from django.http import HttpResponseNotFound
+
+def translate_to_english(request):
+    # Aquí verificas si el idioma es inglés
+    if request.path.startswith("/en"):
+        url_to_translate = request.path[3:]  # Para obtener la URL después de "/en"
+        google_translate_url = f"https://translate.google.com/translate?hl=en&sl=auto&u={request.build_absolute_uri(url_to_translate)}"
+        return redirect(google_translate_url)
+    else:
+        return HttpResponseNotFound("Page not found")
+
 
 class IndexView(TemplateView):
     template_name = 'index.html'

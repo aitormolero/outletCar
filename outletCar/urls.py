@@ -21,11 +21,23 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.shortcuts import redirect
+from appOutletCar import views
 
 urlpatterns = [
-    path('', include('appOutletCar.urls')),
     path('admin/', admin.site.urls),
+    path('en/', views.translate_to_english, name='translate_to_english'),
 ]
+
+# Asegúrate de que el prefijo de idioma esté bien configurado
+urlpatterns += i18n_patterns(
+    path('', include('appOutletCar.urls')),  # Asegúrate de que no haya prefijos de idioma aquí
+)
+
+# Redirigir a un idioma por defecto si no hay prefijo de idioma
+if settings.LANGUAGE_CODE != 'en':
+    urlpatterns = [
+        path('', lambda request: redirect('es/', permanent=True)),
+    ] + urlpatterns
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
