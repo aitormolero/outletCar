@@ -25,9 +25,7 @@ from django.shortcuts import redirect
 urlpatterns = [
     path('', include('appOutletCar.urls')),
     path('admin/', admin.site.urls),
-    # path('', redirect_to_spanish),
 ]
-
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
