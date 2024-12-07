@@ -85,7 +85,7 @@
                                     <select name="transmision" class="form-select" required>
                                         <option value="" disabled selected>{% trans "Selecciona una transmisión" %}</option>
                                         {% for key, value in transmisiones %}
-                                            <option value="{{ key }}">{% trans value }</option>
+                                            <option value="{{ key }}">{% trans value %}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
@@ -109,7 +109,7 @@
                                     <select name="numero_puertas" class="form-select" required>
                                         <option value="" disabled selected>{% trans "Selecciona un n° puertas" %}</option>
                                         {% for key, value in numero_puertas %}
-                                            <option value="{{ key }}">{% trans value %}</option>
+                                            <option value="{{ key }}">{{ value }}</option>
                                         {% endfor %}
                                     </select>
                                 </div>

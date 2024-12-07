@@ -1,6 +1,6 @@
 from django.http import HttpResponse, JsonResponse
 from django.views.generic import TemplateView, ListView, View, DetailView
-from .models import Coche, Marca, Categoria
+from .models import Coche, Marca, Categoria, COMBUSTIBLE_OPCIONES, TRANSMISION_OPCIONES, TRACCION_OPCIONES, NUMERO_PUERTAS_OPCIONES
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import CocheForm
 from django.utils.translation import gettext_lazy as _, activate

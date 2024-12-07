@@ -56,6 +56,7 @@
                             <a href="{% url 'index_coches' %}" class="nav-item nav-link {% block coches-active %} {% endblock %}">{% trans "Coches" %}</a>
                             <a href="{% url 'index_marca' 'BMW' %}" class="nav-item nav-link {% block marcas-active %} {% endblock %}">{% trans "Marcas" %}</a>
                             <a href="{% url 'index_categoria' 'Sedán' %}" class="nav-item nav-link {% block categorias-active %} {% endblock %}">{% trans "Categorías" %}</a>
+                            <a href="{% url 'añadir_coche' %}" class="nav-item nav-link {% block añadir-coche-active %} {% endblock %}">{% trans "Agregar Coche" %}</a>
                             <a href="{% url 'index_formulario' %}" class="nav-item nav-link {% block formulario-active %} {% endblock %}">{% trans "Reseña" %}</a>
                             <div class="nav-item ml-3 d-flex align-items-center lan">
                                 <a class="nav-link" id="lang-es" href="#" onclick="changeLanguage('es'); return false;">{% trans "ES" %}</a>
@@ -102,8 +103,7 @@
 
         <!-- Javascript Propio -->
         <script src="{% static 'js/formulario.js' %}"></script>
-
-        <!-- Javascript para cambiar de idioma -->
+        <script src="{% static 'js/agregar_coche_formulario.js' %}"></script>
         <script src="{% static 'js/idioma.js' %}"></script>
 
         {% block extra_js %}{% endblock %}
