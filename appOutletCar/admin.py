@@ -2,8 +2,27 @@ from django.contrib import admin
 from .models import Coche, Marca, Categoria
 
 
+admin.site.site_header = "Panel de Administración de Outlet Car"
+admin.site.site_title = "Outlet Car Admin"
+admin.site.index_title = "Gestión de Coches, Marcas y Categorías"
 
 class CocheAdmin(admin.ModelAdmin):
+    list_display = ('marca', 'modelo', 'anio', 'precio')
+    list_filter = ('marca', 'categoria')
+    search_fields = ('modelo', 'marca__nombre')
+    ordering = ('marca', 'precio')
+
+    fieldsets = (
+        ('Datos Principales', {'fields': ('marca', 'modelo', 'anio', 'categoria')}),
+        ('Especificaciones Técnicas', {
+            'fields': ('kilometraje', 'color', 'transmision', 'combustible', 'traccion', 'numero_puertas', 'descapotable'),
+            'description': 'Características técnicas del coche'
+        }),
+        ('Información Comercial', {'fields': ('precio', 'descripcion', 'imagen')}),
+    )
+
+    filter_horizontal = ('categoria',)  
+    autocomplete_fields = ['marca']
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
@@ -22,6 +41,18 @@ class CocheAdmin(admin.ModelAdmin):
     
 
 class MarcaAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'fecha_fundacion', 'pais_origen')
+    list_filter = ['pais_origen']
+    search_fields = ('nombre', 'pais_origen')
+    ordering = ['fecha_fundacion']
+
+    fieldsets = (
+        ('Datos Principales', {'fields': ('nombre', 'descripcion')}),
+        ('Detalles Adicionales', {
+            'fields': ('pais_origen', 'fecha_fundacion', 'imagen'),
+            'description': 'Información opcional sobre la marca'
+        }),
+    )
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
@@ -40,7 +71,16 @@ class MarcaAdmin(admin.ModelAdmin):
 
 
 class CategoriaAdmin(admin.ModelAdmin):
+    list_display = ['nombre']
+    list_filter = ['nombre']
+    search_fields = ['nombre']
+    ordering = ['nombre']
     
+    fieldsets = (
+        ('Datos Principales', {'fields': ('nombre',)}),
+        ('Detalles Opcionales', {'fields': ('descripcion',)}),
+    )
+
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         if request.user.groups.filter(name="Cliente").exists() or request.user.groups.filter(name="Vendedor").exists():
