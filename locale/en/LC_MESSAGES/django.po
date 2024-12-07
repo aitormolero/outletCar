@@ -1335,13 +1335,84 @@ msgstr ""
 msgid "Furgoneta"
 msgstr "Van"
 
+
+
+msgid "Los coches familiares están diseñados para maximizar el espacio y la comodidad. Con una mayor capacidad de carga y asientos cómodos, son perfectos para viajes en familia o actividades diarias. Su diseño versátil permite una fácil adaptación a diversas necesidades, convirtiéndolos en una opción ideal para quienes buscan funcionalidad sin sacrificar confort."
+msgstr "Family cars are designed to maximize space and comfort. With greater cargo capacity and comfortable seating, they are perfect for family trips or daily activities. Their versatile design allows for easy adaptation to various needs, making them an ideal choice for those seeking functionality without sacrificing comfort."
+
+
+
+msgid "Los coches deportivos están diseñados para ofrecer un alto rendimiento y una experiencia de conducción emocionante. Con motores potentes, suspensiones ajustadas y un diseño aerodinámico, estos vehículos destacan en velocidad y maniobrabilidad. Suelen tener un aspecto agresivo y pueden incluir características como tracción trasera o integral, ideal para los amantes de la velocidad y la adrenalina."
+msgstr "Sports cars are designed to deliver high performance and an exciting driving experience. With powerful engines, tuned suspensions, and aerodynamic designs, these vehicles excel in speed and maneuverability. They often have an aggressive look and may feature rear or all-wheel drive, ideal for speed and adrenaline enthusiasts."
+
+msgid "Los sedanes son vehículos de cuatro puertas que ofrecen un equilibrio entre comodidad, estilo y funcionalidad. Su diseño elegante y espacioso proporciona un ambiente cómodo para pasajeros y una buena capacidad de maletero. Son ideales para familias o para quienes buscan un coche práctico para el día a día, combinando eficiencia de combustible con un manejo suave."
+msgstr "Sedans are four-door vehicles that offer a balance between comfort, style, and functionality. Their sleek and spacious design provides a comfortable environment for passengers and good trunk capacity. They are ideal for families or those seeking a practical car for daily use, combining fuel efficiency with smooth handling."
+
+
+msgid "Los coupés son coches de dos puertas que destacan por su diseño estilizado y deportivo. Suelen ofrecer una experiencia de conducción más dinámica y una estética más llamativa que los sedanes. Aunque pueden tener menos espacio en la parte trasera, son ideales para quienes priorizan el estilo y la emoción en la conducción."
+msgstr "Coupes are two-door cars known for their sleek and sporty design. They usually offer a more dynamic driving experience and a more striking appearance than sedans. While they may have less rear space, they are ideal for those prioritizing style and driving excitement."
+
+msgid "Las furgonetas son vehículos amplios y versátiles, perfectos para transportar tanto personas como carga. Su diseño rectangular maximiza el espacio interior, lo que las hace ideales para familias numerosas o negocios que requieren movilidad. Muchas furgonetas ofrecen múltiples configuraciones de asientos y pueden incluir características como puertas correderas para facilitar el acceso."
+msgstr "Vans are spacious and versatile vehicles, perfect for transporting both people and cargo. Their boxy design maximizes interior space, making them ideal for large families or businesses requiring mobility. Many vans offer multiple seat configurations and features like sliding doors for easier access."
+
+msgid "Los coches híbridos y eléctricos son opciones eco-amigables que priorizan la eficiencia energética. Los híbridos combinan un motor de combustión interna con uno eléctrico, ofreciendo una mejor economía de combustible. Los eléctricos funcionan únicamente con baterías, eliminando las emisiones de escape. Ambas opciones son ideales para quienes buscan reducir su huella ambiental sin sacrificar rendimiento ni comodidad."
+msgstr "Hybrid and electric cars are eco-friendly options prioritizing energy efficiency. Hybrids combine an internal combustion engine with an electric motor, offering better fuel economy. Electric cars run solely on batteries, eliminating exhaust emissions. Both options are ideal for those looking to reduce their environmental footprint without sacrificing performance or comfort."
+
+msgid "Lujo"
+msgstr "Luxury"
+
+msgid "Alemania"
+msgstr "Germany"
+
+msgid "Audi AG es una marca alemana de automóviles de lujo, conocida por su innovación tecnológica y diseño elegante. Fundada en 1909, Audi ofrece una amplia gama de vehículos, desde sedanes y SUVs hasta deportivos. Su lema \"Vorsprung durch Technik\" refleja su compromiso con la calidad y el rendimiento. Los coches Audi se caracterizan por su atención al detalle, sistemas de tracción integral y tecnologías avanzadas, incluyendo opciones híbridas y eléctricas, lo que los convierte en una opción popular entre quienes buscan lujo y tecnología."
+msgstr "Audi AG is a German luxury car brand known for its technological innovation and elegant design. Founded in 1909, Audi offers a wide range of vehicles, from sedans and SUVs to sports cars. Its slogan \"Vorsprung durch Technik\" reflects its commitment to quality and performance. Audi cars are known for their attention to detail, all-wheel-drive systems, and advanced technologies, including hybrid and electric options, making them a popular choice for those seeking luxury and technology."
+
+msgid "Bayerische Motoren Werke AG es una marca alemana de automóviles y motocicletas, fundada en 1916. Reconocida por su lujo y rendimiento, BMW ofrece una amplia gama de vehículos, desde sedanes y deportivos hasta SUVs y eléctricos. Su lema \"La máquina de conducir\" refleja su compromiso con una experiencia de conducción excepcional. Los coches BMW destacan por un diseño elegante y tecnologías avanzadas, incluyendo modelos híbridos y eléctricos que combinan eficiencia y prestaciones, convirtiéndose en una opción preferida entre los entusiastas del automóvil."
+msgstr "Bayerische Motoren Werke AG is a German brand of cars and motorcycles, founded in 1916. Renowned for its luxury and performance, BMW offers a wide range of vehicles, from sedans and sports cars to SUVs and electric vehicles. Its slogan \"The Ultimate Driving Machine\" reflects its commitment to an exceptional driving experience. BMW cars stand out for their sleek design and advanced technologies, including hybrid and electric models that combine efficiency and performance, making them a preferred choice among car enthusiasts."
+
+
+msgid "Ford Motor Company es una de las marcas automotrices más icónicas de Estados Unidos, fundada en 1903. Conocida por su innovación, especialmente en la producción en masa, Ford ofrece una amplia gama de vehículos, desde camionetas y SUVs hasta coches compactos. Sus modelos como el Ford Mustang son emblemáticos por su rendimiento y estilo. Ford también se está enfocando en la electrificación, con una creciente oferta de modelos híbridos y eléctricos, adaptándose a las nuevas demandas del mercado."
+msgstr "Ford Motor Company is one of the most iconic automotive brands in the United States, founded in 1903. Known for its innovation, particularly in mass production, Ford offers a wide range of vehicles, from trucks and SUVs to compact cars. Models like the Ford Mustang are emblematic for their performance and style. Ford is also focusing on electrification, with a growing lineup of hybrid and electric models, adapting to new market demands."
+
+msgid "Estados Unidos"
+msgstr "United States"
+
+msgid "Japón"
+msgstr "Japan"
+
+msgid "Honda Motor Co., Ltd. es una marca japonesa de automóviles y motocicletas, fundada en 1948. Reconocida por su fiabilidad y eficiencia, Honda ofrece una amplia gama de vehículos, desde sedanes y SUVs hasta deportivos. Su modelo Civic es emblemático por su durabilidad y rendimiento. Honda también ha invertido en tecnología híbrida y eléctrica, buscando un equilibrio entre prestaciones y sostenibilidad, lo que la convierte en una opción popular entre conductores que valoran la calidad y la innovación."
+msgstr "Honda Motor Co., Ltd. is a Japanese brand of cars and motorcycles, founded in 1948. Known for its reliability and efficiency, Honda offers a wide range of vehicles, from sedans and SUVs to sports cars. Its Civic model is iconic for its durability and performance. Honda has also invested in hybrid and electric technology, seeking a balance between performance and sustainability, making it a popular choice for drivers who value quality and innovation."
+
+
+msgid "Mercedes-Benz es una marca de automóviles alemana, parte del Grupo Daimler, reconocida por su lujo y tecnología de vanguardia. Fundada en 1926, ofrece una amplia gama de vehículos que incluyen sedanes, SUVs y deportivos. Su lema \"Lo mejor o nada\" destaca su compromiso con la calidad y el rendimiento. Los coches Mercedes-Benz se caracterizan por un diseño sofisticado, interiores de alta gama y avanzadas características de seguridad, así como modelos híbridos y eléctricos que reflejan su enfoque hacia la sostenibilidad."
+msgstr "Mercedes-Benz is a German car brand, part of the Daimler Group, recognized for its luxury and cutting-edge technology. Founded in 1926, it offers a wide range of vehicles, including sedans, SUVs, and sports cars. Its slogan \"The Best or Nothing\" highlights its commitment to quality and performance. Mercedes-Benz cars are characterized by sophisticated design, high-end interiors, and advanced safety features, as well as hybrid and electric models reflecting its focus on sustainability."
+
+
+msgid "Porsche AG es una marca alemana de automóviles deportivos, fundada en 1931. Reconocida por su ingeniería de alto rendimiento, Porsche ofrece vehículos icónicos como el 911 y el Cayenne, que combinan lujo y velocidad. Su lema \"Porsche. There is no substitute\" refleja su dedicación a la experiencia de conducción. Los coches Porsche son famosos por su diseño distintivo y su tecnología avanzada, con un enfoque creciente en modelos híbridos y eléctricos que mantienen su legado de rendimiento."
+msgstr "Porsche AG is a German sports car brand, founded in 1931. Renowned for its high-performance engineering, Porsche offers iconic vehicles like the 911 and the Cayenne, combining luxury and speed. Its slogan \"Porsche. There is no substitute\" reflects its dedication to the driving experience. Porsche cars are famous for their distinctive design and advanced technology, with an increasing focus on hybrid and electric models that maintain their performance legacy."
+
+msgid "España"
+msgstr "Spain"
+
+msgid "SEAT S.A. es una marca española de automóviles, parte del Grupo Volkswagen, fundada en 1950. Conocida por su diseño juvenil y dinámico, SEAT ofrece una variedad de vehículos, desde compactos hasta SUVs. La marca se destaca por su relación calidad-precio y su enfoque en la tecnología, incluyendo opciones conectadas. SEAT se dirige especialmente a un público joven, combinando estilo y funcionalidad, y ha comenzado a explorar modelos híbridos y eléctricos en su oferta."
+msgstr "SEAT S.A. is a Spanish car brand, part of the Volkswagen Group, founded in 1950. Known for its youthful and dynamic design, SEAT offers a variety of vehicles, from compact cars to SUVs. The brand stands out for its value for money and focus on technology, including connected options. SEAT particularly targets a young audience, combining style and functionality, and has begun exploring hybrid and electric models in its lineup."
+
+
+msgid "Tesla, Inc. es una marca estadounidense de automóviles eléctricos, fundada en 2003, que ha revolucionado la industria automotriz. Conocida por su innovación tecnológica, Tesla ofrece una gama de vehículos eléctricos que destacan por su rendimiento, autonomía y características de conducción autónoma. Sus modelos, como el Model S y Model 3, combinan lujo y sostenibilidad, posicionándose como líderes en el mercado de vehículos eléctricos. Tesla también impulsa la infraestructura de carga y promueve un futuro de energía sostenible."
+msgstr "Tesla, Inc. is an American electric car brand, founded in 2003, that has revolutionized the automotive industry. Known for its technological innovation, Tesla offers a range of electric vehicles known for their performance, range, and autonomous driving features. Models like the Model S and Model 3 combine luxury and sustainability, positioning them as leaders in the electric vehicle market. Tesla also drives charging infrastructure and promotes a sustainable energy future."
+
+
+msgid "Toyota Motor Corporation es una de las marcas automotrices más grandes y reconocidas a nivel mundial, fundada en 1937. Conocida por su fiabilidad y eficiencia, Toyota ofrece una amplia gama de vehículos, desde sedanes y SUVs hasta híbridos y eléctricos. Su modelo Prius es pionero en la tecnología híbrida. La marca se enfoca en la sostenibilidad, promoviendo la movilidad ecológica y desarrollando modelos que combinan eficiencia y rendimiento, lo que la convierte en una opción popular para los conductores conscientes del medio ambiente."
+msgstr "Toyota Motor Corporation is one of the largest and most recognized automotive brands worldwide, founded in 1937. Known for its reliability and efficiency, Toyota offers a wide range of vehicles, from sedans and SUVs to hybrids and electric cars. Its Prius model is a pioneer in hybrid technology. The brand focuses on sustainability, promoting eco-friendly mobility and developing models that combine efficiency and performance, making it a popular choice for environmentally conscious drivers."
+
+
+msgid "Volkswagen AG es una de las principales marcas automotrices alemanas, fundada en 1937. Conocida por su enfoque en la calidad y la ingeniería, Volkswagen ofrece una amplia gama de vehículos, desde el icónico Golf hasta SUVs y eléctricos. Su lema \"Das Auto\" refleja su compromiso con la movilidad accesible. Los coches Volkswagen se caracterizan por su diseño funcional y tecnologías avanzadas, además de un creciente enfoque en la sostenibilidad con modelos híbridos y eléctricos que cumplen con las demandas modernas."
+msgstr "Volkswagen AG is one of the leading German automotive brands, founded in 1937. Known for its focus on quality and engineering, Volkswagen offers a wide range of vehicles, from the iconic Golf to SUVs and electric cars. Its slogan \"Das Auto\" reflects its commitment to accessible mobility. Volkswagen cars are characterized by functional design and advanced technologies, along with a growing focus on sustainability with hybrid and electric models that meet modern demands."
+
+
 #: .\appOutletCar\importar_coches_shell.py:840
 msgid "Sedán"
 msgstr "Sedan"
-
-#: .\appOutletCar\importar_coches_shell.py:839
-msgid "Lujo"
-msgstr "Luxury"
 
 #: .\appOutletCar\importar_coches_shell.py:843
 msgid "Transporter"
