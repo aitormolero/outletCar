@@ -1,19 +1,30 @@
 from django.http import HttpResponse, JsonResponse
 from django.views.generic import TemplateView, ListView, View, DetailView
-from .models import Coche, Marca, Categoria, COMBUSTIBLE_OPCIONES, TRANSMISION_OPCIONES, NUMERO_PUERTAS_OPCIONES, TRACCION_OPCIONES
-from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
+from .models import Coche, Marca, Categoria
+from django.shortcuts import render, get_object_or_404, redirect
 from .forms import CocheForm
+from django.utils.translation import gettext_lazy as _, activate
 from django.shortcuts import redirect
-from django.http import HttpResponseNotFound
 
-def translate_to_english(request):
-    # Aquí verificas si el idioma es inglés
-    if request.path.startswith("/en"):
-        url_to_translate = request.path[3:]  # Para obtener la URL después de "/en"
-        google_translate_url = f"https://translate.google.com/translate?hl=en&sl=auto&u={request.build_absolute_uri(url_to_translate)}"
-        return redirect(google_translate_url)
-    else:
-        return HttpResponseNotFound("Page not found")
+
+def set_language(request):
+    lang_code = request.GET.get('language')
+    if lang_code:
+        activate(lang_code)
+        request.session['django_language'] = lang_code
+
+        referer = request.META.get('HTTP_REFERER', '/')
+        
+        if '/es/' in referer:
+            redirect_url = referer.replace('/es/', f'/{lang_code}/')
+        elif '/en/' in referer:
+            redirect_url = referer.replace('/en/', f'/{lang_code}/')
+        else:
+            redirect_url = f'/{lang_code}/'
+
+        return redirect(redirect_url)
+
+    return redirect('/')
 
 
 class IndexView(TemplateView):
@@ -53,7 +64,7 @@ class CategoriaDetailView(TemplateView):
         context = super().get_context_data(**kwargs)
         categoria_nombre = self.kwargs['categoria']
         if categoria_nombre == "HibridoElectrico":
-            categoria_nombre = "Híbrido / Eléctrico"
+            categoria_nombre = _("Híbrido / Eléctrico")
 
         coches_all = Coche.objects.all()
         coches_categoria = [
@@ -79,26 +90,54 @@ class CocheListView(ListView):
         traccion = self.request.GET.get('traccion')
         puertas = self.request.GET.get('puertas')
 
-        if marca and marca != "Marca":
+        # Aquí buscamos por el msgid original en lugar del traducido.
+        if marca and marca != _("Marca"):
             queryset = queryset.filter(marca__id=marca)
-        if transmision and transmision != "Transmisión":
-            queryset = queryset.filter(transmision=transmision)
-        if combustible and combustible != "Combustible":
-            queryset = queryset.filter(combustible=combustible)
-        if traccion and traccion != "Tracción":
-            queryset = queryset.filter(traccion=traccion)
-        if puertas and puertas != "Puertas":
-            queryset = queryset.filter(numero_puertas=puertas)
+        if transmision and transmision != _("Transmisión"):
+            # Buscar el msgid traducido
+            opciones_transmision = {
+                _("Manual"): "Manual",
+                _("Automática"): "Automática"
+            }
+            transmision_original = opciones_transmision.get(transmision)
+            if transmision_original:
+                queryset = queryset.filter(transmision=transmision_original)
+        if combustible and combustible != _("Combustible"):
+            opciones_combustible = {
+                _("Gasolina"): "Gasolina",
+                _("Diésel"): "Diésel",
+                _("Eléctrico"): "Eléctrico",
+                _("Híbrido"): "Híbrido"
+            }
+            combustible_original = opciones_combustible.get(combustible)
+            if combustible_original:
+                queryset = queryset.filter(combustible=combustible_original)
+        if traccion and traccion != _("Tracción"):
+            opciones_traccion = {
+                _("Delantera"): "Delantera",
+                _("Trasera"): "Trasera",
+                _("Total"): "Total"
+            }
+            traccion_original = opciones_traccion.get(traccion)
+            if traccion_original:
+                queryset = queryset.filter(traccion=traccion_original)
+        if puertas and puertas != _("Puertas"):
+            try:
+                puertas = int(puertas)
+                queryset = queryset.filter(numero_puertas=puertas)
+            except ValueError:
+                pass
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['marcas'] = Marca.objects.order_by('nombre').all()
-        context['transmisiones'] = ["Manual", "Automática"]
-        context['combustibles'] = ["Gasolina", "Diésel", "Eléctrico", "Híbrido"]
-        context['tracciones'] = ["Delantera", "Trasera", "Total"]
+        context['transmisiones'] = [ _("Manual"), _("Automática") ]
+        context['combustibles'] = [ _("Gasolina"), _("Diésel"), _("Eléctrico"), _("Híbrido") ]
+        context['tracciones'] = [ _("Delantera"), _("Trasera"), _("Total") ]
         context['num_puertas'] = [2, 4, 5]
         return context
+
 
 
 class AgregarCocheView(TemplateView):
@@ -168,20 +207,19 @@ class ReseñaCocheView(TemplateView):
         recomendaciones = request.POST.get('recomendaciones')
 
         print("\n\n" + "-"*50)
-        print("¡Nueva Reseña de Coche!")
+        print(_("¡Nueva Reseña de Coche!"))
         print("-" * 50)
-        print(f"Correo Electrónico: {email}")
-        print(f"DNI: {dni}")
-        print(f"Marca: {marca_id}")
-        print(f"Modelo: {modelo}")
-        print(f"Categoría: {categoria_id}")
-        print(f"Transmisión: {transmision}")
-        print(f"¿Es Descapotable? {'Sí' if descapotable == 'True' else 'No'}")
-        print(f"Recomendaciones: {recomendaciones}")
+        print(f"{_('Correo Electrónico')}: {email}")
+        print(f"{_('DNI')}: {dni}")
+        print(f"{_('Marca')}: {marca_id}")
+        print(f"{_('Modelo')}: {modelo}")
+        print(f"{_('Categoría')}: {categoria_id}")
+        print(f"{_('Transmisión')}: {transmision}")
+        print(f"{_('¿Es Descapotable?')} {'Sí' if descapotable == 'True' else 'No'}")
+        print(f"{_('Recomendaciones')}: {recomendaciones}")
         print("-" * 50 + "\n\n")
 
-        return HttpResponse("Formulario enviado con éxito.")
-
+        return HttpResponse(_("Formulario enviado con éxito."))
 
 class GetCategoriesByBrandView(View):
     def get(self, request, marca_id):
@@ -197,7 +235,6 @@ class GetCarsByBrandAndCategoryView(View):
         return JsonResponse(data, safe=False)
 
 
-
 class ShowCocheView(DetailView):
     model = Coche
     template_name = 'car_detail.html'
@@ -205,6 +242,7 @@ class ShowCocheView(DetailView):
 
     def get_object(self):
         return get_object_or_404(Coche, pk=self.kwargs['coche_id'])
+
 
 class ShowMarcaView(TemplateView):
     template_name = 'marca_detail.html'
@@ -216,6 +254,7 @@ class ShowMarcaView(TemplateView):
         context['coches'] = Coche.objects.filter(marca=marca)
         return context
 
+
 class ShowCategoriaView(TemplateView):
     template_name = 'categoria_detail.html'
 
@@ -223,7 +262,7 @@ class ShowCategoriaView(TemplateView):
         context = super().get_context_data(**kwargs)
         categoria_nombre = self.kwargs['categoria']
         if categoria_nombre == "HibridoElectrico":
-            categoria_nombre = "Híbrido / Eléctrico"
+            categoria_nombre = _("Híbrido / Eléctrico")
         categoria = get_object_or_404(Categoria, nombre=categoria_nombre)
         context['categoria'] = categoria
         context['coches'] = Coche.objects.filter(categoria=categoria)

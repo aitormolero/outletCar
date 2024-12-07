@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import gettext_lazy as _  
 from .models import Coche
 
 class CocheForm(forms.ModelForm):
@@ -6,18 +7,18 @@ class CocheForm(forms.ModelForm):
         model = Coche
         fields = '__all__'
         labels = {
-            'marca': 'Marca',
-            'modelo': 'Modelo',
-            'anio': 'Año',
-            'precio': 'Precio',
-            'color': 'Color',
-            'kilometraje': 'Kilometraje',
-            'transmision': 'Transmisión',
-            'combustible': 'Combustible',
-            'traccion': 'Tracción',
-            'numero_puertas': 'Número de Puertas',
-            'descapotable': '¿Es descapotable?',
-            'descripcion': 'Descripción',
-            'categoria': 'Categorías',
-            'imagen': 'Imagen del coche',
+            'marca': _('Marca'),
+            'modelo': _('Modelo'),
+            'anio': _('Año'),
+            'precio': _('Precio'),
+            'color': _('Color'),
+            'kilometraje': _('Kilometraje'),
+            'transmision': _('Transmisión'),
+            'combustible': _('Combustible'),
+            'traccion': _('Tracción'),
+            'numero_puertas': _('Número de Puertas'),
+            'descapotable': _('¿Es descapotable?'),
+            'descripcion': _('Descripción'),
+            'categoria': _('Categorías'),
+            'imagen': _('Imagen del coche'),
         }

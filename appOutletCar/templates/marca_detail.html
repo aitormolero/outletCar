@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}OUTLET CAR - DETALLES MARCA{% endblock %}
+{% block title %}{% trans "OUTLET CAR - DETALLES MARCA" %}{% endblock %}
 {% block marcas-active %} active {% endblock %}
 {% block content %}
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
-        <h2 class="display-3 text-uppercase text-white mb-3">{{ marca.nombre }}</h2>
+        <h2 class="display-3 text-uppercase text-white mb-3">{% trans marca.nombre %}</h2>
         <div class="d-inline-flex text-white">
-            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
+            <h6 class="text-uppercase m-0"><a class="text-white" href="">{% trans "Home" %}</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
-            <h6 class="text-uppercase text-body m-0">Detalles MARCA</h6>
+            <h6 class="text-uppercase text-body m-0">{% trans "Detalles MARCA" %}</h6>
         </div>
     </div>
     <!-- Page Header Start -->
@@ -19,7 +20,7 @@
     <!-- Detail Start -->
     <div class="container-fluid">
         <div class="container">
-            <h1 class="display-4 text-uppercase mb-0">{{ marca.nombre }}</h1>
+            <h1 class="display-4 text-uppercase mb-0">{% trans marca.nombre %}</h1>
             <div class="row">
                 <div class="col-lg-6 mb-5">
                     <div class="row mx-2 mb-3">
@@ -30,22 +31,22 @@
                </div>
                <div class="col-lg-6 mb-5">
                     <div class="bg-secondary p-5">
-                        <h3 class="text-primary text-center mb-4">Detalles de la Marca</h3>
+                        <h3 class="text-primary text-center mb-4">{% trans "Detalles de la Marca" %}</h3>
                         <ul class="ml-0 pl-0">
                             <li class="d-flex justify-content-between">
-                                <p>Nombre</p>
-                                <p>{{ marca.nombre }}</p>
+                                <p>{% trans "Nombre" %}</p>
+                                <p>{% trans marca.nombre %}</p>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>País</p>
-                                <p>{{ marca.pais_origen }}</p>
+                                <p>{% trans "País" %}</p>
+                                <p>{% trans marca.pais_origen %}</p>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>Fecha de fundación</p>
+                                <p>{% trans "Fecha de fundación" %}</p>
                                 <p>{{ marca.fecha_fundacion }}</p>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>{{ marca.descripcion }}</p>
+                                <p>{% trans marca.descripcion %}</p>
                             </li>
                         </ul>
                     </div>
@@ -58,13 +59,13 @@
     <!-- Related Car Start -->
     <div class="container-fluid pb-5">
         <div class="container pb-5">
-            <h2 class="mb-4">Coches de {{ marca.nombre }}</h2>
+            <h2 class="mb-4">{% trans "Coches de" %} {% trans marca.nombre %}</h2>
             <div class="owl-carousel related-carousel position-relative" style="padding: 0 30px;">
 
                 {% for coche in coches %}
                     <div class="rent-item">
                         <img class="img-uniforme4 mb-4" src="{{ coche.imagen.url }}" alt="">
-                        <h4 class="text-uppercase mb-4">{{ coche.marca.nombre }} {{ coche.modelo }}</h4>
+                        <h4 class="text-uppercase mb-4">{% trans coche.marca.nombre %} {% trans coche.modelo %}</h4>
                         <div class="d-flex justify-content-center mb-4">
                             <div class="px-2">
                                 <i class="fa fa-car text-primary mr-1"></i>
@@ -72,14 +73,14 @@
                             </div>
                             <div class="px-2 border-left border-right">
                                 <i class="fa fa-cogs text-primary mr-1"></i>
-                                <span>{{ coche.transmision }}</span>
+                                <span>{% trans coche.transmision %}</span>
                             </div>
                             <div class="px-2">
                                 <i class="fa fa-road text-primary mr-1"></i>
                                 <span>{{ coche.kilometraje }}</span>
                             </div>
                         </div>
-                        <a class="btn btn-primary px-3" href="{% url 'show_coche' coche.id %}">VER COCHE</a>
+                        <a class="btn btn-primary px-3" href="{% url 'show_coche' coche.id %}">{% trans "VER COCHE" %}</a>
                     </div>
                 {% endfor %}
                 

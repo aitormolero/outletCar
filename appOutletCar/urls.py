@@ -1,4 +1,5 @@
 from django.urls import path
+from django.utils.translation import gettext_lazy as _
 from . import views
 from .views import IndexView, AboutView, MarcaDetailView, CategoriaDetailView, CocheListView, ReseñaCocheView, GetCategoriesByBrandView, GetCarsByBrandAndCategoryView, ShowCocheView, ShowMarcaView, ShowCategoriaView, AgregarCocheView
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-03 13:18+0100\n"
+"POT-Creation-Date: 2024-12-07 16:50+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,1857 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: .\outletCar\settings.py:117
+
+#: .\appOutletCar\forms.py:10
+#: .\appOutletCar\templates\agregar_coche_formulario.html:117
+#: .\appOutletCar\templates\car.html:15
+#: .\appOutletCar\templates\car_detail.html:38
+#: .\appOutletCar\templates\formulario.html:50 .\appOutletCar\views.py:93
+#: .\appOutletCar\views.py:186
+msgid "Marca"
+msgstr "Brand"
+
+#: .\appOutletCar\forms.py:11
+#: .\appOutletCar\templates\agregar_coche_formulario.html:58
+#: .\appOutletCar\templates\agregar_coche_formulario.html:59
+#: .\appOutletCar\templates\car_detail.html:42
+#: .\appOutletCar\templates\formulario.html:65 .\appOutletCar\views.py:187
+msgid "Modelo"
+msgstr "Model"
+
+#: .\appOutletCar\forms.py:12
+#: .\appOutletCar\templates\agregar_coche_formulario.html:38
+#: .\appOutletCar\templates\agregar_coche_formulario.html:39
+#: .\appOutletCar\templates\car_detail.html:58
+msgid "Año"
+msgstr "Year"
+
+#: .\appOutletCar\forms.py:13 .\appOutletCar\templates\car_detail.html:62
+msgid "Precio"
+msgstr "Price"
+
+#: .\appOutletCar\forms.py:14
+#: .\appOutletCar\templates\agregar_coche_formulario.html:46
+#: .\appOutletCar\templates\agregar_coche_formulario.html:47
+#: .\appOutletCar\templates\car_detail.html:66
+msgid "Color"
+msgstr ""
+
+#: .\appOutletCar\forms.py:15
+#: .\appOutletCar\templates\agregar_coche_formulario.html:54
+#: .\appOutletCar\templates\car_detail.html:70
+msgid "Kilometraje"
+msgstr "Mileage"
+
+#: .\appOutletCar\forms.py:16
+#: .\appOutletCar\templates\agregar_coche_formulario.html:84
+#: .\appOutletCar\templates\car.html:25
+#: .\appOutletCar\templates\car_detail.html:74
+#: .\appOutletCar\templates\formulario.html:75 .\appOutletCar\views.py:95
+#: .\appOutletCar\views.py:189
+msgid "Transmisión"
+msgstr "Transmission"
+
+#: .\appOutletCar\forms.py:17
+#: .\appOutletCar\templates\agregar_coche_formulario.html:66
+#: .\appOutletCar\templates\car.html:35
+#: .\appOutletCar\templates\car_detail.html:78 .\appOutletCar\views.py:97
+msgid "Combustible"
+msgstr "Fuel"
+
+#: .\appOutletCar\forms.py:18
+#: .\appOutletCar\templates\agregar_coche_formulario.html:75
+#: .\appOutletCar\templates\car.html:45
+#: .\appOutletCar\templates\car_detail.html:82 .\appOutletCar\views.py:99
+msgid "Tracción"
+msgstr "Traction"
+
+#: .\appOutletCar\forms.py:19
+#: .\appOutletCar\templates\agregar_coche_formulario.html:108
+msgid "Número de Puertas"
+msgstr "Number of Doors"
+
+#: .\appOutletCar\forms.py:20
+msgid "¿Es descapotable?"
+msgstr "Is it a convertible?"
+
+#: .\appOutletCar\forms.py:21
+#: .\appOutletCar\templates\agregar_coche_formulario.html:152
+msgid "Descripción"
+msgstr "Description"
+
+#: .\appOutletCar\forms.py:22
+#: .\appOutletCar\templates\agregar_coche_formulario.html:134
+#: .\appOutletCar\templates\base.html:58
+#: .\appOutletCar\templates\car_detail.html:46
+msgid "Categorías"
+msgstr "Categories"
+
+#: .\appOutletCar\forms.py:23
+msgid "Imagen del coche"
+msgstr "Picture of the car"
+
+#: .\appOutletCar\importar_coches_shell.py:7
+#: .\appOutletCar\importar_coches_shell.py:177
+#: .\appOutletCar\importar_coches_shell.py:346
+#: .\appOutletCar\importar_coches_shell.py:516
+#: .\appOutletCar\importar_coches_shell.py:666
+msgid "BMW"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:8
+msgid "Serie 3"
+msgstr "3 Series"
+
+#: .\appOutletCar\importar_coches_shell.py:11
+#: .\appOutletCar\importar_coches_shell.py:130
+#: .\appOutletCar\importar_coches_shell.py:198
+#: .\appOutletCar\importar_coches_shell.py:283
+#: .\appOutletCar\importar_coches_shell.py:317
+#: .\appOutletCar\importar_coches_shell.py:350
+#: .\appOutletCar\importar_coches_shell.py:469
+#: .\appOutletCar\importar_coches_shell.py:537
+#: .\appOutletCar\importar_coches_shell.py:571
+#: .\appOutletCar\importar_coches_shell.py:620
+#: .\appOutletCar\importar_coches_shell.py:686
+#: .\appOutletCar\importar_coches_shell.py:782
+#: .\appOutletCar\importar_coches_shell.py:878
+msgid "Negro"
+msgstr "Black"
+
+#: .\appOutletCar\importar_coches_shell.py:13
+#: .\appOutletCar\importar_coches_shell.py:30
+#: .\appOutletCar\importar_coches_shell.py:47
+#: .\appOutletCar\importar_coches_shell.py:98
+#: .\appOutletCar\importar_coches_shell.py:132
+#: .\appOutletCar\importar_coches_shell.py:149
+#: .\appOutletCar\importar_coches_shell.py:183
+#: .\appOutletCar\importar_coches_shell.py:200
+#: .\appOutletCar\importar_coches_shell.py:217
+#: .\appOutletCar\importar_coches_shell.py:234
+#: .\appOutletCar\importar_coches_shell.py:268
+#: .\appOutletCar\importar_coches_shell.py:285
+#: .\appOutletCar\importar_coches_shell.py:302
+#: .\appOutletCar\importar_coches_shell.py:319
+#: .\appOutletCar\importar_coches_shell.py:336
+#: .\appOutletCar\importar_coches_shell.py:352
+#: .\appOutletCar\importar_coches_shell.py:369
+#: .\appOutletCar\importar_coches_shell.py:386
+#: .\appOutletCar\importar_coches_shell.py:403
+#: .\appOutletCar\importar_coches_shell.py:437
+#: .\appOutletCar\importar_coches_shell.py:471
+#: .\appOutletCar\importar_coches_shell.py:488
+#: .\appOutletCar\importar_coches_shell.py:505
+#: .\appOutletCar\importar_coches_shell.py:522
+#: .\appOutletCar\importar_coches_shell.py:539
+#: .\appOutletCar\importar_coches_shell.py:556
+#: .\appOutletCar\importar_coches_shell.py:573
+#: .\appOutletCar\importar_coches_shell.py:590
+#: .\appOutletCar\importar_coches_shell.py:606
+#: .\appOutletCar\importar_coches_shell.py:622
+#: .\appOutletCar\importar_coches_shell.py:639
+#: .\appOutletCar\importar_coches_shell.py:655
+#: .\appOutletCar\importar_coches_shell.py:672
+#: .\appOutletCar\importar_coches_shell.py:688
+#: .\appOutletCar\importar_coches_shell.py:704
+#: .\appOutletCar\importar_coches_shell.py:720
+#: .\appOutletCar\importar_coches_shell.py:736
+#: .\appOutletCar\importar_coches_shell.py:752
+#: .\appOutletCar\importar_coches_shell.py:768
+#: .\appOutletCar\importar_coches_shell.py:784
+#: .\appOutletCar\importar_coches_shell.py:800
+#: .\appOutletCar\importar_coches_shell.py:816
+#: .\appOutletCar\importar_coches_shell.py:832
+#: .\appOutletCar\importar_coches_shell.py:848
+#: .\appOutletCar\importar_coches_shell.py:864
+#: .\appOutletCar\importar_coches_shell.py:880
+#: .\appOutletCar\importar_coches_shell.py:896 .\appOutletCar\models.py:9
+#: .\appOutletCar\templates\formulario.html:82 .\appOutletCar\views.py:108
+msgid "Automática"
+msgstr "Automatic"
+
+#: .\appOutletCar\importar_coches_shell.py:14
+#: .\appOutletCar\importar_coches_shell.py:48
+#: .\appOutletCar\importar_coches_shell.py:65
+#: .\appOutletCar\importar_coches_shell.py:82
+#: .\appOutletCar\importar_coches_shell.py:116
+#: .\appOutletCar\importar_coches_shell.py:133
+#: .\appOutletCar\importar_coches_shell.py:167
+#: .\appOutletCar\importar_coches_shell.py:184
+#: .\appOutletCar\importar_coches_shell.py:201
+#: .\appOutletCar\importar_coches_shell.py:218
+#: .\appOutletCar\importar_coches_shell.py:235
+#: .\appOutletCar\importar_coches_shell.py:252
+#: .\appOutletCar\importar_coches_shell.py:286
+#: .\appOutletCar\importar_coches_shell.py:337
+#: .\appOutletCar\importar_coches_shell.py:353
+#: .\appOutletCar\importar_coches_shell.py:404
+#: .\appOutletCar\importar_coches_shell.py:455
+#: .\appOutletCar\importar_coches_shell.py:523
+#: .\appOutletCar\importar_coches_shell.py:557
+#: .\appOutletCar\importar_coches_shell.py:574
+#: .\appOutletCar\importar_coches_shell.py:591
+#: .\appOutletCar\importar_coches_shell.py:607
+#: .\appOutletCar\importar_coches_shell.py:623
+#: .\appOutletCar\importar_coches_shell.py:656
+#: .\appOutletCar\importar_coches_shell.py:673
+#: .\appOutletCar\importar_coches_shell.py:689
+#: .\appOutletCar\importar_coches_shell.py:705
+#: .\appOutletCar\importar_coches_shell.py:737
+#: .\appOutletCar\importar_coches_shell.py:753
+#: .\appOutletCar\importar_coches_shell.py:785
+#: .\appOutletCar\importar_coches_shell.py:801
+#: .\appOutletCar\importar_coches_shell.py:817 .\appOutletCar\models.py:18
+#: .\appOutletCar\views.py:109
+msgid "Gasolina"
+msgstr "Gasoline"
+
+#: .\appOutletCar\importar_coches_shell.py:15
+#: .\appOutletCar\importar_coches_shell.py:66
+#: .\appOutletCar\importar_coches_shell.py:253
+#: .\appOutletCar\importar_coches_shell.py:524
+#: .\appOutletCar\importar_coches_shell.py:657
+#: .\appOutletCar\importar_coches_shell.py:674 .\appOutletCar\models.py:30
+#: .\appOutletCar\views.py:110
+msgid "Trasera"
+msgstr "Rear"
+
+#: .\appOutletCar\importar_coches_shell.py:18
+msgid ""
+"Un sedán deportivo que combina un diseño elegante con un rendimiento "
+"excepcional. Equipado con tecnología de punta, ofrece una experiencia de "
+"conducción dinámica y confort en el interior, ideal para quienes buscan "
+"estilo y potencia."
+msgstr ""
+"A sporty sedan that combines elegant design with exceptional performance. "
+"Equipped with cutting-edge technology, it offers a dynamic driving "
+"experience and comfort in the interior, ideal for those seeking style and "
+"power."
+
+#: .\appOutletCar\importar_coches_shell.py:21
+#: .\appOutletCar\importar_coches_shell.py:38
+#: .\appOutletCar\importar_coches_shell.py:55
+#: .\appOutletCar\importar_coches_shell.py:140
+#: .\appOutletCar\importar_coches_shell.py:157
+#: .\appOutletCar\importar_coches_shell.py:174
+#: .\appOutletCar\importar_coches_shell.py:208
+#: .\appOutletCar\importar_coches_shell.py:293
+#: .\appOutletCar\importar_coches_shell.py:343
+#: .\appOutletCar\importar_coches_shell.py:479
+#: .\appOutletCar\importar_coches_shell.py:496
+#: .\appOutletCar\importar_coches_shell.py:547
+#: .\appOutletCar\importar_coches_shell.py:695
+#: .\appOutletCar\importar_coches_shell.py:711
+#: .\appOutletCar\importar_coches_shell.py:759
+#: .\appOutletCar\importar_coches_shell.py:823
+msgid "Sedan"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:21
+#: .\appOutletCar\importar_coches_shell.py:72
+#: .\appOutletCar\importar_coches_shell.py:174
+#: .\appOutletCar\importar_coches_shell.py:225
+#: .\appOutletCar\importar_coches_shell.py:242
+#: .\appOutletCar\importar_coches_shell.py:259
+#: .\appOutletCar\importar_coches_shell.py:411
+#: .\appOutletCar\importar_coches_shell.py:530
+#: .\appOutletCar\importar_coches_shell.py:564
+#: .\appOutletCar\importar_coches_shell.py:663
+#: .\appOutletCar\importar_coches_shell.py:679
+#: .\appOutletCar\importar_coches_shell.py:743
+#: .\appOutletCar\importar_coches_shell.py:775
+msgid "Deportivo"
+msgstr "Sporty"
+
+#: .\appOutletCar\importar_coches_shell.py:24
+#: .\appOutletCar\importar_coches_shell.py:194
+#: .\appOutletCar\importar_coches_shell.py:363
+#: .\appOutletCar\importar_coches_shell.py:533
+#: .\appOutletCar\importar_coches_shell.py:682
+#: .\appOutletCar\importar_coches_shell.py:826
+#: .\appOutletCar\importar_coches_shell.py:890
+msgid "Mercedes"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:25
+msgid "Clase E"
+msgstr "E Class"
+
+#: .\appOutletCar\importar_coches_shell.py:28
+#: .\appOutletCar\importar_coches_shell.py:164
+#: .\appOutletCar\importar_coches_shell.py:215
+#: .\appOutletCar\importar_coches_shell.py:266
+#: .\appOutletCar\importar_coches_shell.py:452
+#: .\appOutletCar\importar_coches_shell.py:604
+#: .\appOutletCar\importar_coches_shell.py:653
+#: .\appOutletCar\importar_coches_shell.py:670
+#: .\appOutletCar\importar_coches_shell.py:846
+msgid "Gris"
+msgstr "Grey"
+
+#: .\appOutletCar\importar_coches_shell.py:31
+#: .\appOutletCar\importar_coches_shell.py:303
+#: .\appOutletCar\importar_coches_shell.py:387
+#: .\appOutletCar\importar_coches_shell.py:472
+#: .\appOutletCar\importar_coches_shell.py:833
+#: .\appOutletCar\importar_coches_shell.py:849
+#: .\appOutletCar\importar_coches_shell.py:865
+#: .\appOutletCar\importar_coches_shell.py:881
+#: .\appOutletCar\importar_coches_shell.py:897 .\appOutletCar\models.py:19
+#: .\appOutletCar\views.py:109
+msgid "Diésel"
+msgstr "Diesel"
+
+#: .\appOutletCar\importar_coches_shell.py:32
+#: .\appOutletCar\importar_coches_shell.py:83
+#: .\appOutletCar\importar_coches_shell.py:100
+#: .\appOutletCar\importar_coches_shell.py:117
+#: .\appOutletCar\importar_coches_shell.py:134
+#: .\appOutletCar\importar_coches_shell.py:168
+#: .\appOutletCar\importar_coches_shell.py:287
+#: .\appOutletCar\importar_coches_shell.py:422
+#: .\appOutletCar\importar_coches_shell.py:456
+#: .\appOutletCar\importar_coches_shell.py:473
+#: .\appOutletCar\importar_coches_shell.py:507
+#: .\appOutletCar\importar_coches_shell.py:608
+#: .\appOutletCar\importar_coches_shell.py:706
+#: .\appOutletCar\importar_coches_shell.py:722
+#: .\appOutletCar\importar_coches_shell.py:738
+#: .\appOutletCar\importar_coches_shell.py:754
+#: .\appOutletCar\importar_coches_shell.py:786
+#: .\appOutletCar\importar_coches_shell.py:802
+#: .\appOutletCar\importar_coches_shell.py:834
+#: .\appOutletCar\importar_coches_shell.py:850
+#: .\appOutletCar\importar_coches_shell.py:866
+#: .\appOutletCar\importar_coches_shell.py:882
+#: .\appOutletCar\importar_coches_shell.py:898 .\appOutletCar\models.py:29
+#: .\appOutletCar\views.py:110
+msgid "Delantera"
+msgstr "Front wheel"
+
+#: .\appOutletCar\importar_coches_shell.py:35
+msgid ""
+"Sedán de lujo, ideal para viajes largos. Con un diseño elegante y "
+"aerodinámico, ofrece una cabina espaciosa y equipada con tecnología "
+"avanzada, perfecta para quienes buscan confort y estilo en la carretera."
+msgstr ""
+"Luxury sedan, ideal for long trips. With an elegant and aerodynamic design, "
+"it offers a spacious cabin equipped with advanced technology, perfect for "
+"those seeking comfort and style on the road."
+
+#: .\appOutletCar\importar_coches_shell.py:38
+#: .\appOutletCar\importar_coches_shell.py:89
+#: .\appOutletCar\importar_coches_shell.py:123
+#: .\appOutletCar\importar_coches_shell.py:191
+#: .\appOutletCar\importar_coches_shell.py:208
+#: .\appOutletCar\importar_coches_shell.py:225
+#: .\appOutletCar\importar_coches_shell.py:242
+#: .\appOutletCar\importar_coches_shell.py:276
+#: .\appOutletCar\importar_coches_shell.py:343
+#: .\appOutletCar\importar_coches_shell.py:360
+#: .\appOutletCar\importar_coches_shell.py:377
+#: .\appOutletCar\importar_coches_shell.py:394
+#: .\appOutletCar\importar_coches_shell.py:411
+#: .\appOutletCar\importar_coches_shell.py:428
+#: .\appOutletCar\importar_coches_shell.py:445
+#: .\appOutletCar\importar_coches_shell.py:462
+#: .\appOutletCar\importar_coches_shell.py:479
+#: .\appOutletCar\importar_coches_shell.py:513
+#: .\appOutletCar\importar_coches_shell.py:597
+#: .\appOutletCar\importar_coches_shell.py:613
+#: .\appOutletCar\importar_coches_shell.py:630
+#: .\appOutletCar\importar_coches_shell.py:791
+#: .\appOutletCar\importar_coches_shell.py:807
+msgid "Familiar"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:41
+#: .\appOutletCar\importar_coches_shell.py:211
+#: .\appOutletCar\importar_coches_shell.py:380
+#: .\appOutletCar\importar_coches_shell.py:550
+#: .\appOutletCar\importar_coches_shell.py:698
+msgid "Audi"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:42
+msgid "A4"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:45
+#: .\appOutletCar\importar_coches_shell.py:147
+#: .\appOutletCar\importar_coches_shell.py:181
+#: .\appOutletCar\importar_coches_shell.py:300
+#: .\appOutletCar\importar_coches_shell.py:637
+#: .\appOutletCar\importar_coches_shell.py:798
+#: .\appOutletCar\importar_coches_shell.py:830
+#: .\appOutletCar\importar_coches_shell.py:894
+msgid "Blanco"
+msgstr "White"
+
+#: .\appOutletCar\importar_coches_shell.py:49
+#: .\appOutletCar\importar_coches_shell.py:151
+#: .\appOutletCar\importar_coches_shell.py:185
+#: .\appOutletCar\importar_coches_shell.py:202
+#: .\appOutletCar\importar_coches_shell.py:219
+#: .\appOutletCar\importar_coches_shell.py:236
+#: .\appOutletCar\importar_coches_shell.py:270
+#: .\appOutletCar\importar_coches_shell.py:304
+#: .\appOutletCar\importar_coches_shell.py:321
+#: .\appOutletCar\importar_coches_shell.py:338
+#: .\appOutletCar\importar_coches_shell.py:354
+#: .\appOutletCar\importar_coches_shell.py:371
+#: .\appOutletCar\importar_coches_shell.py:388
+#: .\appOutletCar\importar_coches_shell.py:405
+#: .\appOutletCar\importar_coches_shell.py:439
+#: .\appOutletCar\importar_coches_shell.py:490
+#: .\appOutletCar\importar_coches_shell.py:541
+#: .\appOutletCar\importar_coches_shell.py:558
+#: .\appOutletCar\importar_coches_shell.py:575
+#: .\appOutletCar\importar_coches_shell.py:592
+#: .\appOutletCar\importar_coches_shell.py:624
+#: .\appOutletCar\importar_coches_shell.py:641
+#: .\appOutletCar\importar_coches_shell.py:690
+#: .\appOutletCar\importar_coches_shell.py:770
+#: .\appOutletCar\importar_coches_shell.py:818 .\appOutletCar\models.py:31
+#: .\appOutletCar\views.py:110
+msgid "Total"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:52
+msgid ""
+"Una mezcla perfecta de lujo y rendimiento. Con un diseño moderno y un "
+"interior cómodo, este sedán es ideal para quienes buscan un vehículo "
+"versátil, refinado y que garantice una experiencia de conducción excepcional."
+msgstr ""
+"A perfect blend of luxury and performance. With a modern design and a "
+"comfortable interior, this sedan is ideal for those seeking a versatile, "
+"refined vehicle that ensures an exceptional driving experience."
+
+#: .\appOutletCar\importar_coches_shell.py:58
+#: .\appOutletCar\importar_coches_shell.py:228
+#: .\appOutletCar\importar_coches_shell.py:397
+#: .\appOutletCar\importar_coches_shell.py:567
+#: .\appOutletCar\importar_coches_shell.py:810
+msgid "Porsche"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:59
+msgid "911"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:62
+#: .\appOutletCar\importar_coches_shell.py:113
+#: .\appOutletCar\importar_coches_shell.py:249
+#: .\appOutletCar\importar_coches_shell.py:418
+#: .\appOutletCar\importar_coches_shell.py:520
+#: .\appOutletCar\importar_coches_shell.py:734
+#: .\appOutletCar\importar_coches_shell.py:814
+msgid "Rojo"
+msgstr "Red"
+
+#: .\appOutletCar\importar_coches_shell.py:64
+#: .\appOutletCar\importar_coches_shell.py:81
+#: .\appOutletCar\importar_coches_shell.py:115
+#: .\appOutletCar\importar_coches_shell.py:166
+#: .\appOutletCar\importar_coches_shell.py:251
+#: .\appOutletCar\importar_coches_shell.py:420
+#: .\appOutletCar\importar_coches_shell.py:454 .\appOutletCar\models.py:8
+#: .\appOutletCar\templates\formulario.html:78 .\appOutletCar\views.py:108
+msgid "Manual"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:69
+msgid ""
+"Deportivo de alto rendimiento para amantes de la velocidad. Un símbolo de "
+"elegancia y tecnología avanzada, este vehículo es ideal para una experiencia "
+"de conducción inigualable y pura adrenalina."
+msgstr ""
+"High-performance sports car for speed enthusiasts. A symbol of elegance and "
+"advanced technology, this vehicle is ideal for an unmatched driving "
+"experience and pure adrenaline."
+
+#: .\appOutletCar\importar_coches_shell.py:72
+#: .\appOutletCar\importar_coches_shell.py:123
+#: .\appOutletCar\importar_coches_shell.py:259
+msgid "Coupé"
+msgstr "Coupe"
+
+#: .\appOutletCar\importar_coches_shell.py:75
+#: .\appOutletCar\importar_coches_shell.py:245
+#: .\appOutletCar\importar_coches_shell.py:414
+#: .\appOutletCar\importar_coches_shell.py:584
+#: .\appOutletCar\importar_coches_shell.py:746
+#: .\appOutletCar\importar_coches_shell.py:858
+msgid "Ford"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:76
+msgid "Fiesta"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:79
+#: .\appOutletCar\importar_coches_shell.py:232
+#: .\appOutletCar\importar_coches_shell.py:334
+#: .\appOutletCar\importar_coches_shell.py:588
+#: .\appOutletCar\importar_coches_shell.py:702
+#: .\appOutletCar\importar_coches_shell.py:750
+#: .\appOutletCar\importar_coches_shell.py:862
+msgid "Azul"
+msgstr "Blue"
+
+#: .\appOutletCar\importar_coches_shell.py:86
+msgid ""
+"Económico y práctico para la ciudad. Su diseño moderno y economía de "
+"combustible lo convierten en una opción versátil y fácil de manejar en el "
+"tráfico urbano."
+msgstr ""
+"Economical and practical for the city. Its modern design and fuel efficiency "
+"make it a versatile choice that is easy to handle in urban traffic."
+
+#: .\appOutletCar\importar_coches_shell.py:92
+#: .\appOutletCar\importar_coches_shell.py:262
+#: .\appOutletCar\importar_coches_shell.py:431
+#: .\appOutletCar\importar_coches_shell.py:649
+#: .\appOutletCar\importar_coches_shell.py:714
+#: .\appOutletCar\importar_coches_shell.py:874
+msgid "Toyota"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:93
+msgid "Prius"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:96
+#: .\appOutletCar\importar_coches_shell.py:718
+msgid "Verde"
+msgstr "Green"
+
+#: .\appOutletCar\importar_coches_shell.py:99
+#: .\appOutletCar\importar_coches_shell.py:269
+#: .\appOutletCar\importar_coches_shell.py:370
+#: .\appOutletCar\importar_coches_shell.py:421
+#: .\appOutletCar\importar_coches_shell.py:438
+#: .\appOutletCar\importar_coches_shell.py:506
+#: .\appOutletCar\importar_coches_shell.py:721 .\appOutletCar\models.py:21
+#: .\appOutletCar\views.py:109
+msgid "Híbrido"
+msgstr "Hybrid"
+
+#: .\appOutletCar\importar_coches_shell.py:103
+msgid ""
+"El clásico híbrido, perfecto para un consumo eficiente. Su diseño "
+"aerodinámico y tecnología de vanguardia hacen de este vehículo una excelente "
+"opción para quienes buscan sostenibilidad."
+msgstr ""
+"The classic hybrid, perfect for efficient fuel consumption. Its aerodynamic "
+"design and cutting-edge technology make this vehicle an excellent choice for "
+"those seeking sustainability."
+
+#: .\appOutletCar\importar_coches_shell.py:106
+#: .\appOutletCar\importar_coches_shell.py:157
+#: .\appOutletCar\importar_coches_shell.py:276
+#: .\appOutletCar\importar_coches_shell.py:377
+#: .\appOutletCar\importar_coches_shell.py:428
+#: .\appOutletCar\importar_coches_shell.py:445
+#: .\appOutletCar\importar_coches_shell.py:496
+#: .\appOutletCar\importar_coches_shell.py:513
+#: .\appOutletCar\importar_coches_shell.py:547
+#: .\appOutletCar\importar_coches_shell.py:646
+#: .\appOutletCar\importar_coches_shell.py:727
+#: .\appOutletCar\importar_coches_shell.py:775
+msgid "Híbrido-Eléctrico"
+msgstr "Hybrid-Electric"
+
+#: .\appOutletCar\importar_coches_shell.py:109
+#: .\appOutletCar\importar_coches_shell.py:279
+#: .\appOutletCar\importar_coches_shell.py:448
+#: .\appOutletCar\importar_coches_shell.py:600
+#: .\appOutletCar\importar_coches_shell.py:794
+msgid "Seat"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:110
+msgid "Ibiza"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:120
+msgid ""
+"Compacto y ágil, ideal para la ciudad. Su tamaño reducido facilita el "
+"estacionamiento y la maniobrabilidad, mientras que su interior cómodo "
+"asegura un viaje agradable."
+msgstr ""
+"Compact and agile, ideal for the city. Its small size makes parking and "
+"maneuvering easier, while its comfortable interior ensures an enjoyable "
+"journey."
+
+#: .\appOutletCar\importar_coches_shell.py:126
+#: .\appOutletCar\importar_coches_shell.py:296
+#: .\appOutletCar\importar_coches_shell.py:465
+#: .\appOutletCar\importar_coches_shell.py:730
+#: .\appOutletCar\importar_coches_shell.py:842
+msgid "Volkswagen"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:127
+msgid "Golf"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:137
+msgid ""
+"Un compacto premium con tecnología avanzada. Con su diseño moderno y "
+"características de seguridad, es perfecto para conductores que buscan un "
+"vehículo confiable y elegante."
+msgstr ""
+"A premium compact car with advanced technology. With its modern design and "
+"safety features, it is perfect for drivers seeking a reliable and stylish "
+"vehicle."
+
+#: .\appOutletCar\importar_coches_shell.py:143
+#: .\appOutletCar\importar_coches_shell.py:313
+#: .\appOutletCar\importar_coches_shell.py:482
+#: .\appOutletCar\importar_coches_shell.py:633
+#: .\appOutletCar\importar_coches_shell.py:762
+msgid "Tesla"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:144
+msgid "Model 3"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:150
+#: .\appOutletCar\importar_coches_shell.py:320
+#: .\appOutletCar\importar_coches_shell.py:489
+#: .\appOutletCar\importar_coches_shell.py:540
+#: .\appOutletCar\importar_coches_shell.py:640
+#: .\appOutletCar\importar_coches_shell.py:769 .\appOutletCar\models.py:20
+#: .\appOutletCar\views.py:109
+msgid "Eléctrico"
+msgstr "Electric"
+
+#: .\appOutletCar\importar_coches_shell.py:154
+msgid ""
+"Eléctrico asequible y de alto rendimiento. Su diseño minimalista y "
+"tecnología de conducción autónoma lo hacen ideal para aquellos que buscan un "
+"futuro más sostenible en el transporte."
+msgstr ""
+"Affordable and high-performance electric vehicle. Its minimalist design and "
+"autonomous driving technology make it ideal for those seeking a more "
+"sustainable future in transportation."
+
+#: .\appOutletCar\importar_coches_shell.py:160
+#: .\appOutletCar\importar_coches_shell.py:330
+#: .\appOutletCar\importar_coches_shell.py:499
+#: .\appOutletCar\importar_coches_shell.py:616
+#: .\appOutletCar\importar_coches_shell.py:778
+msgid "Honda"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:161
+msgid "Civic"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:171
+msgid ""
+"Popular compacto con excelente rendimiento de combustible. Su diseño "
+"atractivo y características de seguridad hacen de este modelo una opción "
+"confiable para el día a día."
+msgstr ""
+"Popular compact car with excellent fuel efficiency. Its attractive design "
+"and safety features make this model a reliable choice for everyday use."
+
+#: .\appOutletCar\importar_coches_shell.py:178
+msgid "X5"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:188
+msgid ""
+"El BMW X5 es un SUV de lujo que combina un diseño elegante con un "
+"rendimiento excepcional. Con tracción total, ofrece una conducción segura en "
+"diversas condiciones climáticas. Su interior espacioso está equipado con "
+"tecnología avanzada, incluyendo un sistema de infoentretenimiento intuitivo "
+"y asientos cómodos, lo que lo convierte en una excelente opción para "
+"familias que buscan confort y estilo."
+msgstr ""
+"The BMW X5 is a luxury SUV that combines elegant design with exceptional "
+"performance. With all-wheel drive, it offers a safe drive in various weather "
+"conditions. Its spacious interior is equipped with advanced technology, "
+"including an intuitive infotainment system and comfortable seating, making "
+"it an excellent choice for families seeking comfort and style."
+
+#: .\appOutletCar\importar_coches_shell.py:195
+msgid "GLE"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:205
+msgid ""
+"El Mercedes GLE es un SUV elegante y robusto que ofrece un amplio espacio "
+"interior y un rendimiento dinámico. Su sistema de tracción total y la "
+"suspensión adaptativa aseguran una conducción suave y segura, incluso en "
+"terrenos difíciles. Con un enfoque en la comodidad y la tecnología avanzada, "
+"este vehículo es perfecto para aquellos que buscan un lujo práctico y "
+"funcional."
+msgstr ""
+"The Mercedes GLE is an elegant and robust SUV that offers a spacious "
+"interior and dynamic performance. Its all-wheel-drive system and adaptive "
+"suspension ensure a smooth and safe ride, even on difficult terrain. With a "
+"focus on comfort and advanced technology, this vehicle is perfect for those "
+"seeking practical and functional luxury."
+
+#: .\appOutletCar\importar_coches_shell.py:212
+#: .\appOutletCar\importar_coches_shell.py:381
+msgid "Q7"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:222
+msgid ""
+"El Audi Q7 es un SUV grande y espacioso, ideal para familias numerosas. Con "
+"un motor potente y tracción total, ofrece un excelente rendimiento en "
+"carretera y fuera de ella. Su interior lujoso está diseñado con materiales "
+"de alta calidad y tecnología de vanguardia, incluyendo un sistema de "
+"infoentretenimiento completo, lo que garantiza comodidad y diversión en cada "
+"viaje."
+msgstr ""
+"The Audi Q7 is a large and spacious SUV, ideal for large families. With a "
+"powerful engine and all-wheel drive, it offers excellent performance both on "
+"and off-road. Its luxurious interior is designed with high-quality materials "
+"and cutting-edge technology, including a comprehensive infotainment system, "
+"ensuring comfort and entertainment on every journey."
+
+#: .\appOutletCar\importar_coches_shell.py:229
+#: .\appOutletCar\importar_coches_shell.py:568
+msgid "Cayenne"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:239
+msgid ""
+"El Porsche Cayenne es un SUV de lujo que ofrece un rendimiento excepcional y "
+"una experiencia de conducción inigualable. Con su potente motor y tracción "
+"total, puede acelerar de 0 a 100 km/h en un tiempo impresionante. El "
+"interior es un refugio de confort, con asientos de cuero de alta calidad y "
+"tecnología avanzada, ofreciendo tanto lujo como funcionalidad."
+msgstr ""
+"The Porsche Cayenne is a luxury SUV that offers exceptional performance and "
+"an unparalleled driving experience. With its powerful engine and all-wheel "
+"drive, it can accelerate from 0 to 100 km/h in an impressive time. The "
+"interior is a haven of comfort, with high-quality leather seats and advanced "
+"technology, offering both luxury and functionality."
+
+#: .\appOutletCar\importar_coches_shell.py:246
+msgid "Mustang"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:256
+msgid ""
+"El Ford Mustang es un ícono deportivo estadounidense que combina potencia y "
+"estilo en un solo paquete. Su motor V8 ofrece una aceleración emocionante y "
+"un sonido inconfundible. El diseño descapotable proporciona una experiencia "
+"de conducción al aire libre, mientras que el interior moderno y las "
+"características tecnológicas avanzadas aseguran que cada viaje sea memorable "
+"y cómodo."
+msgstr ""
+"The Ford Mustang is an American sports icon that combines power and style in "
+"one package. Its V8 engine offers thrilling acceleration and an unmistakable "
+"sound. The convertible design provides an open-air driving experience, while "
+"the modern interior and advanced technological features ensure every journey "
+"is both memorable and comfortable."
+
+#: .\appOutletCar\importar_coches_shell.py:263
+#: .\appOutletCar\importar_coches_shell.py:432
+msgid "RAV4"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:273
+msgid ""
+"El Toyota RAV4 es un SUV híbrido que combina eficiencia de combustible con "
+"un rendimiento confiable. Su diseño robusto y espacioso es perfecto para "
+"aventuras familiares, y la tracción total proporciona seguridad en diversas "
+"condiciones. Con un interior bien equipado y características de seguridad "
+"avanzadas, es una opción práctica y ecológica para los conductores modernos."
+msgstr ""
+"The Toyota RAV4 is a hybrid SUV that combines fuel efficiency with reliable "
+"performance. Its rugged and spacious design is perfect for family "
+"adventures, and its all-wheel drive provides safety in various conditions. "
+"With a well-equipped interior and advanced safety features, it is a "
+"practical and eco-friendly choice for modern drivers."
+
+#: .\appOutletCar\importar_coches_shell.py:280
+msgid "León"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:290
+msgid ""
+"El Seat León es un hatchback ágil y moderno que destaca por su diseño "
+"deportivo y tecnología avanzada. Con una conducción dinámica y eficiente, es "
+"ideal para la vida urbana y los desplazamientos diarios. Su interior ofrece "
+"comodidad y espacio, con un enfoque en la conectividad y la seguridad, lo "
+"que lo convierte en una excelente opción para jóvenes conductores."
+msgstr ""
+"The Seat León is a nimble and modern hatchback that stands out for its "
+"sporty design and advanced technology. With dynamic and efficient driving, "
+"it is ideal for urban life and daily commuting. Its interior offers comfort "
+"and space, with a focus on connectivity and safety, making it an excellent "
+"choice for young drivers."
+
+#: .\appOutletCar\importar_coches_shell.py:297
+msgid "Tiguan"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:307
+msgid ""
+"El Volkswagen Tiguan es un SUV diésel con tracción total que ofrece un gran "
+"espacio interior y una conducción cómoda. Su diseño robusto y "
+"características de seguridad avanzadas lo convierten en una excelente opción "
+"para familias y aventureros. Además, su eficiente motor diésel garantiza un "
+"consumo de combustible razonable, lo que lo hace perfecto para viajes largos."
+msgstr ""
+"The Volkswagen Tiguan is a diesel SUV with all-wheel drive that offers ample "
+"interior space and a comfortable ride. Its rugged design and advanced safety "
+"features make it an excellent choice for families and adventurers. "
+"Additionally, its efficient diesel engine ensures reasonable fuel "
+"consumption, making it perfect for long trips."
+
+#: .\appOutletCar\importar_coches_shell.py:314
+msgid "Model X"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:324
+msgid ""
+"El Tesla Model X es un SUV eléctrico que destaca por su diseño innovador y "
+"sus características únicas, como las puertas de halcón. Con una autonomía "
+"excepcional y un rendimiento ágil, ofrece una experiencia de conducción "
+"ecológica y emocionante. El interior es espacioso y está lleno de tecnología "
+"avanzada, lo que garantiza un viaje cómodo y conectado para toda la familia."
+msgstr ""
+" The Tesla Model X is an electric SUV that stands out for its innovative "
+"design and unique features, such as its Falcon Wing doors. With exceptional "
+"range and agile performance, it offers an eco-friendly and exciting driving "
+"experience. The interior is spacious and filled with advanced technology, "
+"ensuring a comfortable and connected journey for the entire family."
+
+#: .\appOutletCar\importar_coches_shell.py:331
+msgid "CR-V"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:341
+msgid ""
+"El Honda CR-V es un SUV compacto que combina confiabilidad y eficiencia. Su "
+"diseño práctico ofrece un amplio espacio interior, ideal para familias. La "
+"tracción total proporciona seguridad en diferentes condiciones climáticas, y "
+"su reputación de bajo mantenimiento lo convierte en una opción inteligente a "
+"largo plazo."
+msgstr ""
+"The Honda CR-V is a compact SUV that combines reliability and efficiency. "
+"Its practical design offers ample interior space, ideal for families. All-"
+"wheel drive provides safety in various weather conditions, and its "
+"reputation for low maintenance makes it a smart long-term choice."
+
+#: .\appOutletCar\importar_coches_shell.py:347
+msgid "X3"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:357
+msgid ""
+"El BMW X3 es un SUV compacto de lujo con tracción total y un diseño moderno. "
+"Ofrece un motor de gasolina potente y una experiencia de conducción "
+"equilibrada entre confort y deportividad, perfecto tanto para la ciudad como "
+"para viajes largos."
+msgstr ""
+"The BMW X3 is a luxury compact SUV with all-wheel drive and a modern design. "
+"It offers a powerful gasoline engine and a driving experience that balances "
+"comfort and sportiness, making it perfect for both city driving and long "
+"trips."
+
+#: .\appOutletCar\importar_coches_shell.py:364
+msgid "GLC"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:367
+msgid "Plata"
+msgstr "Silver"
+
+#: .\appOutletCar\importar_coches_shell.py:374
+msgid ""
+"El Mercedes GLC es un SUV híbrido que combina lujo y eficiencia. Con "
+"tracción total y un sistema híbrido avanzado, proporciona un excelente "
+"rendimiento tanto en carretera como fuera de ella, ideal para conductores "
+"que buscan un vehículo versátil y elegante."
+msgstr ""
+"The Mercedes GLC is a hybrid SUV that combines luxury and efficiency. With "
+"all-wheel drive and an advanced hybrid system, it delivers excellent "
+"performance both on and off-road, making it ideal for drivers seeking a "
+"versatile and stylish vehicle."
+
+#: .\appOutletCar\importar_coches_shell.py:384
+msgid "Gris Metálico"
+msgstr "Metallic Gray"
+
+#: .\appOutletCar\importar_coches_shell.py:391
+msgid ""
+"El Audi Q7 es un SUV grande y lujoso con tracción total y un motor diésel "
+"potente. Destaca por su amplio espacio interior, ideal para familias, y su "
+"avanzada tecnología de asistencia al conductor, lo que lo convierte en un "
+"vehículo cómodo y seguro en largas travesías."
+msgstr ""
+"The Audi Q7 is a large, luxurious SUV with all-wheel drive and a powerful "
+"diesel engine. It stands out for its spacious interior, ideal for families, "
+"and its advanced driver assistance technology, making it a comfortable and "
+"safe vehicle for long journeys."
+
+#: .\appOutletCar\importar_coches_shell.py:398
+msgid "Macan"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:401
+#: .\appOutletCar\importar_coches_shell.py:503
+msgid "Blanco Perla"
+msgstr "Perl White"
+
+#: .\appOutletCar\importar_coches_shell.py:408
+msgid ""
+"El Porsche Macan es un SUV deportivo que combina el rendimiento "
+"característico de Porsche con la comodidad de un todoterreno. Ideal para "
+"quienes buscan un vehículo con espíritu deportivo y capacidad para la "
+"familia, con tracción total y un motor de gasolina ágil."
+msgstr ""
+"The Porsche Macan is a sporty SUV that combines Porsche's signature "
+"performance with the comfort of an all-terrain vehicle. Ideal for those "
+"seeking a vehicle with a sporty spirit and family capabilities, it features "
+"all-wheel drive and a nimble gasoline engine."
+
+#: .\appOutletCar\importar_coches_shell.py:415
+msgid "Kuga"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:425
+msgid ""
+"El Ford Kuga es un SUV híbrido compacto y eficiente, con tracción delantera. "
+"Diseñado para ofrecer una gran economía de combustible sin sacrificar el "
+"rendimiento, es ideal para conducir en ciudad o realizar viajes largos con "
+"comodidad."
+msgstr ""
+"The Ford Kuga is a compact and efficient hybrid SUV with front-wheel drive. "
+"Designed to offer excellent fuel economy without sacrificing performance, it "
+"is ideal for city driving or long trips with comfort."
+
+#: .\appOutletCar\importar_coches_shell.py:435
+msgid "Verde Oscuro"
+msgstr "Dark Green"
+
+#: .\appOutletCar\importar_coches_shell.py:442
+msgid ""
+"El Toyota RAV4 es un SUV híbrido compacto que ofrece un excelente equilibrio "
+"entre rendimiento, economía de combustible y capacidad todoterreno. Con "
+"tracción total, es perfecto para familias activas que buscan un vehículo "
+"versátil y fiable."
+msgstr ""
+"The Toyota RAV4 is a compact hybrid SUV that offers an excellent balance of "
+"performance, fuel economy, and off-road capability. With all-wheel drive, it "
+"is perfect for active families seeking a versatile and reliable vehicle."
+
+#: .\appOutletCar\importar_coches_shell.py:449
+#: .\appOutletCar\importar_coches_shell.py:601
+msgid "Arona"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:459
+msgid ""
+"El Seat Arona es un SUV compacto ágil y económico, ideal para la conducción "
+"urbana. Su diseño juvenil y motor eficiente lo convierten en una opción "
+"excelente para quienes buscan un vehículo compacto pero con espacio "
+"suficiente para la familia o amigos."
+msgstr ""
+"The Seat Arona is a compact, agile, and economical SUV, ideal for urban "
+"driving. Its youthful design and efficient engine make it an excellent "
+"choice for those seeking a compact vehicle with enough space for family or "
+"friends."
+
+#: .\appOutletCar\importar_coches_shell.py:466
+msgid "Passat"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:476
+msgid ""
+"El Volkswagen Passat es un sedán de tamaño medio que destaca por su "
+"tecnología avanzada, su confort y su eficiencia. Con un motor diésel, es "
+"ideal para quienes buscan un vehículo duradero y con gran autonomía, "
+"perfecto tanto para viajes largos como para uso diario."
+msgstr ""
+"The Volkswagen Passat is a mid-size sedan that stands out for its advanced "
+"technology, comfort, and efficiency. With a diesel engine, it is ideal for "
+"those seeking a durable vehicle with great range, perfect for both long "
+"trips and daily use."
+
+#: .\appOutletCar\importar_coches_shell.py:483
+msgid "Model S"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:486
+#: .\appOutletCar\importar_coches_shell.py:766
+msgid "Plateado"
+msgstr "Silver"
+
+#: .\appOutletCar\importar_coches_shell.py:493
+msgid ""
+"El Tesla Model S es una berlina completamente eléctrica con una "
+"impresionante autonomía y rendimiento. Ofrece tecnología de conducción "
+"autónoma, una aceleración increíble y un diseño elegante, haciéndolo ideal "
+"para quienes buscan el futuro de la movilidad."
+msgstr ""
+"The Tesla Model S is a fully electric sedan with impressive range and "
+"performance. It offers autonomous driving technology, incredible "
+"acceleration, and an elegant design, making it ideal for those seeking the "
+"future of mobility."
+
+#: .\appOutletCar\importar_coches_shell.py:500
+msgid "Jazz"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:510
+msgid ""
+"El Honda Jazz es un compacto urbano que destaca por su gran eficiencia y "
+"espacio interior pese a su tamaño reducido. Equipado con un motor híbrido, "
+"es ideal para quienes buscan un coche económico y amigable con el medio "
+"ambiente, perfecto para la conducción en ciudad y con un diseño moderno."
+msgstr ""
+"The Honda Jazz is an urban compact car that stands out for its great "
+"efficiency and interior space despite its small size. Equipped with a hybrid "
+"engine, it is ideal for those seeking an economical and environmentally "
+"friendly car, perfect for city driving and featuring a modern design."
+
+#: .\appOutletCar\importar_coches_shell.py:517
+msgid "Z4"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:527
+msgid ""
+"El BMW Z4 es un roadster deportivo que combina un diseño elegante con un "
+"rendimiento sobresaliente. Con su motor potente y tracción trasera, ofrece "
+"una experiencia de conducción emocionante y abierta, ideal para los amantes "
+"de la velocidad y la aventura en la carretera."
+msgstr ""
+"The BMW Z4 is a sporty roadster that combines elegant design with "
+"outstanding performance. With its powerful engine and rear-wheel drive, it "
+"offers an exciting and open driving experience, ideal for speed enthusiasts "
+"and adventure seekers on the road."
+
+#: .\appOutletCar\importar_coches_shell.py:534
+msgid "EQS"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:544
+msgid ""
+"El Mercedes EQS redefine el lujo en la era eléctrica. Con un diseño "
+"futurista, tecnología de vanguardia y una autonomía excepcional, es la "
+"berlina eléctrica perfecta para quienes buscan confort y sostenibilidad, sin "
+"sacrificar el rendimiento."
+msgstr ""
+"The Mercedes EQS redefines luxury in the electric age. With its futuristic "
+"design, cutting-edge technology, and exceptional range, it is the perfect "
+"electric sedan for those seeking comfort and sustainability without "
+"compromising performance."
+
+#: .\appOutletCar\importar_coches_shell.py:551
+msgid "R8"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:554
+msgid "Gris Platino"
+msgstr "Silver Gray"
+
+#: .\appOutletCar\importar_coches_shell.py:561
+msgid ""
+"El Audi R8 es un superdeportivo que combina un diseño impresionante con un "
+"motor V10 potente. Con tracción total, acelera de 0 a 100 km/h en solo unos "
+"segundos, ofreciendo una experiencia de conducción inigualable en circuito y "
+"en carretera."
+msgstr ""
+"The Audi R8 is a supercar that combines an impressive design with a powerful "
+"V10 engine. With all-wheel drive, it accelerates from 0 to 100 km/h in just "
+"a few seconds, offering an unmatched driving experience on both the track "
+"and the road."
+
+#: .\appOutletCar\importar_coches_shell.py:578
+msgid ""
+"El Porsche Cayenne es un SUV de lujo que combina un rendimiento excepcional "
+"con un diseño elegante. Equipado con potentes motores y una tracción total "
+"que garantiza una conducción dinámica, es ideal para aquellos que buscan "
+"estilo y versatilidad en un solo vehículo."
+msgstr ""
+"The Porsche Cayenne is a luxury SUV that combines exceptional performance "
+"with an elegant design. Equipped with powerful engines and all-wheel drive "
+"that ensures a dynamic driving experience, it is ideal for those seeking "
+"style and versatility in one vehicle."
+
+#: .\appOutletCar\importar_coches_shell.py:585
+msgid "Explorer"
+msgstr "Explorer"
+
+#: .\appOutletCar\importar_coches_shell.py:595
+msgid ""
+"El Ford Explorer es un SUV de tamaño mediano que ofrece una combinación "
+"perfecta de espacio, comodidad y rendimiento. Con un interior versátil y "
+"tecnología avanzada, es ideal para familias que buscan aventuras y comodidad "
+"en sus viajes."
+msgstr ""
+"The Ford Explorer is a mid-size SUV that offers the perfect combination of "
+"space, comfort, and performance. With a versatile interior and advanced "
+"technology, it is ideal for families seeking adventure and comfort on their "
+"journeys."
+
+#: .\appOutletCar\importar_coches_shell.py:611
+msgid ""
+"El Seat Arona es un SUV subcompacto que destaca por su diseño juvenil y su "
+"excelente relación calidad-precio. Con un motor eficiente y un interior "
+"moderno, es perfecto para la conducción urbana y aventuras familiares."
+msgstr ""
+"The Seat Arona is a subcompact SUV that stands out for its youthful design "
+"and excellent value for money. With an efficient engine and a modern "
+"interior, it is perfect for urban driving and family adventures."
+
+#: .\appOutletCar\importar_coches_shell.py:617
+msgid "Pilot"
+msgstr "Pilot"
+
+#: .\appOutletCar\importar_coches_shell.py:627
+msgid ""
+"El Honda Pilot es un SUV de tamaño completo que ofrece un amplio espacio "
+"para hasta ocho pasajeros. Con su tracción total y tecnología avanzada de "
+"seguridad, es perfecto para familias que buscan comodidad y seguridad en "
+"todos sus viajes."
+msgstr ""
+"The Honda Pilot is a full-size SUV that offers ample space for up to eight "
+"passengers. With its all-wheel drive and advanced safety technology, it is "
+"perfect for families seeking comfort and safety on all their trips."
+
+#: .\appOutletCar\importar_coches_shell.py:634
+msgid "Model Y"
+msgstr "Model Y"
+
+#: .\appOutletCar\importar_coches_shell.py:644
+msgid ""
+"El Tesla Model Y es un SUV totalmente eléctrico que ofrece un rendimiento "
+"impresionante, amplio espacio interior y tecnología de conducción autónoma. "
+"Con una autonomía sobresaliente y un diseño moderno, es perfecto para "
+"quienes buscan un vehículo sostenible y práctico para la familia."
+msgstr ""
+"The Tesla Model Y is a fully electric SUV that offers impressive "
+"performance, ample interior space, and autonomous driving technology. With "
+"outstanding range and a modern design, it is perfect for those seeking a "
+"sustainable and practical family vehicle."
+
+#: .\appOutletCar\importar_coches_shell.py:650
+msgid "Supra"
+msgstr "Supra"
+
+#: .\appOutletCar\importar_coches_shell.py:660
+msgid ""
+"El Toyota Supra es un coupé deportivo que destaca por su diseño agresivo y "
+"su excepcional rendimiento. Equipado con un motor turboalimentado, ofrece "
+"una experiencia de conducción ágil y emocionante, perfecta para los "
+"entusiastas del automovilismo."
+msgstr ""
+"The Toyota Supra is a sports coupe that stands out for its aggressive design "
+"and exceptional performance. Equipped with a turbocharged engine, it offers "
+"an agile and thrilling driving experience, perfect for car enthusiasts."
+
+#: .\appOutletCar\importar_coches_shell.py:667
+msgid "M4"
+msgstr ""
+
+#: .\appOutletCar\importar_coches_shell.py:677
+msgid ""
+"El BMW M4 es un coupé deportivo que ofrece un rendimiento extraordinario y "
+"un manejo preciso. Con su motor potente y su diseño agresivo, está diseñado "
+"para los entusiastas de la velocidad que buscan una experiencia de "
+"conducción emocionante."
+msgstr ""
+"The BMW M4 is a sports coupe that offers extraordinary performance and "
+"precise handling. With its powerful engine and aggressive design, it is "
+"designed for speed enthusiasts seeking an exciting driving experience."
+
+#: .\appOutletCar\importar_coches_shell.py:683
+msgid "Clase S"
+msgstr "S-Class"
+
+#: .\appOutletCar\importar_coches_shell.py:693
+msgid ""
+"La Mercedes Clase S es la máxima expresión de lujo y tecnología. Con un "
+"interior exquisito y un rendimiento sobresaliente, es perfecta para quienes "
+"valoran la elegancia y el confort en cada viaje."
+msgstr ""
+"The Mercedes S-Class represents the pinnacle of luxury and technology. With "
+"its exquisite interior and outstanding performance, it is perfect for those "
+"who value elegance and comfort on every journey."
+
+#: .\appOutletCar\importar_coches_shell.py:699
+msgid "A1"
+msgstr "A1"
+
+#: .\appOutletCar\importar_coches_shell.py:709
+msgid ""
+"El Audi A1 es un compacto que combina estilo y tecnología en un paquete "
+"atractivo. Con su interior bien diseñado y su manejo ágil, es ideal para la "
+"ciudad y para quienes buscan un coche práctico y elegante."
+msgstr ""
+"The Audi A1 is a compact car that combines style and technology in an "
+"attractive package. With its well-designed interior and agile handling, it "
+"is ideal for city driving and for those seeking a practical and stylish car."
+
+#: .\appOutletCar\importar_coches_shell.py:715
+msgid "C-HR"
+msgstr "C-HR"
+
+#: .\appOutletCar\importar_coches_shell.py:725
+msgid ""
+"El Toyota C-HR es un SUV compacto que se destaca por su diseño futurista y "
+"su eficiencia energética. Con un interior espacioso y tecnología avanzada, "
+"es perfecto para quienes buscan un vehículo moderno y ecológico."
+msgstr ""
+"The Toyota C-HR is a compact SUV that stands out for its futuristic design "
+"and energy efficiency. With a spacious interior and advanced technology, it "
+"is perfect for those seeking a modern and eco-friendly vehicle."
+
+#: .\appOutletCar\importar_coches_shell.py:731
+msgid "GTI"
+msgstr "GTI"
+
+#: .\appOutletCar\importar_coches_shell.py:741
+msgid ""
+"El Volkswagen GTI es un hatchback deportivo que combina un diseño icónico "
+"con un rendimiento excepcional. Con su motor potente y su chasis ágil, es "
+"ideal para quienes buscan una experiencia de conducción emocionante y "
+"divertida."
+msgstr ""
+"The Volkswagen GTI is a sporty hatchback that combines an iconic design with "
+"exceptional performance. With its powerful engine and agile chassis, it is "
+"ideal for those seeking an exciting and fun driving experience."
+
+#: .\appOutletCar\importar_coches_shell.py:747
+msgid "Focus"
+msgstr "Focus"
+
+#: .\appOutletCar\importar_coches_shell.py:757
+msgid ""
+"El Ford Focus es un compacto versátil que combina un diseño elegante con "
+"tecnología avanzada. Su conducción ágil y eficiente lo convierte en una "
+"excelente opción tanto para la ciudad como para viajes largos."
+msgstr ""
+"The Ford Focus is a versatile compact car that combines an elegant design "
+"with advanced technology. Its agile and efficient driving makes it an "
+"excellent choice for both city driving and long trips."
+
+#: .\appOutletCar\importar_coches_shell.py:763
+msgid "Roadster"
+msgstr "Roadster"
+
+#: .\appOutletCar\importar_coches_shell.py:773
+msgid ""
+"El Tesla Roadster es un superdeportivo completamente eléctrico que redefine "
+"la velocidad y la eficiencia. Con su aceleración impresionante y su diseño "
+"aerodinámico, es perfecto para quienes buscan lo último en tecnología y "
+"rendimiento."
+msgstr ""
+"The Tesla Roadster is a fully electric supercar that redefines speed and "
+"efficiency. With its impressive acceleration and aerodynamic design, it is "
+"perfect for those seeking the latest in technology and performance."
+
+#: .\appOutletCar\importar_coches_shell.py:779
+msgid "ZR-V"
+msgstr "ZR-V"
+
+#: .\appOutletCar\importar_coches_shell.py:789
+msgid ""
+"El Honda ZR-V es un SUV compacto que combina un diseño moderno con una "
+"excelente eficiencia de combustible. Con un interior espacioso y cómodo, es "
+"ideal para familias que buscan un vehículo práctico para la vida diaria."
+msgstr ""
+"The Honda ZR-V is a compact SUV that combines a modern design with excellent "
+"fuel efficiency. With a spacious and comfortable interior, it is ideal for "
+"families seeking a practical vehicle for daily life."
+
+#: .\appOutletCar\importar_coches_shell.py:795
+msgid "Ateca"
+msgstr "Ateca"
+
+#: .\appOutletCar\importar_coches_shell.py:805
+msgid ""
+"El Seat Ateca es un SUV que combina estilo y funcionalidad. Con un interior "
+"bien equipado y una conducción cómoda, es perfecto para aventuras urbanas y "
+"escapadas familiares."
+msgstr ""
+"The Seat Ateca is an SUV that combines style and functionality. With a well-"
+"equipped interior and comfortable driving, it is perfect for urban "
+"adventures and family getaways."
+
+#: .\appOutletCar\importar_coches_shell.py:811
+msgid "Panamera"
+msgstr "Panamera"
+
+#: .\appOutletCar\importar_coches_shell.py:821
+msgid ""
+"El Porsche Panamera combina el rendimiento de un deportivo con la comodidad "
+"de un sedán de lujo. Su motor potente y su diseño elegante lo convierten en "
+"un vehículo ideal para quienes buscan velocidad y confort en un solo paquete."
+msgstr ""
+"The Porsche Panamera combines the performance of a sports car with the "
+"comfort of a luxury sedan. Its powerful engine and elegant design make it an "
+"ideal vehicle for those seeking speed and comfort in one package."
+
+#: .\appOutletCar\importar_coches_shell.py:827
+msgid "Clase V"
+msgstr "V-Class"
+
+#: .\appOutletCar\importar_coches_shell.py:837
+msgid ""
+"La Mercedes Clase V es una furgoneta de lujo que ofrece un amplio espacio y "
+"confort. Ideal para familias grandes o para transporte de pasajeros, combina "
+"un diseño elegante con tecnología avanzada."
+msgstr ""
+"The Mercedes V-Class is a luxury van that offers ample space and comfort. "
+"Ideal for large families or passenger transport, it combines an elegant "
+"design with advanced technology."
+
+#: .\appOutletCar\importar_coches_shell.py:839
+#: .\appOutletCar\importar_coches_shell.py:855
+#: .\appOutletCar\importar_coches_shell.py:871
+#: .\appOutletCar\importar_coches_shell.py:887
+#: .\appOutletCar\importar_coches_shell.py:903
+msgid "Furgoneta"
+msgstr "Van"
+
+#: .\appOutletCar\importar_coches_shell.py:840
+msgid "Sedán"
+msgstr "Sedan"
+
+#: .\appOutletCar\importar_coches_shell.py:839
+msgid "Lujo"
+msgstr "Luxury"
+
+#: .\appOutletCar\importar_coches_shell.py:843
+msgid "Transporter"
+msgstr "Transporter"
+
+#: .\appOutletCar\importar_coches_shell.py:853
+msgid ""
+"La Volkswagen Transporter es una furgoneta versátil y robusta, perfecta para "
+"negocios y transporte. Su espacio interior y capacidad de carga la "
+"convierten en una opción ideal para profesionales en movimiento."
+msgstr ""
+"The Volkswagen Transporter is a versatile and robust van, perfect for "
+"business and transport. Its interior space and load capacity make it an "
+"ideal choice for professionals on the move."
+
+#: .\appOutletCar\importar_coches_shell.py:855
+#: .\appOutletCar\importar_coches_shell.py:871
+#: .\appOutletCar\importar_coches_shell.py:887
+#: .\appOutletCar\importar_coches_shell.py:903
+msgid "Comercial"
+msgstr "Commercial"
+
+#: .\appOutletCar\importar_coches_shell.py:859
+msgid "Transit Custom"
+msgstr "Transit Custom"
+
+#: .\appOutletCar\importar_coches_shell.py:869
+msgid ""
+"La Ford Transit Custom es una furgoneta diseñada para ofrecer flexibilidad y "
+"confort. Con su amplia capacidad de carga y tecnología avanzada, es ideal "
+"para cualquier tipo de trabajo."
+msgstr ""
+"The Ford Transit Custom is a van designed to offer flexibility and comfort. "
+"With its wide load capacity and advanced technology, it is ideal for any "
+"type of work."
+
+#: .\appOutletCar\importar_coches_shell.py:875
+msgid "Proace"
+msgstr "Proace"
+
+#: .\appOutletCar\importar_coches_shell.py:885
+msgid ""
+"El Toyota Proace es una furgoneta versátil y eficiente, ideal para el "
+"transporte de mercancías o personas. Con un diseño práctico y una gran "
+"capacidad de carga, es perfecta para negocios en crecimiento."
+msgstr ""
+"The Toyota Proace is a versatile and efficient van, ideal for the "
+"transportation of goods or people. With its practical design and great load "
+"capacity, it is perfect for growing businesses."
+
+#: .\appOutletCar\importar_coches_shell.py:891
+msgid "Sprinter"
+msgstr "Sprinter"
+
+#: .\appOutletCar\importar_coches_shell.py:901
+msgid ""
+"La Mercedes Sprinter es una furgoneta de gran capacidad y versatilidad. Con "
+"un interior espacioso y la opción de diferentes longitudes de chasis, es "
+"ideal para transporte de mercancías, como vehículo de trabajo o incluso como "
+"camper. Su tecnología avanzada asegura una experiencia de conducción cómoda "
+"y segura."
+msgstr ""
+"The Mercedes Sprinter is a high-capacity and versatile van. With its "
+"spacious interior and the option of different chassis lengths, it is ideal "
+"for transporting goods, as a work vehicle, or even as a camper. Its advanced "
+"technology ensures a comfortable and safe driving experience."
+
+#: .\appOutletCar\models.py:51 .\appOutletCar\models.py:81
+msgid "Image"
+msgstr "Image"
+
+#: .\appOutletCar\templates\about.html:5
+msgid "OUTLET CAR - NOSOTROS"
+msgstr "OUTLET CAR - ABOUT US"
+
+#: .\appOutletCar\templates\about.html:11
+#: .\appOutletCar\templates\about.html:15 .\appOutletCar\templates\base.html:55
+msgid "Sobre Nosotros"
+msgstr "About Us"
+
+#: .\appOutletCar\templates\about.html:13
+#: .\appOutletCar\templates\agregar_coche_formulario.html:13
+msgid "Inicio"
+msgstr "Home"
+
+#: .\appOutletCar\templates\about.html:23
+msgid "Bienvenido a"
+msgstr "Welcome to"
+
+#: .\appOutletCar\templates\about.html:23
+#: .\appOutletCar\templates\about.html:26
+#: .\appOutletCar\templates\about.html:27
+#: .\appOutletCar\templates\index.html:17
+#: .\appOutletCar\templates\index.html:27
+msgid "Outlet Car"
+msgstr "Outlet Car"
+
+#: .\appOutletCar\templates\about.html:27
+msgid "En"
+msgstr "At"
+
+#: .\appOutletCar\templates\about.html:27
+msgid ""
+"nos especializamos en la venta de coches usados de distintas marcas y "
+"categorías, para que encuentres el vehículo ideal a precios accesibles. "
+"Nuestra misión es ofrecer coches de calidad y facilitar el proceso de compra "
+"proporcionando toda la información necesaria para tomar la mejor decisión."
+msgstr ""
+"we specialize in selling used cars from various brands and categories so "
+"that you can find the ideal vehicle at affordable prices. Our mission is to "
+"offer quality cars and make the buying process easier by providing all the "
+"necessary information to make the best decision."
+
+#: .\appOutletCar\templates\about.html:37
+msgid "Garantía de Calidad"
+msgstr "Quality Guarantee"
+
+#: .\appOutletCar\templates\about.html:46
+msgid "Precios Competitivos"
+msgstr "Competitive Prices"
+
+#: .\appOutletCar\templates\about.html:55
+msgid "Ubicados en toda la península"
+msgstr "Located Throughout the Peninsula"
+
+#: .\appOutletCar\templates\about.html:66
+msgid "Conoce Nuestro Equipo"
+msgstr "Meet Our Team"
+
+#: .\appOutletCar\templates\about.html:69
+#: .\appOutletCar\templates\about.html:71
+msgid "Aitor Molero Lopez"
+msgstr ""
+
+#: .\appOutletCar\templates\about.html:75
+#: .\appOutletCar\templates\about.html:77
+msgid "Sabin Luja Hernandez"
+msgstr ""
+
+#: .\appOutletCar\templates\about.html:81
+#: .\appOutletCar\templates\about.html:83
+msgid "Endika Blanco Cabana"
+msgstr ""
+
+#: .\appOutletCar\templates\about.html:87
+#: .\appOutletCar\templates\about.html:89
+msgid "Kerman Bruña Garcia"
+msgstr ""
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:5
+msgid "Agregar Coche - Car Management"
+msgstr "Add Car - Car Management"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:11
+#: .\appOutletCar\templates\agregar_coche_formulario.html:15
+msgid "Agregar Coche"
+msgstr "Add Car"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:22
+msgid "Introduce los Detalles del Coche"
+msgstr "Enter Car Details"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:27
+#: .\appOutletCar\templates\agregar_coche_formulario.html:158
+msgid "Añadir Coche"
+msgstr "Add Car"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:28
+msgid "Completa los detalles para añadir un nuevo coche a la base de datos"
+msgstr "Fill in the details to add a new car to the database"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:42
+#: .\appOutletCar\templates\agregar_coche_formulario.html:43
+msgid "Precio (€)"
+msgstr "Price (€)"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:55
+msgid "Kilómetros recorridos"
+msgstr "Mileage"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:68
+msgid "Selecciona un combustible"
+msgstr "Select a fuel type"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:77
+msgid "Selecciona una tracción"
+msgstr "Select a traction type"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:86
+msgid "Selecciona una transmisión"
+msgstr "Select a transmission type"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:97
+#: .\appOutletCar\templates\formulario.html:86 .\appOutletCar\views.py:190
+msgid "¿Es Descapotable?"
+msgstr "Is it Convertible?"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:100
+#: .\appOutletCar\templates\formulario.html:89
+msgid "Sí"
+msgstr "Yes"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:104
+#: .\appOutletCar\templates\formulario.html:93
+msgid "No"
+msgstr "No"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:110
+msgid "Selecciona un n° puertas"
+msgstr "Select a number of doors"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:119
+msgid "Selecciona una marca"
+msgstr "Select a brand"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:130
+msgid "Subir Foto"
+msgstr "Upload Photo"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:137
+msgid "Selecciona una categoría"
+msgstr "Select a category"
+
+#: .\appOutletCar\templates\agregar_coche_formulario.html:153
+msgid "Descripción del coche..."
+msgstr "Car description..."
+
+#: .\appOutletCar\templates\base.html:10 .\appOutletCar\templates\base.html:47
+msgid "OUTLET CAR"
+msgstr ""
+
+#: .\appOutletCar\templates\base.html:12 .\appOutletCar\templates\base.html:13
+msgid "Free HTML Templates"
+msgstr ""
+
+#: .\appOutletCar\templates\base.html:54 .\appOutletCar\templates\car.html:75
+#: .\appOutletCar\templates\car_detail.html:13
+#: .\appOutletCar\templates\categoria_detail.html:13
+#: .\appOutletCar\templates\categorias.html:13
+#: .\appOutletCar\templates\formulario.html:13
+#: .\appOutletCar\templates\marca_detail.html:13
+#: .\appOutletCar\templates\marcas.html:13
+msgid "Home"
+msgstr ""
+
+#: .\appOutletCar\templates\base.html:56
+#: .\appOutletCar\templates\categoria_detail.html:46
+msgid "Coches"
+msgstr "Cars"
+
+#: .\appOutletCar\templates\base.html:57
+#: .\appOutletCar\templates\marcas.html:11
+#: .\appOutletCar\templates\marcas.html:15
+msgid "Marcas"
+msgstr "Brands"
+
+#: .\appOutletCar\templates\base.html:59
+#: .\appOutletCar\templates\formulario.html:11
+#: .\appOutletCar\templates\formulario.html:15
+msgid "Reseña"
+msgstr "Review"
+
+#: .\appOutletCar\templates\base.html:61
+msgid "ES"
+msgstr "ES"
+
+#: .\appOutletCar\templates\base.html:63
+msgid "EN"
+msgstr "EN"
+
+#: .\appOutletCar\templates\base.html:82
+msgid "Your Site Name"
+msgstr "Your Site Name"
+
+#: .\appOutletCar\templates\base.html:82
+msgid "All Rights Reserved."
+msgstr "All Rights Reserved."
+
+#: .\appOutletCar\templates\base.html:83
+msgid "Designed by"
+msgstr "Designed by"
+
+#: .\appOutletCar\templates\car.html:5
+msgid "OUTLET CAR - COCHES"
+msgstr "OUTLET CAR - CARS"
+
+#: .\appOutletCar\templates\car.html:55 .\appOutletCar\views.py:101
+msgid "Puertas"
+msgstr "Doors"
+
+#: .\appOutletCar\templates\car.html:64
+msgid "Filtrar"
+msgstr "Filter"
+
+#: .\appOutletCar\templates\car.html:73 .\appOutletCar\templates\car.html:77
+msgid "Listado De Coches"
+msgstr "Car Listings"
+
+#: .\appOutletCar\templates\car.html:85
+msgid "Encuentra Tu Coche"
+msgstr "Find Your Car"
+
+#: .\appOutletCar\templates\car.html:108
+#: .\appOutletCar\templates\categoria_detail.html:67
+#: .\appOutletCar\templates\categorias.html:76
+#: .\appOutletCar\templates\index.html:76
+#: .\appOutletCar\templates\marca_detail.html:83
+#: .\appOutletCar\templates\marcas.html:67
+msgid "VER COCHE"
+msgstr "VIEW CAR"
+
+#: .\appOutletCar\templates\car_detail.html:5
+msgid "OUTLET CAR - DETALLES COCHE"
+msgstr "OUTLET CAR - CAR DETAILS"
+
+#: .\appOutletCar\templates\car_detail.html:15
+msgid "Detalles Coche"
+msgstr "Car Details"
+
+#: .\appOutletCar\templates\car_detail.html:35
+msgid "Detalles del Coche"
+msgstr "Car Details"
+
+#: .\appOutletCar\templates\car_detail.html:86
+msgid "Número de puertas"
+msgstr "Number of doors"
+
+#: .\appOutletCar\templates\car_detail.html:90
+msgid "Descapotable"
+msgstr "Convertible"
+
+#: .\appOutletCar\templates\categoria_detail.html:5
+#: .\appOutletCar\templates\marca_detail.html:5
+msgid "OUTLET CAR - DETALLES MARCA"
+msgstr "OUTLET CAR - BRAND DETAILS"
+
+#: .\appOutletCar\templates\categoria_detail.html:15
+msgid "Detalles Categoria"
+msgstr "Category Details"
+
+#: .\appOutletCar\templates\categoria_detail.html:27
+msgid "Detalles de la Categoria"
+msgstr "Category Information"
+
+#: .\appOutletCar\templates\categoria_detail.html:30
+#: .\appOutletCar\templates\marca_detail.html:37
+msgid "Nombre"
+msgstr "Name"
+
+#: .\appOutletCar\templates\categorias.html:5
+msgid "OUTLET CAR - CATEGORIAS"
+msgstr "OUTLET CAR - CATEGORIES"
+
+#: .\appOutletCar\templates\categorias.html:11
+#: .\appOutletCar\templates\categorias.html:15
+msgid "Categorias"
+msgstr "Categories"
+
+#: .\appOutletCar\templates\categorias.html:23
+msgid "Selecciona tu categoria"
+msgstr "Select your category"
+
+#: .\appOutletCar\templates\categorias.html:44
+#: .\appOutletCar\templates\marcas.html:36
+msgid "VER DETALLES DE"
+msgstr "VIEW DETAILS OF"
+
+#: .\appOutletCar\templates\formulario.html:5
+msgid "Formulario de Reseña - Outlet Car"
+msgstr "Review Form - Outlet Car"
+
+#: .\appOutletCar\templates\formulario.html:22
+msgid "¡Déjanos tu reseña!"
+msgstr "Leave us your review!"
+
+#: .\appOutletCar\templates\formulario.html:27
+msgid "¡Tu opinión es importante para nosotros!"
+msgstr "Your opinion is important to us!"
+
+#: .\appOutletCar\templates\formulario.html:28
+msgid "Completa el formulario y comparte tu experiencia"
+msgstr "Complete the form and share your experience"
+
+#: .\appOutletCar\templates\formulario.html:38 .\appOutletCar\views.py:184
+msgid "Correo Electrónico"
+msgstr "Email"
+
+#: .\appOutletCar\templates\formulario.html:39
+msgid "Tu email"
+msgstr "Your email"
+
+#: .\appOutletCar\templates\formulario.html:42 .\appOutletCar\views.py:185
+msgid "DNI"
+msgstr "ID Number"
+
+#: .\appOutletCar\templates\formulario.html:43
+msgid "Tu DNI"
+msgstr "Your ID Number"
+
+#: .\appOutletCar\templates\formulario.html:52
+#: .\appOutletCar\templates\formulario.html:61
+#: .\appOutletCar\templates\formulario.html:67
+msgid "-----"
+msgstr "-----"
+
+#: .\appOutletCar\templates\formulario.html:59 .\appOutletCar\views.py:188
+msgid "Categoría"
+msgstr "Category"
+
+#: .\appOutletCar\templates\formulario.html:100 .\appOutletCar\views.py:191
+msgid "Recomendaciones"
+msgstr "Recommendations"
+
+#: .\appOutletCar\templates\formulario.html:101
+msgid "Escribe aquí tus recomendaciones..."
+msgstr "Write your recommendations here..."
+
+#: .\appOutletCar\templates\formulario.html:106
+msgid "Enviar Reseña"
+msgstr "Submit Review"
+
+#: .\appOutletCar\templates\index.html:5
+msgid "OUTLET CAR - HOME"
+msgstr "OUTLET CAR - HOME"
+
+#: .\appOutletCar\templates\index.html:18
+msgid "Los Mejores Coches a tu Disposición"
+msgstr "The Best Cars at Your Disposal"
+
+#: .\appOutletCar\templates\index.html:19
+#: .\appOutletCar\templates\index.html:29
+msgid "Comprar Ahora"
+msgstr "Buy Now"
+
+#: .\appOutletCar\templates\index.html:28
+msgid "Coches de Calidad con Kilómetros Ilimitados"
+msgstr "Quality Cars with Unlimited Mileage"
+
+#: .\appOutletCar\templates\index.html:53
+msgid "Busca el coche"
+msgstr "Find the car"
+
+#: .\appOutletCar\templates\index.html:53
+msgid "ideal"
+msgstr "ideal"
+
+#: .\appOutletCar\templates\marca_detail.html:15
+msgid "Detalles MARCA"
+msgstr "Brand Details"
+
+#: .\appOutletCar\templates\marca_detail.html:34
+msgid "Detalles de la Marca"
+msgstr "Brand Information"
+
+#: .\appOutletCar\templates\marca_detail.html:41
+msgid "País"
+msgstr "Country"
+
+#: .\appOutletCar\templates\marca_detail.html:45
+msgid "Fecha de fundación"
+msgstr "Date of Foundation"
+
+#: .\appOutletCar\templates\marca_detail.html:62
+msgid "Coches de"
+msgstr "Cars by"
+
+#: .\appOutletCar\templates\marcas.html:5
+msgid "OUTLET CAR - MARCAS"
+msgstr "OUTLET CAR - BRANDS"
+
+#: .\appOutletCar\templates\marcas.html:23
+msgid "Selecciona tu Marca"
+msgstr "Select your Brand"
+
+#: .\appOutletCar\views.py:67 .\appOutletCar\views.py:237
+msgid "Híbrido / Eléctrico"
+msgstr "Hybrid / Electric"
+
+#: .\appOutletCar\views.py:182
+msgid "¡Nueva Reseña de Coche!"
+msgstr "New Car Review!"
+
+#: .\appOutletCar\views.py:194
+msgid "Formulario enviado con éxito."
+msgstr "Form submitted successfully."
+
+#: .\outletCar\settings.py:111
 msgid "English"
 msgstr "English"
 
-#: .\outletCar\settings.py:118
+#: .\outletCar\settings.py:112
 msgid "Spanish"
 msgstr "Spanish"
+
+#~ msgid "Car Details"
+#~ msgstr "Car Details"
+
+#~ msgid "about/"
+#~ msgstr "about/"
+
+#~ msgid "coches/"
+#~ msgstr "cars/"
+
+#~ msgid "coches/<int:coche_id>/"
+#~ msgstr "cars/<int:car_id>/"
+
+#~ msgid "marcas/<str:marca>/"
+#~ msgstr "brands/<str:brand>/"
+
+#~ msgid "marcas/<str:marca>/detail/"
+#~ msgstr "brands/<str:brand>/detail/"
+
+#~ msgid "categorias/<str:categoria>/"
+#~ msgstr "categories/<str:category>/"
+
+#~ msgid "categorias/<str:categoria>/detail/"
+#~ msgstr "categories/<str:category>/detail/"
+
+#~ msgid "reseña/"
+#~ msgstr "review/"
+
+#~ msgid "añadir/"
+#~ msgstr "add/"
+
+#~ msgid "api/categorias/<int:marca_id>/"
+#~ msgstr "api/categories/<int:brand_id>/"
+
+#~ msgid "api/coches/<int:marca_id>/<int:categoria_id>/"
+#~ msgstr "api/cars/<int:brand_id>/<int:category_id>/"

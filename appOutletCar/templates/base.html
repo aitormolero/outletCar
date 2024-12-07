@@ -7,22 +7,10 @@
 
     <head>
         <meta charset="utf-8">
-        <title>{% block title %}OUTLET CAR{% endblock %}</title>
+        <title>{% block title %}{% trans "OUTLET CAR" %}{% endblock %}</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free HTML Templates" name="keywords">
-        <meta content="Free HTML Templates" name="description">
-
-        <!-- Google Translate -->
-        <script type="text/javascript">
-            function googleTranslateElementInit() {
-                new google.translate.TranslateElement(
-                    {pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 
-                    'google_translate_element'
-                );
-            }
-        </script>
-        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        
+        <meta content="{% trans 'Free HTML Templates' %}" name="keywords">
+        <meta content="{% trans 'Free HTML Templates' %}" name="description">
 
         <!-- Favicon -->
         <link href="{% static 'img/favicon.ico' %}" rel="icon">
@@ -56,19 +44,19 @@
             <div class="position-relative z-9">
                 <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
                     <a href="#" class="navbar-brand">
-                        <h1 class="text-uppercase text-primary mb-1">OUTLET CAR</h1>
+                        <h1 class="text-uppercase text-primary mb-1">{% trans "OUTLET CAR" %}</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="{% url 'index' %}" class="nav-item nav-link {% block home-active %} {% endblock %}">Home</a>
-                            <a href="{% url 'index_about' %}" class="nav-item nav-link {% block about-active %} {% endblock %}">Sobre Nosotros</a>
-                            <a href="{% url 'index_coches' %}" class="nav-item nav-link {% block coches-active %} {% endblock %}">Coches</a>
-                            <a href="{% url 'index_marca' 'BMW' %}" class="nav-item nav-link {% block marcas-active %} {% endblock %}">Marcas</a>
-                            <a href="{% url 'index_categoria' 'Sedán' %}" class="nav-item nav-link {% block categorias-active %} {% endblock %}">Categorías</a>
-                            <a href="{% url 'index_formulario' %}" class="nav-item nav-link {% block formulario-active %} {% endblock %}">Reseña</a>
+                            <a href="{% url 'index' %}" class="nav-item nav-link {% block home-active %} {% endblock %}">{% trans "Home" %}</a>
+                            <a href="{% url 'index_about' %}" class="nav-item nav-link {% block about-active %} {% endblock %}">{% trans "Sobre Nosotros" %}</a>
+                            <a href="{% url 'index_coches' %}" class="nav-item nav-link {% block coches-active %} {% endblock %}">{% trans "Coches" %}</a>
+                            <a href="{% url 'index_marca' 'BMW' %}" class="nav-item nav-link {% block marcas-active %} {% endblock %}">{% trans "Marcas" %}</a>
+                            <a href="{% url 'index_categoria' 'Sedán' %}" class="nav-item nav-link {% block categorias-active %} {% endblock %}">{% trans "Categorías" %}</a>
+                            <a href="{% url 'index_formulario' %}" class="nav-item nav-link {% block formulario-active %} {% endblock %}">{% trans "Reseña" %}</a>
                             <div class="nav-item ml-3 d-flex align-items-center lan">
                                 <a class="nav-link" id="lang-es" href="#" onclick="changeLanguage('es'); return false;">{% trans "ES" %}</a>
                                 <span> / </span>
@@ -91,8 +79,8 @@
 
         <!-- Footer Start -->
         <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
-            <p class="mb-2 text-center text-body">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.</p>
-            <p class="m-0 text-center text-body">Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
+            <p class="mb-2 text-center text-body">&copy; <a href="#">{% trans "Your Site Name" %}</a>. {% trans "All Rights Reserved." %}</p>
+            <p class="m-0 text-center text-body">{% trans "Designed by" %} <a href="https://htmlcodex.com">HTML Codex</a></p>
         </div>
         <!-- Footer End -->
 

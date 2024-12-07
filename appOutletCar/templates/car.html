@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}OUTLET CAR - COCHES{% endblock %}
+{% block title %}{% trans "OUTLET CAR - COCHES" %}{% endblock %}
 {% block coches-active %} active {% endblock %}
 {% block content %}
 
@@ -11,47 +12,47 @@
             <div class="row mx-n2">
                 <div class="col-xl-2 col-lg-4 col-md-6 px-2">
                     <select name="marca" class="custom-select px-4 mb-3 height-50">
-                        <option {% if not request.GET.marca %}selected{% endif %}>Marca</option>
+                        <option {% if not request.GET.marca %}selected{% endif %}>{% trans "Marca" %}</option>
                         {% for marca in marcas %}
                             <option value="{{ marca.id }}" {% if marca.id|stringformat:"s" == request.GET.marca %}selected{% endif %}>
-                                {{ marca.nombre }}
+                                {% trans marca.nombre %}
                             </option>
                         {% endfor %}
                     </select>
                 </div>
                 <div class="col-xl-2 col-lg-4 col-md-6 px-2">
                     <select name="transmision" class="custom-select px-4 mb-3 height-50">
-                        <option {% if not request.GET.transmision %}selected{% endif %}>Transmisión</option>
+                        <option {% if not request.GET.transmision %}selected{% endif %}>{% trans "Transmisión" %}</option>
                         {% for transmision in transmisiones %}
                             <option value="{{ transmision }}" {% if transmision == request.GET.transmision %}selected{% endif %}>
-                                {{ transmision }}
+                                {% trans transmision %}
                             </option>
                         {% endfor %}
                     </select>
                 </div>
                 <div class="col-xl-2 col-lg-4 col-md-6 px-2">
                     <select name="combustible" class="custom-select px-4 mb-3 height-50">
-                        <option {% if not request.GET.combustible %}selected{% endif %}>Combustible</option>
+                        <option {% if not request.GET.combustible %}selected{% endif %}>{% trans "Combustible" %}</option>
                         {% for combustible in combustibles %}
                             <option value="{{ combustible }}" {% if combustible == request.GET.combustible %}selected{% endif %}>
-                                {{ combustible }}
+                                {% trans combustible %}
                             </option>
                         {% endfor %}
                     </select>
                 </div>
                 <div class="col-xl-2 col-lg-4 col-md-6 px-2">
                     <select name="traccion" class="custom-select px-4 mb-3 height-50">
-                        <option {% if not request.GET.traccion %}selected{% endif %}>Tracción</option>
+                        <option {% if not request.GET.traccion %}selected{% endif %}>{% trans "Tracción" %}</option>
                         {% for traccion in tracciones %}
                             <option value="{{ traccion }}" {% if traccion == request.GET.traccion %}selected{% endif %}>
-                                {{ traccion }}
+                                {% trans traccion %}
                             </option>
                         {% endfor %}
                     </select>
                 </div>
                 <div class="col-xl-2 col-lg-4 col-md-6 px-2">
                     <select name="puertas" class="custom-select px-4 mb-3 height-50">
-                        <option {% if not request.GET.puertas %}selected{% endif %}>Puertas</option>
+                        <option {% if not request.GET.puertas %}selected{% endif %}>{% trans "Puertas" %}</option>
                         {% for puerta in num_puertas %}
                             <option value="{{ puerta }}" {% if puerta|stringformat:"s" == request.GET.puertas %}selected{% endif %}>
                                 {{ puerta }}
@@ -59,34 +60,29 @@
                         {% endfor %}
                     </select>
                 </div>
-
                 <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <button class="btn btn-primary btn-block mb-3 height-50" type="submit">Filtrar</button>
+                    <button class="btn btn-primary btn-block mb-3 height-50" type="submit">{% trans "Filtrar" %}</button>
                 </div>
             </div>
         </form>
     </div>
     <!-- Search End -->
 
-
-
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
-        <h2 class="display-3 text-uppercase text-white mb-3">Listado De Coches</h2>
+        <h2 class="display-3 text-uppercase text-white mb-3">{% trans "Listado De Coches" %}</h2>
         <div class="d-inline-flex text-white">
-            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
+            <h6 class="text-uppercase m-0"><a class="text-white" href="">{% trans "Home" %}</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
-            <h6 class="text-uppercase text-body m-0">Listado De Coches</h6>
+            <h6 class="text-uppercase text-body m-0">{% trans "Listado De Coches" %}</h6>
         </div>
     </div>
-    <!-- Page Header Start -->
-
-
+    <!-- Page Header End -->
 
     <!-- Rent A Car Start -->
     <div class="container-fluid">
         <div class="container pt-5 pb-3">
-            <h2 class="display-4 text-uppercase text-center mb-5 pb-5">Encuentra Tu Coche</h2>
+            <h2 class="display-4 text-uppercase text-center mb-5 pb-5">{% trans "Encuentra Tu Coche" %}</h2>
             <div class="row">
                 {% for coche in coches %}
                     <div class="col-lg-6 col-md-6 mb-2">
@@ -94,7 +90,7 @@
                             <div class="img-container">
                                 <img class="img-uniforme2 mb-4" src="{{ coche.imagen.url }}" alt="{{ coche.imagen.name }}">
                             </div>
-                            <h4 class="text-uppercase mb-4">{{ coche.marca.nombre }} {{ coche.modelo }}</h4>
+                            <h4 class="text-uppercase mb-4">{% trans coche.marca.nombre %} {% trans coche.modelo %}</h4>
                             <div class="d-flex justify-content-center mb-4">
                                 <div class="px-4">
                                     <i class="fa fa-car text-primary mr-1"></i>
@@ -102,14 +98,14 @@
                                 </div>
                                 <div class="px-4 border-left border-right">
                                     <i class="fa fa-cogs text-primary mr-1"></i>
-                                    <span>{{ coche.transmision }}</span>
+                                    <span>{% trans coche.transmision %}</span>
                                 </div>
                                 <div class="px-4">
                                     <i class="fa fa-road text-primary mr-1"></i>
-                                    <span>{{ coche.kilometraje }}</span>
+                                    <span>{{coche.kilometraje }}</span>
                                 </div>
                             </div>
-                            <a class="btn btn-primary px-3" href="{% url 'show_coche' coche.id %}">VER COCHE</a>
+                            <a class="btn btn-primary px-3" href="{% url 'show_coche' coche.id %}">{% trans "VER COCHE" %}</a>
                         </div>
                     </div>
                 {% endfor %}
@@ -117,5 +113,5 @@
         </div>
     </div>
     <!-- Rent A Car End -->
-     
+
 {% endblock %}

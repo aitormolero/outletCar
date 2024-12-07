@@ -1,27 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}OUTLET CAR - DETALLES COCHE{% endblock %}
+{% block title %}{% trans "OUTLET CAR - DETALLES COCHE" %}{% endblock %}
 {% block coches-active %} active {% endblock %}
 {% block content %}
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
-        <h2 class="display-3 text-uppercase text-white mb-3">{{ coche.marca.nombre }} {{ coche.modelo }}</h2>
+        <h2 class="display-3 text-uppercase text-white mb-3">{% trans coche.marca.nombre %} {% trans coche.modelo %}</h2>
         <div class="d-inline-flex text-white">
-            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
+            <h6 class="text-uppercase m-0"><a class="text-white" href="">{% trans "Home" %}</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
-            <h6 class="text-uppercase text-body m-0">Detalles Coche</h6>
+            <h6 class="text-uppercase text-body m-0">{% trans "Detalles Coche" %}</h6>
         </div>
     </div>
-    <!-- Page Header Start -->
-
-
+    <!-- Page Header End -->
 
     <!-- Detail Start -->
     <div class="container-fluid">
         <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-uppercase mb-0">{{ coche.marca.nombre }} {{ coche.modelo }}</h1>
+            <h1 class="display-4 text-uppercase mb-0">{% trans coche.marca.nombre %} {% trans coche.modelo %}</h1>
             <div class="row">
                 <div class="col-lg-7 mb-5">
                     <div class="row mx-2 mb-3">
@@ -29,69 +28,69 @@
                             <img class="img-uniforme3" src="{{ coche.imagen.url }}" alt="{{ coche.imagen.name }}">
                         </div>
                     </div>
-                    <p>{{ coche.descripcion }}</p>
+                    <p>{% trans coche.descripcion %}</p>
                </div>
                <div class="col-lg-5 mb-5">
                     <div class="bg-secondary p-5">
-                        <h3 class="text-primary text-center mb-4">Car Details</h3>
+                        <h3 class="text-primary text-center mb-4">{% trans "Detalles del Coche" %}</h3>
                         <ul class="ml-0 pl-0">
                             <li class="d-flex justify-content-between">
-                                <p>Marca</p>
-                                <a href="{% url 'show_marca' coche.marca.nombre %}"><p>{{ coche.marca.nombre }}</p></a>
+                                <p>{% trans "Marca" %}</p>
+                                <a href="{% url 'show_marca' coche.marca.nombre %}"><p>{% trans coche.marca.nombre %}</p></a>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>Modelo</p>
-                                <p>{{ coche.modelo }}</p>
+                                <p>{% trans "Modelo" %}</p>
+                                <p>{% trans coche.modelo %}</p>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>Categorias</p>
+                                <p>{% trans "Categorías" %}</p>
                                 <p>
                                     {% for categoria in coche.categoria.all %}
                                         {% if categoria.nombre == "Híbrido / Eléctrico" %}
-                                            <a href="{% url 'show_categoria' 'HibridoElectrico' %}">{{ categoria.nombre }}</a>
+                                            <a href="{% url 'show_categoria' 'HibridoElectrico' %}">{% trans categoria.nombre %}</a>
                                         {% else %}
-                                            <a href="{% url 'show_categoria' categoria.nombre %}">{{ categoria.nombre }}</a>
+                                            <a href="{% url 'show_categoria' categoria.nombre %}">{% trans categoria.nombre %}</a>
                                         {% endif %}
                                     {% endfor %}
                                 </p>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>Año</p>
+                                <p>{% trans "Año" %}</p>
                                 <p>{{ coche.anio }}</p>
+                            </li>
                             <li class="d-flex justify-content-between">
-                                <p>Precio</p>
+                                <p>{% trans "Precio" %}</p>
                                 <p>{{ coche.precio }}</p>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>Color</p>
-                                <p>{{ coche.color }}</p>
+                                <p>{% trans "Color" %}</p>
+                                <p>{% trans coche.color %}</p>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>Kilometraje</p>
+                                <p>{% trans "Kilometraje" %}</p>
                                 <p>{{ coche.kilometraje }}</p>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>Transmisión</p>
-                                <p>{{ coche.transmision }}</p>
+                                <p>{% trans "Transmisión" %}</p>
+                                <p>{% trans coche.transmision %}</p>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>Combustible</p>
-                                <p>{{ coche.combustible }}</p>
+                                <p>{% trans "Combustible" %}</p>
+                                <p>{% trans coche.combustible %}</p>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>Traccion</p>
-                                <p>{{ coche.traccion }}</p>
+                                <p>{% trans "Tracción" %}</p>
+                                <p>{% trans coche.traccion %}</p>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>Numero de puertas</p>
+                                <p>{% trans "Número de puertas" %}</p>
                                 <p>{{ coche.numero_puertas }}</p>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <p>Descapotable</p>
+                                <p>{% trans "Descapotable" %}</p>
                                 <p>{{ coche.descapotable }}</p>
                             </li>
                         </ul>
-
                     </div>
                </div>
             </div>

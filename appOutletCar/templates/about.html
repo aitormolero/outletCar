@@ -1,31 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}OUTLET CAR - NOSOTROS{% endblock %}
+{% block title %}{% trans "OUTLET CAR - NOSOTROS" %}{% endblock %}
 {% block about-active %} active {% endblock %}
 {% block content %}
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
-        <h2 class="display-3 text-uppercase text-white mb-3">Sobre Nosotros</h2>
+        <h2 class="display-3 text-uppercase text-white mb-3">{% trans "Sobre Nosotros" %}</h2>
         <div class="d-inline-flex text-white">
-            <h6 class="text-uppercase m-0"><a class="text-white" href="{% url 'index' %}">Inicio</a></h6>
+            <h6 class="text-uppercase m-0"><a class="text-white" href="{% url 'index' %}">{% trans "Inicio" %}</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
-            <h6 class="text-uppercase text-body m-0">Sobre Nosotros</h6>
+            <h6 class="text-uppercase text-body m-0">{% trans "Sobre Nosotros" %}</h6>
         </div>
     </div>
     <!-- Page Header End -->
 
-
-
     <!-- About Start -->
     <div class="container-fluid">
         <div class="container pt-5 pb-3">
-            <h2 class="display-4 text-uppercase text-center mb-5">Bienvenido a <span class="text-primary">Outlet Car</span></h2>
+            <h2 class="display-4 text-uppercase text-center mb-5">{% trans "Bienvenido a" %} <span class="text-primary">{% trans "Outlet Car" %}</span></h2>
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <img class="w-75 mb-4 p-4" src="{% static 'img/about.png' %}" alt="Outlet Car">
-                    <p>En <strong>Outlet Car</strong> nos especializamos en la venta de coches usados de distintas marcas y categorías, para que encuentres el vehículo ideal a precios accesibles. Nuestra misión es ofrecer coches de calidad y facilitar el proceso de compra proporcionando toda la información necesaria para tomar la mejor decisión.</p>
+                    <img class="w-75 mb-4 p-4" src="{% static 'img/about.png' %}" alt="{% trans 'Outlet Car' %}">
+                    <p>{% trans "En" %} <strong>{% trans "Outlet Car" %}</strong> {% trans "nos especializamos en la venta de coches usados de distintas marcas y categorías, para que encuentres el vehículo ideal a precios accesibles. Nuestra misión es ofrecer coches de calidad y facilitar el proceso de compra proporcionando toda la información necesaria para tomar la mejor decisión." %}</p>
                 </div>
             </div>
             <div class="row mt-3 p-4">
@@ -35,7 +34,7 @@
                         <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary ml-n4 mr-4 altura-anchura-carac">
                             <i class="fa fa-2x fa-check-circle text-secondary"></i>
                         </div>
-                        <h4 class="text-uppercase m-0">Garantía de Calidad</h4>
+                        <h4 class="text-uppercase m-0">{% trans "Garantía de Calidad" %}</h4>
                     </div>
                 </div>
                 <!-- Precios Competitivos -->
@@ -44,7 +43,7 @@
                         <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary ml-n4 mr-4 altura-anchura-carac">
                             <i class="fa fa-2x fa-tag text-secondary"></i>
                         </div>
-                        <h4 class="text-light text-uppercase m-0">Precios Competitivos</h4>
+                        <h4 class="text-light text-uppercase m-0">{% trans "Precios Competitivos" %}</h4>
                     </div>
                 </div>
                 <!-- Amplia Red de Localización -->
@@ -53,7 +52,7 @@
                         <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary ml-n4 mr-4 altura-anchura-carac">
                             <i class="fa fa-2x fa-map-marker-alt text-secondary"></i>
                         </div>
-                        <h4 class="text-uppercase m-0">Ubicados en toda la peninsula</h4>
+                        <h4 class="text-uppercase m-0">{% trans "Ubicados en toda la península" %}</h4>
                     </div>
                 </div>
             </div>
@@ -61,35 +60,33 @@
     </div>
     <!-- About End -->
 
-
-
     <!-- Team Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
-            <h2 class="display-4 text-uppercase text-center mb-5">Conoce Nuestro Equipo</h2>
+            <h2 class="display-4 text-uppercase text-center mb-5">{% trans "Conoce Nuestro Equipo" %}</h2>
             <div class="owl-carousel team-carousel position-relative pad-nosotros">
                 <div class="team-item">
-                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/aitor.png' %}" alt="Team Member 1">
+                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/aitor.png' %}" alt="{% trans 'Aitor Molero Lopez' %}">
                     <div class="position-relative py-4">
-                        <h4 class="text-uppercase">Aitor Molero Lopez</h4>
+                        <h4 class="text-uppercase">{% trans "Aitor Molero Lopez" %}</h4>
                     </div>
                 </div>
                 <div class="team-item">
-                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/sabin.png' %}" alt="Team Member 2">
+                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/sabin.png' %}" alt="{% trans 'Sabin Luja Hernandez' %}">
                     <div class="position-relative py-4">
-                        <h4 class="text-uppercase">Sabin Luja Hernandez</h4>
+                        <h4 class="text-uppercase">{% trans "Sabin Luja Hernandez" %}</h4>
                     </div>
                 </div>
                 <div class="team-item">
-                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/endika.png' %}" alt="Team Member 3">
+                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/endika.png' %}" alt="{% trans 'Endika Blanco Cabana' %}">
                     <div class="position-relative py-4">
-                        <h4 class="text-uppercase">Endika Blanco Cabana</h4>
+                        <h4 class="text-uppercase">{% trans "Endika Blanco Cabana" %}</h4>
                     </div>
                 </div>
                 <div class="team-item">
-                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/kerman.png' %}" alt="Team Member 4">
+                    <img class="img-fluid bg-white" src="{% static 'img/nosotros/kerman.png' %}" alt="{% trans 'Kerman Bruña Garcia' %}">
                     <div class="position-relative py-4">
-                        <h4 class="text-uppercase">Kerman Bruña Garcia</h4>
+                        <h4 class="text-uppercase">{% trans "Kerman Bruña Garcia" %}</h4>
                     </div>
                 </div>
             </div>

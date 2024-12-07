@@ -1,30 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Agregar Coche - Car Management{% endblock %}
+{% block title %}{% trans "Agregar Coche - Car Management" %}{% endblock %}
 {% block añadir-coche-active %} active {% endblock %}
 {% block content %}
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
-        <h2 class="display-3 text-uppercase text-white mb-3">Agregar Coche</h2>
+        <h2 class="display-3 text-uppercase text-white mb-3">{% trans "Agregar Coche" %}</h2>
         <div class="d-inline-flex text-white">
-            <h6 class="text-uppercase m-0"><a class="text-white" href="">Inicio</a></h6>
+            <h6 class="text-uppercase m-0"><a class="text-white" href="">{% trans "Inicio" %}</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
-            <h6 class="text-uppercase text-body m-0">Agregar Coche</h6>
+            <h6 class="text-uppercase text-body m-0">{% trans "Agregar Coche" %}</h6>
         </div>
     </div>
     <!-- Page Header End -->
 
     <!-- Formulario Start -->
     <div class="container py-5">
-        <h2 class="display-4 text-uppercase text-center mb-5 pb-5">Introduce los Detalles del Coche</h2>
+        <h2 class="display-4 text-uppercase text-center mb-5 pb-5">{% trans "Introduce los Detalles del Coche" %}</h2>
         <div class="row justify-content-center">
             <div class="col-lg-9 col-md-10 col-12">
                 <div class="card shadow-lg border-0">
                     <div class="card-header text-center bg-primary text-white">
-                        <h3>Añadir Coche</h3>
-                        <p class="mb-0">Completa los detalles para añadir un nuevo coche a la base de datos</p>
+                        <h3>{% trans "Añadir Coche" %}</h3>
+                        <p class="mb-0">{% trans "Completa los detalles para añadir un nuevo coche a la base de datos" %}</p>
                     </div>
                     <div class="card-body bg-light p-5">
                         <form method="post" action="{% url 'añadir_coche' %}" enctype="multipart/form-data">
@@ -34,57 +35,57 @@
                             <!-- Año, Precio y Color -->
                             <div class="row mb-4 text-center">
                                 <div class="col-md-4">
-                                    <label for="anio" class="form-label">Año</label>
-                                    <input type="number" name="anio" class="form-control" placeholder="Año" min="1975" required>
+                                    <label for="anio" class="form-label">{% trans "Año" %}</label>
+                                    <input type="number" name="anio" class="form-control" placeholder="{% trans "Año" %}" min="1975" required>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="precio" class="form-label">Precio (€)</label>
-                                    <input type="number" step="0.01" name="precio" class="form-control" placeholder="Precio (€)" min="10000" required>
+                                    <label for="precio" class="form-label">{% trans "Precio (€)" %}</label>
+                                    <input type="number" step="0.01" name="precio" class="form-control" placeholder="{% trans "Precio (€)" %}" min="10000" required>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="color" class="form-label">Color</label>
-                                    <input type="text" name="color" class="form-control" placeholder="Color" required>
+                                    <label for="color" class="form-label">{% trans "Color" %}</label>
+                                    <input type="text" name="color" class="form-control" placeholder="{% trans "Color" %}" required>
                                 </div>
                             </div>
 
                             <!-- Kilometraje y Modelo -->
                             <div class="row mb-4 text-center">
                                 <div class="col-md-6">
-                                    <label for="kilometraje" class="form-label">Kilometraje</label>
-                                    <input type="number" name="kilometraje" class="form-control" min="10000" placeholder="Kilómetros recorridos" required>
+                                    <label for="kilometraje" class="form-label">{% trans "Kilometraje" %}</label>
+                                    <input type="number" name="kilometraje" class="form-control" min="10000" placeholder="{% trans "Kilómetros recorridos" %}" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="modelo" class="form-label">Modelo</label>
-                                    <input type="text" name="modelo" class="form-control" placeholder="Modelo" required>
+                                    <label for="modelo" class="form-label">{% trans "Modelo" %}</label>
+                                    <input type="text" name="modelo" class="form-control" placeholder="{% trans "Modelo" %}" required>
                                 </div>
                             </div>
 
                             <!-- Combustible, Tracción y Transmisión -->
                             <div class="row mb-4 text-center">
                                 <div class="col-md-4">
-                                    <label for="combustible" class="form-label">Combustible</label>
+                                    <label for="combustible" class="form-label">{% trans "Combustible" %}</label>
                                     <select name="combustible" class="form-select" required>
-                                        <option value="" disabled selected>Selecciona un combustible</option>
+                                        <option value="" disabled selected>{% trans "Selecciona un combustible" %}</option>
                                         {% for key, value in combustibles %}
-                                            <option value="{{ key }}">{{ value }}</option>
+                                            <option value="{{ key }}">{% trans value %}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="traccion" class="form-label">Tracción</label>
+                                    <label for="traccion" class="form-label">{% trans "Tracción" %}</label>
                                     <select name="traccion" class="form-select" required>
-                                        <option value="" disabled selected>Selecciona una traccion</option>
+                                        <option value="" disabled selected>{% trans "Selecciona una tracción" %}</option>
                                         {% for key, value in tracciones %}
-                                            <option value="{{ key }}">{{ value }}</option>
+                                            <option value="{{ key }}">{% trans value %}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="transmision" class="form-label">Transmisión</label>
+                                    <label for="transmision" class="form-label">{% trans "Transmisión" %}</label>
                                     <select name="transmision" class="form-select" required>
-                                        <option value="" disabled selected>Selecciona una transmision</option>
+                                        <option value="" disabled selected>{% trans "Selecciona una transmisión" %}</option>
                                         {% for key, value in transmisiones %}
-                                            <option value="{{ key }}">{{ value }}</option>
+                                            <option value="{{ key }}">{% trans value }</option>
                                         {% endfor %}
                                     </select>
                                 </div>
@@ -93,31 +94,31 @@
                             <!-- Es Descapotable, Marca y Puertas -->
                             <div class="row mb-4 text-center">
                                 <div class="col-md-4">
-                                    <label for="descapotable" class="form-label">¿Es Descapotable?</label>
+                                    <label for="descapotable" class="form-label">{% trans "¿Es Descapotable?" %}</label>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="descapotable" value="True">
-                                        <label class="form-check-label">Sí</label>
+                                        <label class="form-check-label">{% trans "Sí" %}</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="descapotable" value="False" checked>
-                                        <label class="form-check-label">No</label>
+                                        <label class="form-check-label">{% trans "No" %}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="numero_puertas" class="form-label">Número de Puertas</label>
+                                    <label for="numero_puertas" class="form-label">{% trans "Número de Puertas" %}</label>
                                     <select name="numero_puertas" class="form-select" required>
-                                        <option value="" disabled selected>Selecciona un n° puertas</option>
+                                        <option value="" disabled selected>{% trans "Selecciona un n° puertas" %}</option>
                                         {% for key, value in numero_puertas %}
-                                            <option value="{{ key }}">{{ value }}</option>
+                                            <option value="{{ key }}">{% trans value %}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="marca" class="form-label">Marca</label>
+                                    <label for="marca" class="form-label">{% trans "Marca" %}</label>
                                     <select name="marca" class="form-select" required>
-                                        <option value="" disabled selected>Selecciona una marca</option>
+                                        <option value="" disabled selected>{% trans "Selecciona una marca" %}</option>
                                         {% for marca in marcas %}
-                                            <option value="{{ marca.id }}">{{ marca.nombre }}</option>
+                                            <option value="{{ marca.id }}">{% trans marca.nombre %}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
@@ -126,16 +127,16 @@
                             <!-- Foto y Categorías a la misma altura -->
                             <div class="row mb-4 text-center">
                                 <div class="col-md-6">
-                                    <label for="imagen" class="form-label">Subir Foto</label>
+                                    <label for="imagen" class="form-label">{% trans "Subir Foto" %}</label>
                                     <input type="file" name="imagen" class="form-control" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="categorias" class="form-label">Categorías</label>
+                                    <label for="categorias" class="form-label">{% trans "Categorías" %}</label>
                                     <div class="input-group justify-content-center">
                                         <select id="categoria-selector" name="categorias" class="form-select">
-                                            <option value="" disabled selected>Selecciona una categoría</option>
+                                            <option value="" disabled selected>{% trans "Selecciona una categoría" %}</option>
                                             {% for categoria in categorias %}
-                                                <option value="{{ categoria.id }}">{{ categoria.nombre }}</option>
+                                                <option value="{{ categoria.id }}">{% trans categoria.nombre %}</option>
                                             {% endfor %}
                                         </select>
                                     </div>
@@ -148,13 +149,13 @@
 
                             <!-- Descripción -->
                             <div class="mb-4">
-                                <label for="descripcion" class="form-label">Descripción</label>
-                                <textarea name="descripcion" class="form-control" rows="5" placeholder="Descripción del coche..." required></textarea>
+                                <label for="descripcion" class="form-label">{% trans "Descripción" %}</label>
+                                <textarea name="descripcion" class="form-control" rows="5" placeholder="{% trans "Descripción del coche..." %}" required></textarea>
                             </div>
 
                             <!-- Botón de Enviar -->
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill">Añadir Coche</button>
+                                <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill">{% trans "Añadir Coche" %}</button>
                             </div>
 
                         </form>

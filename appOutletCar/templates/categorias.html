@@ -1,38 +1,37 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}OUTLET CAR - CATEGORIAS{% endblock %}
+{% block title %}{% trans "OUTLET CAR - CATEGORIAS" %}{% endblock %}
 {% block categorias-active %} active {% endblock %}
 {% block content %}
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
-        <h2 class="display-3 text-uppercase text-white mb-3">Categorias</h2>
+        <h2 class="display-3 text-uppercase text-white mb-3">{% trans "Categorias" %}</h2>
         <div class="d-inline-flex text-white">
-            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
+            <h6 class="text-uppercase m-0"><a class="text-white" href="">{% trans "Home" %}</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
-            <h6 class="text-uppercase text-body m-0">Categorias</h6>
+            <h6 class="text-uppercase text-body m-0">{% trans "Categorias" %}</h6>
         </div>
     </div>
     <!-- Page Header Start -->
 
-
-
     <!-- Vendor Start -->
     <div class="container-fluid py-5">
         <div class="container">
-            <h2 class="display-4 text-uppercase text-center mb-5 pb-5">Selecciona tu categoria</h2>
+            <h2 class="display-4 text-uppercase text-center mb-5 pb-5">{% trans "Selecciona tu categoria" %}</h2>
             <div class="owl-carousel vendor-carousel">
                 {% for categoria in categorias %}
                     
                     <div class="bg-light p-4 {% if categoria.nombre == categoria_activa.nombre %}categoria-active{% endif %}">
                         {% if categoria.nombre == "Híbrido / Eléctrico" %}
                             <a href="{% url 'index_categoria' 'HibridoElectrico' %}" class="text-decoration-none">
-                                <h4 class="text-uppercase text-center py-4 mb-1">{{ categoria.nombre }}</h4>
+                                <h4 class="text-uppercase text-center py-4 mb-1">{% trans categoria.nombre %}</h4>
                             </a>
                         {% else %}
                             <a href="{% url 'index_categoria' categoria.nombre %}" class="text-decoration-none">
-                                <h4 class="text-uppercase text-center py-4 mt-3 mb-3">{{ categoria.nombre }}</h4>
+                                <h4 class="text-uppercase text-center py-4 mt-3 mb-3">{% trans categoria.nombre %}</h4>
                             </a>
                         {% endif %}
                     </div>
@@ -42,43 +41,41 @@
         </div>
         
         <div class="d-flex justify-content-center mt-5">
-            <a class="btn btn-primary btn-lg px-5 py-3 text-uppercase" href="{% url 'show_categoria' categoria_activa.nombre %}">VER DETALLES DE {{ categoria_activa.nombre }}</a>
+            <a class="btn btn-primary btn-lg px-5 py-3 text-uppercase" href="{% url 'show_categoria' categoria_activa.nombre %}">{% trans "VER DETALLES DE" %} {% trans categoria_activa.nombre %}</a>
         </div>
     </div>
     <!-- Vendor End -->
 
-
-
     <!-- Rent A Car Start -->
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
-            <h2 class="display-4 text-uppercase text-center mb-5">{{ categoria_activa.nombre }}</h2>
+            <h2 class="display-4 text-uppercase text-center mb-5">{% trans categoria_activa.nombre %}</h2>
             <div class="row">
                 {% for coche in coches %}
                     
                 <div class="col-lg-6 col-md-6 mb-2">
-                        <div class="rent-item mb-4">
-                            <div class="img-container">
-                                <img class="img-uniforme2 mb-4" src="{{ coche.imagen.url }}" alt="{{ coche.imagen.name }}">
-                            </div>
-                            <h4 class="text-uppercase mb-4">{{ coche.marca.nombre }} {{ coche.modelo }}</h4>
-                            <div class="d-flex justify-content-center mb-4">
-                                <div class="px-4">
-                                    <i class="fa fa-car text-primary mr-1"></i>
-                                    <span>{{ coche.anio }}</span>
-                                </div>
-                                <div class="px-4 border-left border-right">
-                                    <i class="fa fa-cogs text-primary mr-1"></i>
-                                    <span>{{ coche.transmision }}</span>
-                                </div>
-                                <div class="px-4">
-                                    <i class="fa fa-road text-primary mr-1"></i>
-                                    <span>{{ coche.kilometraje }}</span>
-                                </div>
-                            </div>
-                            <a class="btn btn-primary px-3" href="{% url 'show_coche' coche.id %}">VER COCHE</a>
+                    <div class="rent-item mb-4">
+                        <div class="img-container">
+                            <img class="img-uniforme2 mb-4" src="{{ coche.imagen.url }}" alt="{% trans coche.imagen.name %}">
                         </div>
+                        <h4 class="text-uppercase mb-4">{% trans coche.marca.nombre %} {% trans coche.modelo %}</h4>
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="px-4">
+                                <i class="fa fa-car text-primary mr-1"></i>
+                                <span>{{ coche.anio }}</span>
+                            </div>
+                            <div class="px-4 border-left border-right">
+                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                <span>{% trans coche.transmision %}</span>
+                            </div>
+                            <div class="px-4">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>{{ coche.kilometraje }}</span>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary px-3" href="{% url 'show_coche' coche.id %}">{% trans "VER COCHE" %}</a>
                     </div>
+                </div>
 
                 {% endfor %}
             </div>
