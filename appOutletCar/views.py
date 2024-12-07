@@ -91,7 +91,7 @@ class CocheListView(ListView):
         puertas = self.request.GET.get('puertas')
 
         # Aquí buscamos por el msgid original en lugar del traducido.
-        if marca and marca != _("Marca"):
+        if marca and marca != "Marca" and marca != "Brand":
             queryset = queryset.filter(marca__id=marca)
         if transmision and transmision != _("Transmisión"):
             # Buscar el msgid traducido
