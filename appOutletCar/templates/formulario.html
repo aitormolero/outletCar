@@ -35,20 +35,20 @@
                             <!-- Detalles de contacto (Correo y DNI) -->
                             <div class="row mb-4 text-center">
                                 <div class="col-md-6">
-                                    <label for="email" class="form-label">{% trans "Correo Electrónico" %}</label>
-                                    <input type="email" name="email" class="form-control" placeholder="{% trans 'Tu email' %}" required>
+                                    <label for="email-id" class="form-label">{% trans "Correo Electrónico" %}</label>
+                                    <input id="email-id" type="email" name="email" class="form-control" placeholder="{% trans 'Tu email' %}" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="dni" class="form-label">{% trans "DNI" %}</label>
-                                    <input type="text" name="dni" class="form-control" placeholder="{% trans 'Tu DNI' %}" required>
+                                    <label for="dni-id" class="form-label">{% trans "DNI" %}</label>
+                                    <input id="dni-id" type="text" name="dni" class="form-control" placeholder="{% trans 'Tu DNI' %}" required>
                                 </div>
                             </div>
 
                             <!-- Marca, Categoría y Modelo -->
                             <div class="row mb-4 text-center">
                                 <div class="col-md-4">
-                                    <label for="marca" class="form-label">{% trans "Marca" %}</label>
-                                    <select name="marca" class="form-select" required>
+                                    <label for="marca-id" class="form-label">{% trans "Marca" %}</label>
+                                    <select id="marca-id" name="marca" class="form-select" required>
                                         <option value="">{% trans "-----" %}</option>
                                         {% for marca in marcas %}
                                             <option value="{{ marca.id }}">{% trans marca.nombre %}</option>
@@ -56,14 +56,14 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="categoria" class="form-label">{% trans "Categoría" %}</label>
-                                    <select name="categoria" class="form-select select-constant-width" required>
+                                    <label for="categoria-id" class="form-label">{% trans "Categoría" %}</label>
+                                    <select id="categoria-id" name="categoria" class="form-select select-constant-width" required>
                                         <option value="">{% trans "-----" %}</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="modelo" class="form-label">{% trans "Modelo" %}</label>
-                                    <select name="modelo" class="form-select select-constant-width" required>
+                                    <label for="modelo-id" class="form-label">{% trans "Modelo" %}</label>
+                                    <select id="modelo-id" name="modelo" class="form-select select-constant-width" required>
                                         <option value="">{% trans "-----" %}</option>
                                     </select>
                                 </div>
@@ -97,8 +97,8 @@
 
                             <!-- Recomendaciones -->
                             <div class="mb-4 pt-2">
-                                <label for="recomendaciones" class="form-label">{% trans "Recomendaciones" %}</label>
-                                <textarea name="recomendaciones" class="form-control" rows="5" placeholder="{% trans 'Escribe aquí tus recomendaciones...' %}" required></textarea>
+                                <label for="recomendaciones-id" class="form-label">{% trans "Recomendaciones" %}</label>
+                                <textarea id="recomendaciones-id" name="recomendaciones" class="form-control" rows="5" placeholder="{% trans 'Escribe aquí tus recomendaciones...' %}" required></textarea>
                             </div>
 
                             <!-- Botón de Enviar -->

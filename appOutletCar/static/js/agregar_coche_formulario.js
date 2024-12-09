@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const categoriaSelector = document.getElementById('categoria-selector');
+    const categoriaSelector = document.getElementById('categorias');
     const categoriasSeleccionadasDiv = document.getElementById('categorias-seleccionadas');
     const categoriasInput = document.getElementById('categorias-input');
     let categoriaSeleccionada = null;
