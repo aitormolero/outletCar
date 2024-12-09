@@ -64,7 +64,7 @@ class CategoriaDetailView(TemplateView):
         context = super().get_context_data(**kwargs)
         categoria_nombre = self.kwargs['categoria']
         if categoria_nombre == "HibridoElectrico":
-            categoria_nombre = _("Híbrido / Eléctrico")
+            categoria_nombre = "Híbrido / Eléctrico"
 
         coches_all = Coche.objects.all()
         coches_categoria = [
@@ -262,7 +262,7 @@ class ShowCategoriaView(TemplateView):
         context = super().get_context_data(**kwargs)
         categoria_nombre = self.kwargs['categoria']
         if categoria_nombre == "HibridoElectrico":
-            categoria_nombre = _("Híbrido / Eléctrico")
+            categoria_nombre = "Híbrido / Eléctrico"
         categoria = get_object_or_404(Categoria, nombre=categoria_nombre)
         context['categoria'] = categoria
         context['coches'] = Coche.objects.filter(categoria=categoria)

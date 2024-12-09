@@ -42,7 +42,7 @@
         
         <div class="d-flex justify-content-center mt-5">
             {% if categoria_activa.nombre == "Híbrido / Eléctrico" %}
-                <a class="btn btn-primary btn-lg px-5 py-3 text-uppercase" href="{% url 'index_categoria' 'HibridoElectrico' %}">{% trans "VER DETALLES DE" %} {% trans categoria_activa.nombre %}</a>
+                <a class="btn btn-primary btn-lg px-5 py-3 text-uppercase" href="{% url 'show_categoria' 'HibridoElectrico' %}">{% trans "VER DETALLES DE" %} {% trans categoria_activa.nombre %}</a>
             {% else %}
                 <a class="btn btn-primary btn-lg px-5 py-3 text-uppercase" href="{% url 'show_categoria' categoria_activa.nombre %}">{% trans "VER DETALLES DE" %} {% trans categoria_activa.nombre %}</a>
             {% endif %}
